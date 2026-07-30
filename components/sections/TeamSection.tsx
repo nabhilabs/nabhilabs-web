@@ -11,24 +11,24 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const members = [
   {
-    name: "Arjun D.",
-    role: "Co-founder & Engineering",
-    description: "Builds the core systems that power understanding.",
+    name: "Surya Raj",
+    role: "Co-founder",
+    description: "Builds the systems that turn understanding into technology.",
   },
   {
-    name: "Kartik M.",
-    role: "Co-founder & Research",
-    description: "Explores how AI can reason, learn, and stay grounded.",
+    name: "Pavan Kumar",
+    role: "Co-founder",
+    description: "Shapes products that stay grounded in real human needs.",
   },
   {
-    name: "Raghav S.",
-    role: "Co-founder & Design",
-    description: "Designs experiences that bring clarity to complexity.",
+    name: "Tharun Parsa",
+    role: "Co-founder",
+    description: "Designs clarity into every experience we create.",
   },
   {
-    name: "Ishaan P.",
-    role: "Co-founder & Strategy",
-    description: "Connects the dots between vision, product, and impact.",
+    name: "Sai Manjith",
+    role: "Co-founder",
+    description: "Connects vision, research, and impact into one direction.",
   },
 ] as const;
 
