@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-space);
+  --color-nabhi-bg: #f2f4f0;
+  --color-nabhi-surface: #ffffff;
+  --color-nabhi-soft: #ebf0e8;
+  --color-nabhi-border: #d8e0d5;
+  --color-nabhi-forest: #1a3323;
+  --color-nabhi-lime: #cde0b8;
+  --color-nabhi-text: #0f1c13;
+  --color-nabhi-muted: #4a5b4e;
+}
+
+:root {
+  color-scheme: light;
+  --background: #f2f4f0;
+  --foreground: #0f1c13;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  scroll-behavior: auto;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: clip;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #cde0b8;
+  color: #0f1c13;
+}
+
+.technical-grid {
+  background-image:
+    linear-gradient(rgba(26, 51, 35, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 51, 35, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
