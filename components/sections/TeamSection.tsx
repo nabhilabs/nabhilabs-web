@@ -1,9 +1,9 @@
+import Image from "next/image";
 import {
   Box,
   Lightbulb,
   MessageSquare,
   Target,
-  UserRound,
   UsersRound,
 } from "lucide-react";
 import { ChapterTag } from "@/components/ui/ChapterTag";
@@ -14,21 +14,25 @@ const members = [
     name: "Surya Raj",
     role: "Co-founder",
     description: "Builds the systems that turn understanding into technology.",
+    image: "/assets/surya.png",
   },
   {
     name: "Pavan Kumar",
     role: "Co-founder",
     description: "Shapes products that stay grounded in real human needs.",
+    image: "/assets/pavan.png",
   },
   {
     name: "Tharun Parsa",
     role: "Co-founder",
     description: "Designs clarity into every experience we create.",
+    image: "/assets/tharun.png",
   },
   {
     name: "Sai Manjith",
     role: "Co-founder",
     description: "Connects vision, research, and impact into one direction.",
+    image: "/assets/manjith.png",
   },
 ] as const;
 
@@ -120,17 +124,14 @@ export function TeamSection() {
                   className="group grid grid-rows-[auto_auto_1fr]"
                   key={member.name}
                 >
-                  <div className="technical-grid relative aspect-[4/5] overflow-hidden rounded-2xl border border-[#d8e0d5] bg-[radial-gradient(circle_at_50%_38%,rgba(205,224,184,0.5),rgba(255,255,255,0.2)_55%,transparent_80%)]">
-                    <span className="absolute inset-0 grid place-items-center">
-                      <UserRound
-                        aria-label={`${member.name} portrait placeholder`}
-                        className="size-24 text-[#5a7052]/45 transition-transform duration-500 group-hover:scale-105"
-                        strokeWidth={0.8}
-                      />
-                    </span>
-                    <span className="absolute bottom-3 left-3 rounded-full border border-[#c8d6c4] bg-white/65 px-3 py-1.5 font-mono text-[7px] uppercase tracking-[0.14em] text-[#5a7052]">
-                      Portrait 0{index + 1}
-                    </span>
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-[#d8e0d5] bg-[#edf3e8]">
+                    <Image
+                      alt={member.name}
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
+                      src={member.image}
+                    />
                   </div>
                   <div className="mt-4 flex items-start gap-3">
                     <span className="grid size-8 shrink-0 place-items-center rounded-full bg-[#31543a] font-mono text-[8px] text-white">

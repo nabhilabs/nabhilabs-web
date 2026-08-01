@@ -136,6 +136,7 @@ export function IntelligenceSection() {
                   onClick={() => setActive(index)}
                   onFocus={() => setActive(index)}
                   onMouseEnter={() => setActive(index)}
+                  suppressHydrationWarning
                   type="button"
                 >
                   <span className="font-mono text-[10px] text-[#5a7052]">

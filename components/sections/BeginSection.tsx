@@ -127,6 +127,7 @@ export function BeginSection() {
                     name="name"
                     placeholder="Your name"
                     required
+                    suppressHydrationWarning
                     type="text"
                   />
                 </span>
@@ -171,6 +172,7 @@ export function BeginSection() {
 
               <button
                 className="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#1a3323] px-8 py-4 text-xs font-medium text-white transition-colors hover:bg-[#2c4f37]"
+                suppressHydrationWarning
                 type="submit"
               >
                 Schedule a Conversation

@@ -1,0 +1,27 @@
+/* Green (layer 3) + red (layer 4): same dug-dug → rest cycle */
+.context-map-layer4,
+.context-map-layer6 {
+  animation: context-map-heartbeat 2.4s ease-in-out infinite;
+}
+
+@keyframes context-map-heartbeat {
+  0% {
+    opacity: 0.2;
+  }
+  /* dug */
+  8% {
+    opacity: 1;
+  }
+  16% {
+    opacity: 0.2;
+  }
+  /* dug */
+  24% {
+    opacity: 1;
+  }
+  /* stable until next cycle */
+  32%,
+  100% {
+    opacity: 0.2;
+  }
+}

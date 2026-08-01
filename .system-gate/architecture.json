@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "intent": "Nabhi Labs public marketing website that explains the product and collects conversation inquiries via mailto.",
+  "startedAt": "2026-07-31T11:49:06.510Z",
+  "updatedAt": "2026-07-31T11:49:29.949Z",
+  "baselineRef": "5670648f9822cd2d81453ea9e19581638802f697",
+  "goals": {
+    "primaryUsers": "Prospective customers and partners evaluating Nabhi Labs",
+    "successMetric": "Qualified conversation requests started from the Begin form"
+  },
+  "constraints": {
+    "teamSize": "4 cofounders",
+    "budget": null,
+    "compliance": []
+  },
+  "intentTags": [
+    "web"
+  ],
+  "flow": {
+    "nodes": [
+      {
+        "id": "browser",
+        "kind": "client",
+        "name": "Visitor browser"
+      },
+      {
+        "id": "nextjs",
+        "kind": "service",
+        "name": "Next.js App Router site"
+      },
+      {
+        "id": "static-content",
+        "kind": "datastore",
+        "name": "Built pages and public assets"
+      },
+      {
+        "id": "mail",
+        "kind": "external",
+        "name": "User email client via mailto"
+      }
+    ],
+    "edges": [
+      {
+        "from": "browser",
+        "to": "nextjs",
+        "protocol": "https",
+        "sync": true
+      },
+      {
+        "from": "nextjs",
+        "to": "static-content",
+        "protocol": "other",
+        "sync": true
+      },
+      {
+        "from": "browser",
+        "to": "mail",
+        "protocol": "other",
+        "sync": true
+      }
+    ]
+  },
+  "claims": {
+    "statelessApp": true,
+    "singleRegion": true,
+    "loadTested": false,
+    "multiAzData": false,
+    "localDiskSession": false
+  },
+  "evidence": [],
+  "decisions": [
+    {
+      "topic": "runtime",
+      "choice": "Next.js App Router with static marketing sections",
+      "rationale": "The product needs a public brochure site, and the repo already ships as a Next.js App Router app with no backend APIs."
+    },
+    {
+      "topic": "lead-capture",
+      "choice": "Mailto inquiry form instead of a server mailbox API",
+      "rationale": "BeginSection opens a mailto to hello@nabhilabs.com, so inquiry capture does not require a datastore write path yet."
+    },
+    {
+      "topic": "auth",
+      "choice": "No authentication layer",
+      "rationale": "All routes are public marketing content with no member or admin surfaces in the codebase."
+    },
+    {
+      "topic": "data-plane",
+      "choice": "No dedicated database or queue workers",
+      "rationale": "Package dependencies and app routes show only page rendering and static assets, with no ORM, queue, or worker packages present."
+    }
+  ]
+}

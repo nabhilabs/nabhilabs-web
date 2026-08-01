@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Layers3, Network, Sparkles, UserRound } from "lucide-react";
 import { ChapterTag } from "@/components/ui/ChapterTag";
 import { Reveal } from "@/components/ui/Reveal";
@@ -58,53 +59,25 @@ export function StorySection() {
           </div>
 
           <div className="relative mx-auto aspect-square w-full max-w-[36rem]">
-            <span className="absolute inset-[8%] rounded-full border border-[#5a7052]/20" />
-            <span className="absolute inset-[19%] rounded-full border border-dashed border-[#5a7052]/15" />
-            <span className="absolute inset-[31%] rounded-full border border-[#5a7052]/15" />
-            <span className="absolute inset-[42%] rounded-full border border-[#5a7052]/20" />
-            <span className="absolute inset-x-[8%] top-1/2 h-px bg-[#5a7052]/12" />
-            <span className="absolute inset-y-[8%] left-1/2 w-px bg-[#5a7052]/12" />
-
-            <svg
-              aria-hidden="true"
-              className="absolute inset-[8%] h-[84%] w-[84%]"
-              viewBox="0 0 500 500"
-            >
-              {[35, 75, 115, 155, 195, 235, 275, 315, 355, 395, 435, 475].map(
-                (targetY, index) => (
-                  <path
-                    d={`M 250 250 C ${150 + (index % 3) * 40} ${130 + index * 18}, ${90 + (index % 4) * 105} ${targetY}, ${index % 2 === 0 ? 0 : 500} ${targetY}`}
-                    fill="none"
-                    key={targetY}
-                    stroke="rgba(90,112,82,0.12)"
-                    strokeWidth="0.8"
-                  />
-                ),
-              )}
-            </svg>
-
-            <span className="absolute left-1/2 top-[8%] -translate-x-1/2 font-mono text-[9px] uppercase tracking-[0.15em] text-[#5a7052]">
-              First connection
-            </span>
-            <span className="absolute left-1/2 top-[7.5%] size-2 -translate-x-1/2 translate-y-7 rounded-full bg-[#5a7052]" />
-
-            <span className="absolute left-[2%] top-1/2 -translate-y-1/2 rounded-full border border-[#d8e0d5] bg-white/60 px-5 py-2 font-mono text-[8px] uppercase tracking-[0.12em] text-[#5a7052]">
-              People
-            </span>
-            <span className="absolute right-[0%] top-1/2 -translate-y-1/2 rounded-full border border-[#d8e0d5] bg-white/60 px-5 py-2 font-mono text-[8px] uppercase tracking-[0.12em] text-[#5a7052]">
-              Possibility
-            </span>
-            <span className="absolute bottom-[5%] left-1/2 -translate-x-1/2 rounded-full border border-[#d8e0d5] bg-white/60 px-5 py-2 font-mono text-[8px] uppercase tracking-[0.12em] text-[#5a7052]">
-              Purpose
-            </span>
-
-            <span className="absolute left-1/2 top-1/2 grid size-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#31543a] font-display text-3xl font-medium text-white shadow-[0_0_36px_18px_rgba(120,150,106,0.28)]">
-              N
-            </span>
-            <span className="absolute left-[23%] top-[18%] size-1.5 rounded-full bg-[#78966a]" />
-            <span className="absolute right-[18%] top-[20%] size-1.5 rounded-full bg-[#78966a]" />
-            <span className="absolute bottom-[16%] left-[22%] size-1.5 rounded-full bg-[#78966a]" />
-            <span className="absolute bottom-[15%] right-[20%] size-1.5 rounded-full bg-[#78966a]" />
+            <div className="absolute inset-0 animate-story-spin">
+              <Image
+                alt=""
+                aria-hidden="true"
+                className="h-full w-full object-contain"
+                height={800}
+                src="/assets/inner-circle.svg"
+                width={800}
+              />
+            </div>
+            <div className="absolute inset-0">
+              <Image
+                alt="Nabhi connection map — people, possibility, purpose, and first connection"
+                className="h-full w-full object-contain"
+                height={800}
+                src="/assets/our-story-outer-circle.svg"
+                width={800}
+              />
+            </div>
           </div>
         </div>
 

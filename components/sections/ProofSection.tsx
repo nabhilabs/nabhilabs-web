@@ -1,24 +1,7 @@
-import { BarChart3, Box, Grid3X3, GitBranch, Search } from "lucide-react";
+import { BarChart3, Box } from "lucide-react";
+import { ContextMap } from "@/components/context-map/ContextMap";
 import { ChapterTag } from "@/components/ui/ChapterTag";
 import { Reveal } from "@/components/ui/Reveal";
-
-const contextSteps = [
-  {
-    title: "Research",
-    copy: "Find what matters.",
-    icon: Search,
-  },
-  {
-    title: "Decisions",
-    copy: "Choose with confidence.",
-    icon: GitBranch,
-  },
-  {
-    title: "Patterns",
-    copy: "See what repeats.",
-    icon: Grid3X3,
-  },
-] as const;
 
 export function ProofSection() {
   return (
@@ -68,76 +51,7 @@ export function ProofSection() {
               understanding—so every decision is backed by clarity, not chance.
             </p>
 
-            <div className="relative mt-7 min-h-[19rem] overflow-hidden rounded-2xl border border-[#31543a] bg-[radial-gradient(circle_at_12%_50%,#123b28_0%,#0b2c1d_35%,#061b12_100%)] p-5 shadow-[0_18px_50px_rgba(4,22,13,0.18)]">
-              <p className="relative z-20 font-mono text-[8px] uppercase tracking-[0.16em] text-[#cde0b8]/75">
-                Context map
-              </p>
-
-              <svg
-                aria-hidden="true"
-                className="absolute inset-0 h-full w-full opacity-50"
-                preserveAspectRatio="none"
-                viewBox="0 0 800 320"
-              >
-                {Array.from({ length: 18 }, (_, index) => (
-                  <path
-                    d={`M 25 ${65 + index * 10} C 170 ${15 + ((index * 31) % 230)}, 530 ${45 + ((index * 43) % 220)}, 765 160`}
-                    fill="none"
-                    key={index}
-                    stroke="rgba(205,224,184,0.2)"
-                    strokeWidth="0.7"
-                  />
-                ))}
-              </svg>
-
-              <div className="absolute left-[4%] top-1/2 size-36 -translate-y-1/2">
-                {Array.from({ length: 28 }, (_, index) => (
-                  <span
-                    className="absolute size-1 rounded-full bg-[#cde0b8]"
-                    key={index}
-                    style={{
-                      left: `${8 + ((index * 37) % 86)}%`,
-                      opacity: 0.25 + ((index * 11) % 60) / 100,
-                      top: `${8 + ((index * 53) % 86)}%`,
-                    }}
-                  />
-                ))}
-              </div>
-
-              <div className="absolute inset-y-[15%] left-[29%] right-[17%] z-10 grid grid-cols-3 gap-4">
-                {contextSteps.map((step, index) => {
-                  const Icon = step.icon;
-
-                  return (
-                    <div
-                      className="flex flex-col justify-center rounded-xl border border-white/15 bg-white/[0.07] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.16)] backdrop-blur-md"
-                      key={step.title}
-                      style={{
-                        transform: `translateY(${index % 2 === 0 ? -5 : 5}px)`,
-                      }}
-                    >
-                      <Icon className="size-5 text-[#cde0b8]" strokeWidth={1.2} />
-                      <h4 className="mt-5 text-xs text-white/85">
-                        {step.title}
-                      </h4>
-                      <p className="mt-3 text-[9px] leading-4 text-white/45">
-                        {step.copy}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="absolute right-[4%] top-1/2 grid size-20 -translate-y-1/2 place-items-center rounded-full border border-[#cde0b8]/20">
-                <span className="size-7 rounded-full bg-[#cde0b8] shadow-[0_0_24px_10px_rgba(205,224,184,0.45)]" />
-              </div>
-
-              <div className="absolute inset-x-5 bottom-4 flex justify-between font-mono text-[7px] uppercase tracking-[0.18em] text-[#cde0b8]/55">
-                <span>Scattered</span>
-                <span>Connected</span>
-                <span>Clarity</span>
-              </div>
-            </div>
+            <ContextMap />
           </article>
 
           <div className="grid border-l-0 border-[#d8e0d5] lg:border-l">

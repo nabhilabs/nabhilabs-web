@@ -60,6 +60,16 @@ a {
   background-size: 32px 32px;
 }
 
+@keyframes story-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-story-spin {
+  animation: story-spin 10s linear infinite;
+}
+
 :focus-visible {
   outline: 1px solid currentColor;
   outline-offset: 5px;
