@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export function HeroSection() {
   return (
@@ -69,12 +70,14 @@ export function HeroSection() {
                   actually happening in your system.
                 </p>
               </div>
-              <a
+              <MagneticButton
+                as="a"
                 className="mt-4 w-fit rounded-full bg-[#1a3323] px-4 py-2.5 text-[10px] font-medium text-white transition-colors hover:bg-[#2c4f37]"
                 href="#understanding"
+                threshold={40}
               >
                 Unpack the Problem →
-              </a>
+              </MagneticButton>
             </motion.article>
 
             <motion.article

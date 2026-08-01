@@ -1,13 +1,9 @@
 import Image from "next/image";
-import {
-  Box,
-  Lightbulb,
-  MessageSquare,
-  Target,
-  UsersRound,
-} from "lucide-react";
+import { UsersRound } from "lucide-react";
 import { ChapterTag } from "@/components/ui/ChapterTag";
+import { HorizontalTimeline } from "@/components/ui/HorizontalTimeline";
 import { Reveal } from "@/components/ui/Reveal";
+import { StaggerReveal } from "@/components/ui/StaggerReveal";
 
 const members = [
   {
@@ -43,7 +39,7 @@ const milestones = [
     period: "Early 2024",
     description:
       "Four friends, countless late-night conversations, and one shared frustration.",
-    icon: MessageSquare,
+    icon: "MessageSquare",
   },
   {
     number: "02",
@@ -51,7 +47,7 @@ const milestones = [
     period: "Spring 2024",
     description:
       "The problem wasn’t more data. It was the lack of clarity to make sense of it.",
-    icon: Lightbulb,
+    icon: "Lightbulb",
   },
   {
     number: "03",
@@ -59,7 +55,7 @@ const milestones = [
     period: "Summer 2024",
     description:
       "We decided to build—not just another tool, but a new kind of intelligence layer.",
-    icon: Box,
+    icon: "Box",
   },
   {
     number: "04",
@@ -67,16 +63,19 @@ const milestones = [
     period: "Now",
     description:
       "Our journey has just begun. Understanding before technology.",
-    icon: Target,
+    icon: "Target",
   },
 ] as const;
 
 export function TeamSection() {
   return (
-    <section className="relative z-10 bg-[#f7f6f1]" id="team">
+    <section
+      className="section-theme-light relative z-10 bg-[#f7f6f1]"
+      id="team"
+    >
       <Reveal className="mx-auto max-w-[95rem] px-6 py-12 md:px-10 md:py-16">
-        <div className="grid gap-14 lg:grid-cols-[0.72fr_1.28fr]">
-          <div>
+        <div className="grid gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <div className="lg:sticky lg:top-24 lg:self-start">
             <ChapterTag>09 // Our Team</ChapterTag>
             <h2 className="mt-5 max-w-lg font-display text-[clamp(3.2rem,5vw,5.5rem)] font-medium leading-[0.88] tracking-[-0.06em] text-[#0f1c13]">
               Built by four
@@ -120,36 +119,35 @@ export function TeamSection() {
 
             <div className="grid gap-4 border-t border-[#d8e0d5] pt-4 sm:grid-cols-2 md:grid-cols-4">
               {members.map((member, index) => (
-                <article
-                  className="group grid grid-rows-[auto_auto_1fr]"
-                  key={member.name}
-                >
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-[#d8e0d5] bg-[#edf3e8]">
-                    <Image
-                      alt={member.name}
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
-                      src={member.image}
-                    />
-                  </div>
-                  <div className="mt-4 flex items-start gap-3">
-                    <span className="grid size-8 shrink-0 place-items-center rounded-full bg-[#31543a] font-mono text-[8px] text-white">
-                      0{index + 1}
-                    </span>
-                    <div>
-                      <h3 className="font-display text-base font-medium text-[#0f1c13]">
-                        {member.name}
-                      </h3>
-                      <p className="mt-1 font-mono text-[7px] uppercase tracking-[0.13em] text-[#5a7052]">
-                        {member.role}
-                      </p>
+                <StaggerReveal index={index} key={member.name}>
+                  <article className="group grid grid-rows-[auto_auto_1fr]">
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-[#d8e0d5] bg-[#edf3e8]">
+                      <Image
+                        alt={member.name}
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
+                        src={member.image}
+                      />
                     </div>
-                  </div>
-                  <p className="mt-4 text-[10px] leading-5 text-[#4a5b4e]">
-                    {member.description}
-                  </p>
-                </article>
+                    <div className="mt-4 flex items-start gap-3">
+                      <span className="grid size-8 shrink-0 place-items-center rounded-full bg-[#31543a] font-mono text-[8px] text-white">
+                        0{index + 1}
+                      </span>
+                      <div>
+                        <h3 className="font-display text-base font-medium text-[#0f1c13]">
+                          {member.name}
+                        </h3>
+                        <p className="mt-1 font-mono text-[7px] uppercase tracking-[0.13em] text-[#5a7052]">
+                          {member.role}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-[10px] leading-5 text-[#4a5b4e]">
+                      {member.description}
+                    </p>
+                  </article>
+                </StaggerReveal>
               ))}
             </div>
           </div>
@@ -173,35 +171,7 @@ export function TeamSection() {
             </blockquote>
           </div>
 
-          <div className="relative grid gap-7 sm:grid-cols-4">
-            <span className="absolute left-5 right-5 top-12 hidden h-px bg-[#c8d6c4] sm:block" />
-            {milestones.map((milestone) => {
-              const Icon = milestone.icon;
-
-              return (
-                <article className="relative z-10" key={milestone.title}>
-                  <span className="grid size-10 place-items-center rounded-full bg-[#edf3e8] text-[#5a7052]">
-                    <Icon className="size-4" strokeWidth={1.25} />
-                  </span>
-                  <span className="absolute left-[14px] top-[42px] size-3 rounded-full border-4 border-[#edf3e8] bg-[#78966a] shadow-[0_0_10px_3px_rgba(120,150,106,0.2)]" />
-                  <div className="mt-8">
-                    <p className="font-mono text-[7px] text-[#5a7052]">
-                      {milestone.number}
-                    </p>
-                    <h3 className="mt-2 text-xs font-medium text-[#31543a]">
-                      {milestone.title}
-                    </h3>
-                    <p className="mt-1 text-[9px] text-[#4a5b4e]">
-                      {milestone.period}
-                    </p>
-                    <p className="mt-3 text-[9px] leading-4 text-[#4a5b4e]">
-                      {milestone.description}
-                    </p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+          <HorizontalTimeline steps={milestones} />
         </div>
       </Reveal>
     </section>

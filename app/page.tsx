@@ -8,10 +8,12 @@ import { StorySection } from "@/components/sections/StorySection";
 import { TeamSection } from "@/components/sections/TeamSection";
 import { UnderstandingSection } from "@/components/sections/UnderstandingSection";
 import { WhyNabhiSection } from "@/components/sections/WhyNabhiSection";
+import { SectionProgress } from "@/components/ui/SectionProgress";
 
 export default function HomePage() {
   return (
     <main id="main-content">
+      <SectionProgress />
       <HeroSection />
       <UnderstandingSection />
       <SecondBrainSection />

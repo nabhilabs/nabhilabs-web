@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { PhilosophySteps } from "@/components/sections/PhilosophySteps";
 import { ChapterTag } from "@/components/ui/ChapterTag";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -111,44 +111,7 @@ export function UnderstandingSection() {
           </div>
         </div>
 
-        <div className="relative z-10 mt-16 grid gap-6 sm:grid-cols-2 lg:mt-24 lg:grid-cols-4 lg:gap-8">
-          {principles.map((principle, index) => (
-            <article className="group flex flex-col" key={principle.title}>
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="font-mono text-[9px] tracking-[0.18em] text-[#5a7052]">
-                    0{index + 1}
-                  </p>
-                  <h3 className="mt-2 font-mono text-xs uppercase tracking-[0.12em] text-[#0f1c13]">
-                    {principle.title}
-                  </h3>
-                  <p className="mt-2 text-[10px] leading-4 text-[#4a5b4e]">
-                    {principle.prompt}
-                  </p>
-                </div>
-                <span className="font-mono text-xs text-[#5a7052]/40">+</span>
-              </div>
-
-              <div
-                className="philosophy-float relative mx-auto mt-8 aspect-square w-full max-w-[13.5rem]"
-                style={{ animationDelay: `${index * 0.55}s` }}
-              >
-                <Image
-                  alt={principle.title}
-                  className="object-contain object-center"
-                  fill
-                  loading="eager"
-                  sizes="(max-width: 640px) 60vw, 220px"
-                  src={principle.image}
-                />
-              </div>
-
-              <p className="mt-8 max-w-[15rem] text-[11px] leading-5 text-[#4a5b4e]">
-                {principle.description}
-              </p>
-            </article>
-          ))}
-        </div>
+        <PhilosophySteps principles={principles} />
 
         <div className="mt-5 grid items-center gap-5 rounded-[24px] border border-[#d8e0d5] bg-white/45 px-6 py-5 md:grid-cols-[1.5fr_repeat(3,auto)]">
           <div>

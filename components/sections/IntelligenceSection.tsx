@@ -12,6 +12,7 @@ import {
 import { motion } from "motion/react";
 import { ChapterTag } from "@/components/ui/ChapterTag";
 import { Reveal } from "@/components/ui/Reveal";
+import { applyPointerTilt, clearPointerTilt } from "@/lib/pointer-tilt";
 
 const pillars = [
   {
@@ -143,10 +144,13 @@ export function IntelligenceSection() {
   }, [active]);
 
   return (
-    <section className="relative z-10 bg-[#f7f6f1]" id="intelligence">
+    <section
+      className="section-theme-light relative z-10 bg-[#f7f6f1]"
+      id="intelligence"
+    >
       <Reveal className="mx-auto max-w-[95rem] px-6 py-12 md:px-10 md:py-16">
         <div
-          className="relative grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center"
+          className="relative grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start"
           ref={gridRef}
         >
           {svgSize.w > 0 && (
@@ -167,7 +171,7 @@ export function IntelligenceSection() {
             </svg>
           )}
 
-          <div className="relative z-10">
+          <div className="relative z-10 lg:sticky lg:top-24 lg:self-start">
             <div ref={copyRef}>
               <ChapterTag>05 // Intelligence</ChapterTag>
               <p className="mt-6 font-mono text-[10px] text-[#4a5b4e]">
@@ -213,15 +217,18 @@ export function IntelligenceSection() {
               return (
                 <button
                   aria-expanded={isActive}
-                  className={`grid w-full grid-cols-[2rem_3.5rem_1fr_auto] items-center gap-3 rounded-2xl border px-4 py-4 text-left transition-colors md:px-5 ${
+                  className={`tilt-surface group relative grid w-full grid-cols-[2rem_3.5rem_1fr_auto] items-center gap-3 overflow-hidden rounded-2xl border px-4 py-4 text-left md:px-5 ${
                     isActive
-                      ? "border-[#cad8c6] bg-[#edf3e8]"
-                      : "border-[#d8e0d5] bg-white/35 hover:bg-white/60"
+                      ? "border-[#a3e635]/50 bg-[#edf3e8] shadow-[0_12px_32px_rgba(26,51,35,0.06)]"
+                      : "border-[#d8e0d5] bg-white/35 hover:border-[#cad8c6] hover:bg-white/60"
                   }`}
+                  data-active={isActive ? "true" : "false"}
                   key={pillar.title}
                   onClick={() => setActive(index)}
                   onFocus={() => setActive(index)}
                   onMouseEnter={() => setActive(index)}
+                  onMouseLeave={clearPointerTilt}
+                  onMouseMove={applyPointerTilt}
                   ref={(el) => {
                     cardRefs.current[index] = el;
                   }}
@@ -255,8 +262,12 @@ export function IntelligenceSection() {
                       </span>
                     </motion.span>
                   </span>
-                  <span className="font-mono text-sm text-[#4a5b4e]">
-                    {isActive ? "—" : "+"}
+                  <span
+                    className={`bento-plus font-mono text-sm text-[#4a5b4e] ${
+                      isActive ? "rotate-45" : ""
+                    }`}
+                  >
+                    +
                   </span>
                 </button>
               );

@@ -75,10 +75,13 @@ const promises = [
 
 export function SecondBrainSection() {
   return (
-    <section className="relative z-10 bg-[#071c13]" id="second-brain">
-      <Reveal className="mx-auto max-w-[95rem] bg-[radial-gradient(circle_at_70%_30%,#174f2c_0%,#0d2e1c_34%,#071c13_76%)] p-6 text-white md:p-10 lg:p-14">
-        <div className="grid gap-14 lg:grid-cols-[0.78fr_1.22fr]">
-          <div>
+    <section
+      className="section-theme-dark relative z-10 bg-[#0e1012] text-white transition-colors duration-700"
+      id="second-brain"
+    >
+      <Reveal className="mx-auto max-w-[95rem] bg-[radial-gradient(circle_at_70%_30%,#1a3d24_0%,#121a16_34%,#0e1012_76%)] p-6 md:p-10 lg:p-14">
+        <div className="grid gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <div className="lg:sticky lg:top-24 lg:self-start">
             <ChapterTag inverse>03 // Flagship Product</ChapterTag>
             <p className="mt-6 font-mono text-[10px] text-white/50">
               What is your signature creation?
