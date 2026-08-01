@@ -70,6 +70,52 @@ a {
   animation: story-spin 10s linear infinite;
 }
 
+@keyframes philosophy-spin-cw {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes philosophy-spin-ccw {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.philosophy-spin-cw {
+  animation: philosophy-spin-cw 60s linear infinite;
+}
+
+.philosophy-spin-cw-mid {
+  animation: philosophy-spin-cw 40s linear infinite;
+}
+
+.philosophy-spin-cw-fast {
+  animation: philosophy-spin-cw 28s linear infinite;
+}
+
+.philosophy-spin-ccw {
+  animation: philosophy-spin-ccw 50s linear infinite;
+}
+
+.philosophy-spin-ccw-fast {
+  animation: philosophy-spin-ccw 32s linear infinite;
+}
+
+@keyframes philosophy-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.philosophy-float {
+  animation: philosophy-float 4.5s ease-in-out infinite;
+}
+
 :focus-visible {
   outline: 1px solid currentColor;
   outline-offset: 5px;

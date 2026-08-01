@@ -106,8 +106,8 @@ export function WhyNabhiSection() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[24px] border border-white/15 bg-white/[0.035]">
-            <div className="grid grid-cols-[1fr_auto_1fr] items-center border-b border-white/10 px-5 py-5 font-mono text-[9px] uppercase tracking-[0.16em] text-white/55 md:px-8">
+          <div className="flex min-h-0 flex-col overflow-hidden rounded-[24px] border border-white/15 bg-white/[0.035] lg:h-full">
+            <div className="grid shrink-0 grid-cols-[1fr_auto_1fr] items-center border-b border-white/10 px-5 py-5 font-mono text-[9px] uppercase tracking-[0.16em] text-white/55 md:px-8">
               <span>Common shortcut</span>
               <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[#cde0b8]">
                 vs
@@ -115,31 +115,35 @@ export function WhyNabhiSection() {
               <span className="text-right">Nabhi practice</span>
             </div>
 
-            {comparisons.map((comparison) => {
-              const ShortcutIcon = comparison.shortcutIcon;
-              const PracticeIcon = comparison.practiceIcon;
+            <div className="flex flex-1 flex-col">
+              {comparisons.map((comparison) => {
+                const ShortcutIcon = comparison.shortcutIcon;
+                const PracticeIcon = comparison.practiceIcon;
 
-              return (
-                <div
-                  className="grid grid-cols-[2.5rem_1fr_auto_2.5rem_1fr] items-center gap-3 border-b border-white/10 px-4 py-5 last:border-b-0 md:gap-5 md:px-8"
-                  key={comparison.shortcut}
-                >
-                  <span className="grid size-10 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-[#cde0b8]/75">
-                    <ShortcutIcon className="size-5" strokeWidth={1.25} />
-                  </span>
-                  <span className="text-xs text-white/55 md:text-sm">
-                    {comparison.shortcut}
-                  </span>
-                  <span className="font-mono text-sm text-[#cde0b8]/55">›</span>
-                  <span className="grid size-10 place-items-center rounded-full border border-[#cde0b8]/25 text-[#cde0b8]">
-                    <PracticeIcon className="size-5" strokeWidth={1.25} />
-                  </span>
-                  <span className="text-xs text-white/85 md:text-sm">
-                    {comparison.practice}
-                  </span>
-                </div>
-              );
-            })}
+                return (
+                  <div
+                    className="grid flex-1 grid-cols-[2.5rem_1fr_auto_2.5rem_1fr] items-center gap-3 border-b border-white/10 px-4 py-4 last:border-b-0 md:gap-5 md:px-8 md:py-5"
+                    key={comparison.shortcut}
+                  >
+                    <span className="grid size-10 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-[#cde0b8]/75">
+                      <ShortcutIcon className="size-5" strokeWidth={1.25} />
+                    </span>
+                    <span className="text-xs text-white/55 md:text-sm">
+                      {comparison.shortcut}
+                    </span>
+                    <span className="font-mono text-sm text-[#cde0b8]/55">
+                      ›
+                    </span>
+                    <span className="grid size-10 place-items-center rounded-full border border-[#cde0b8]/25 text-[#cde0b8]">
+                      <PracticeIcon className="size-5" strokeWidth={1.25} />
+                    </span>
+                    <span className="text-xs text-white/85 md:text-sm">
+                      {comparison.practice}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
 

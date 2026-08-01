@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ChapterTag } from "@/components/ui/ChapterTag";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -7,42 +8,67 @@ const principles = [
     prompt: "Absorb before you act.",
     description:
       "We listen deeply to understand the real problem, not just the surface noise.",
+    image: "/assets/01_listen.png",
   },
   {
     title: "Observe",
     prompt: "Find patterns in complexity.",
     description:
       "We observe the system as a whole and identify the unseen patterns driving it.",
+    image: "/assets/02_observe.png",
   },
   {
     title: "Simplify",
-    prompt: "Remove what doesn’t matter.",
+    prompt: "Remove what doesn't matter.",
     description:
       "We strip away unnecessary complexity to uncover what truly matters.",
+    image: "/assets/03_simplify.png",
   },
   {
     title: "Build",
-    prompt: "Build what’s inevitable.",
+    prompt: "Build what's inevitable.",
     description:
       "With clarity as our foundation, we build technology that feels natural, not forced.",
+    image: "/assets/04_build.png",
   },
 ] as const;
 
-function ImageHolder({ label }: { label: string }) {
-  return (
-    <div className="grid aspect-[4/3] place-items-center rounded-[28px] border border-dashed border-[#bac7b7] bg-[radial-gradient(circle_at_50%_45%,rgba(205,224,184,0.55),rgba(255,255,255,0.35)_55%,transparent_75%)]">
-      <span className="rounded-full border border-[#c8d6c4] bg-white/65 px-3 py-1.5 font-mono text-[8px] uppercase tracking-[0.16em] text-[#5a7052]">
-        [ {label} image ]
-      </span>
-    </div>
-  );
-}
+const philosophyLayers = [
+  {
+    src: "/assets/Philosophy/OL 2.svg",
+    className: "philosophy-spin-cw",
+  },
+  {
+    src: "/assets/Philosophy/OL 1.svg",
+    className: "philosophy-spin-ccw",
+  },
+  {
+    src: "/assets/Philosophy/OL 0.svg",
+    className: "philosophy-spin-cw-mid",
+  },
+  {
+    src: "/assets/Philosophy/Middle Circle.svg",
+    className: "philosophy-spin-cw-fast",
+  },
+  {
+    src: "/assets/Philosophy/Inner Circle.svg",
+    className: "philosophy-spin-ccw-fast",
+  },
+  {
+    src: "/assets/Philosophy/Main Object.svg",
+    className: "",
+  },
+  {
+    src: "/assets/Philosophy/Main Object Floatings.svg",
+    className: "philosophy-float",
+  },
+] as const;
 
 export function UnderstandingSection() {
   return (
     <section className="relative z-10 bg-[#f7f6f1]" id="understanding">
       <Reveal className="mx-auto max-w-[95rem] px-6 py-12 md:px-10 md:py-16 lg:px-16">
-        <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <ChapterTag>02 // Philosophy</ChapterTag>
             <p className="mt-5 font-mono text-[10px] text-[#4a5b4e]">
@@ -64,78 +90,60 @@ export function UnderstandingSection() {
             </p>
           </div>
 
-          <div className="technical-grid relative min-h-[28rem] overflow-hidden rounded-[28px] border border-[#d8e0d5]/80 bg-white/35 md:min-h-[34rem]">
-            <span className="absolute left-1/2 top-1/2 size-[27rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#5a7052]/15" />
-            <span className="absolute left-1/2 top-1/2 size-[21rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#5a7052]/15" />
-            <span className="absolute left-1/2 top-1/2 size-[15rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#5a7052]/20" />
-            <span className="absolute left-1/2 top-1/2 h-px w-[90%] -translate-x-1/2 bg-[#5a7052]/10" />
-            <span className="absolute left-1/2 top-1/2 h-[85%] w-px -translate-y-1/2 bg-[#5a7052]/10" />
-
-            <div className="absolute left-1/2 top-1/2 z-10 w-44 -translate-x-1/2 -translate-y-1/2 md:w-52">
-              <ImageHolder label="central portal" />
-              <p className="mt-4 text-center font-mono text-[8px] uppercase tracking-[0.18em] text-[#5a7052]">
-                [ Nabhi approach ]
-              </p>
-              <p className="mx-auto mt-2 max-w-48 text-center text-[10px] leading-4 text-[#4a5b4e]">
-                Understanding is the starting point. Technology is the natural
-                outcome.
-              </p>
-            </div>
-
-            <div className="absolute left-[5%] top-[38%] max-w-28">
-              <span className="mb-2 block size-2 rounded-full bg-[#6f9164]" />
-              <p className="font-mono text-[8px] uppercase tracking-[0.12em] text-[#0f1c13]">
-                Uncertainty
-              </p>
-              <p className="mt-1 text-[9px] leading-4 text-[#4a5b4e]">
-                Signals everywhere. Clarity nowhere.
-              </p>
-            </div>
-            <div className="absolute right-[4%] top-[12%] max-w-28">
-              <span className="mb-2 block size-2 rounded-full bg-[#6f9164]" />
-              <p className="font-mono text-[8px] uppercase tracking-[0.12em] text-[#0f1c13]">
-                Complexity
-              </p>
-              <p className="mt-1 text-[9px] leading-4 text-[#4a5b4e]">
-                Too many systems. Too many tools.
-              </p>
-            </div>
-            <div className="absolute bottom-[18%] right-[3%] max-w-28">
-              <span className="mb-2 block size-2 rounded-full bg-[#6f9164]" />
-              <p className="font-mono text-[8px] uppercase tracking-[0.12em] text-[#0f1c13]">
-                Overwhelm
-              </p>
-              <p className="mt-1 text-[9px] leading-4 text-[#4a5b4e]">
-                More technology. More confusion.
-              </p>
-            </div>
+          <div
+            aria-label="Nabhi philosophy diagram"
+            className="relative mx-auto aspect-square w-full max-w-[48rem] lg:-mt-16 lg:-mb-32 xl:-mt-24"
+          >
+            {philosophyLayers.map((layer, index) => (
+              <div
+                className={`absolute inset-0 ${layer.className}`}
+                key={layer.src}
+                style={{ zIndex: index + 1 }}
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  className="h-full w-full object-contain"
+                  src={layer.src}
+                />
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="mt-16 grid border-y border-[#d8e0d5] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative z-10 mt-16 grid gap-6 sm:grid-cols-2 lg:mt-24 lg:grid-cols-4 lg:gap-8">
           {principles.map((principle, index) => (
-            <article
-              className="group border-b border-[#d8e0d5] p-5 sm:odd:border-r lg:border-b-0 lg:border-r lg:last:border-r-0"
-              key={principle.title}
-            >
-              <div className="flex items-start justify-between">
+            <article className="group flex flex-col" key={principle.title}>
+              <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="font-mono text-[9px] tracking-[0.18em] text-[#5a7052]">
                     0{index + 1}
                   </p>
-                  <h3 className="mt-1 font-mono text-xs uppercase tracking-[0.12em] text-[#0f1c13]">
+                  <h3 className="mt-2 font-mono text-xs uppercase tracking-[0.12em] text-[#0f1c13]">
                     {principle.title}
                   </h3>
-                  <p className="mt-1 text-[10px] text-[#4a5b4e]">
+                  <p className="mt-2 text-[10px] leading-4 text-[#4a5b4e]">
                     {principle.prompt}
                   </p>
                 </div>
-                <span className="font-mono text-xs text-[#5a7052]/50">+</span>
+                <span className="font-mono text-xs text-[#5a7052]/40">+</span>
               </div>
-              <div className="mt-5 transition-transform duration-500 group-hover:-translate-y-1">
-                <ImageHolder label={principle.title} />
+
+              <div
+                className="philosophy-float relative mx-auto mt-8 aspect-square w-full max-w-[13.5rem]"
+                style={{ animationDelay: `${index * 0.55}s` }}
+              >
+                <Image
+                  alt={principle.title}
+                  className="object-contain object-center"
+                  fill
+                  loading="eager"
+                  sizes="(max-width: 640px) 60vw, 220px"
+                  src={principle.image}
+                />
               </div>
-              <p className="mt-5 text-[11px] leading-5 text-[#4a5b4e]">
+
+              <p className="mt-8 max-w-[15rem] text-[11px] leading-5 text-[#4a5b4e]">
                 {principle.description}
               </p>
             </article>
