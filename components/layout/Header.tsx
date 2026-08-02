@@ -1,3 +1,5 @@
+import { SiteSearch } from "@/components/search/SiteSearch";
+
 const navigation = [
   { label: "Nabhi Persona", href: "/solutions/nabhi-persona" },
   { label: "Capabilities", href: "/#capabilities" },
@@ -20,7 +22,7 @@ export function Header() {
           NABHI
         </a>
 
-        <div className="flex items-center gap-5 text-xs text-[#4a5b4e] sm:gap-8">
+        <div className="flex items-center gap-4 text-xs text-[#4a5b4e] sm:gap-7">
           {navigation.map((item) => (
             <a
               className="hidden transition-colors duration-300 hover:text-[#0f1c13] sm:block"
@@ -30,6 +32,7 @@ export function Header() {
               {item.label}
             </a>
           ))}
+          <SiteSearch />
           <a
             className="rounded-full bg-[#1a3323] px-5 py-2.5 text-white transition-colors duration-300 hover:bg-[#2c4f37]"
             href="/#begin"

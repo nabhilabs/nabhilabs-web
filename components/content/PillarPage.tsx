@@ -1,11 +1,20 @@
 import Link from "next/link";
 import { aeoCitations, type PillarPageContent } from "@/lib/pillar-pages";
+import {
+  getProductByPath,
+  productKeywordsCsv,
+} from "@/lib/products";
 
 type PillarPageProps = {
   page: PillarPageContent;
 };
 
 export function PillarPage({ page }: PillarPageProps) {
+  const product = getProductByPath(page.path);
+  const keywordList = product
+    ? productKeywordsCsv(product)
+    : page.primaryKeyword;
+
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -38,8 +47,34 @@ export function PillarPage({ page }: PillarPageProps) {
       name: "Nabhi Labs",
       url: "https://nabhilabs.com",
     },
-    keywords: page.primaryKeyword,
+    keywords: keywordList,
   };
+
+  const offeringJsonLd = product
+    ? {
+        "@context": "https://schema.org",
+        "@type": product.schemaType,
+        name: product.name,
+        description: product.description,
+        url: `https://nabhilabs.com${product.url}`,
+        keywords: keywordList,
+        provider: {
+          "@type": "Organization",
+          name: "Nabhi Labs",
+          url: "https://nabhilabs.com",
+        },
+        brand: {
+          "@type": "Brand",
+          name: "Nabhi Labs",
+        },
+        ...(product.schemaType === "SoftwareApplication"
+          ? {
+              applicationCategory: "BusinessApplication",
+              operatingSystem: "Web",
+            }
+          : {}),
+      }
+    : null;
 
   return (
     <main className="relative" id="main-content">
@@ -51,6 +86,12 @@ export function PillarPage({ page }: PillarPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         type="application/ld+json"
       />
+      {offeringJsonLd ? (
+        <script
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(offeringJsonLd) }}
+          type="application/ld+json"
+        />
+      ) : null}
 
       <section className="technical-grid relative overflow-hidden border-b border-[#d8e0d5] bg-[#f2f4f0]">
         <div className="mx-auto max-w-[95rem] px-6 pb-16 pt-28 md:px-10 md:pb-20 md:pt-32">
@@ -66,6 +107,11 @@ export function PillarPage({ page }: PillarPageProps) {
           <p className="mt-6 max-w-2xl text-base leading-7 text-[#4a5b4e]">
             {page.lede}
           </p>
+          {product ? (
+            <p className="mt-5 max-w-2xl font-mono text-[10px] leading-5 tracking-[0.04em] text-[#5a7052]">
+              Target words: {product.keywords.slice(0, 6).join(" · ")}
+            </p>
+          ) : null}
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               className="rounded-full bg-[#1a3323] px-6 py-3 text-sm text-white transition-colors hover:bg-[#2c4f37]"

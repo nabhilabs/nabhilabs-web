@@ -33,23 +33,26 @@ export const pillarPages: PillarPageContent[] = [
     dateModified: "2026-08-02",
     sections: [
       {
-        heading: "Why institutional knowledge stays trapped",
+        heading: "Why institutional knowledge stays trapped without Nabhi Persona",
         body: [
-          "Most enterprises already own the answers. They live in tickets, decks, chats, CRMs, wikis, and the heads of people who leave. Search returns documents; meetings rediscover the same facts; AI chatbots invent when context is thin. A Nabhi Persona is not another repository. It is an intelligence layer that keeps knowledge active—retrieved with provenance, reasoned over with constraints, and ready when pressure is highest.",
-          "Nabhi Labs treats Nabhi Persona work as systems design first. Before models or vector stores, we map who decides, which sources are trusted, and where clarity collapses. That sequence keeps the product from becoming more noise.",
+          "Most enterprises already own the answers. They live in tickets, decks, chats, CRMs, wikis, and the heads of people who leave. Search returns documents; meetings rediscover the same facts; AI chatbots invent when context is thin. Teams then buy another knowledge base, another intranet, or another generic assistant—and the fragmentation deepens. A Nabhi Persona is not another repository. It is an intelligence layer that keeps institutional knowledge active—retrieved with provenance, reasoned over with constraints, and ready when pressure is highest.",
+          "Nabhi Labs treats Nabhi Persona work as systems design first. Before models or vector stores, we map who decides, which sources are trusted, and where clarity collapses. That sequence keeps the product from becoming more noise. Leaders evaluating enterprise persona AI usually discover the bottleneck is not “more GPT”—it is missing ownership, stale corpora, and answers that cannot be inspected. Nabhi Persona is built so every useful response can point back to what the organization already knows.",
+          "When rediscovery costs more than delivery, the organization feels slow even when people work hard. Nabhi Persona targets that cost: fewer repeated explanations, faster grounded decisions, and a shared picture of how the system actually behaves under real constraints.",
         ],
       },
       {
-        heading: "What Nabhi Labs implements",
+        heading: "What Nabhi Labs implements in a Nabhi Persona architecture",
         body: [
-          "A Nabhi Persona architecture typically includes governed ingestion from the tools teams already use, retrieval that respects permissions, memory that updates from real outcomes, and interfaces that answer in the language of the work—not generic chat. Teams use it when rediscovery costs more than delivery, and when leadership needs a shared picture of how the system actually behaves.",
-          "On average, teams that reconnect scattered knowledge into usable understanding report about a 25% increase in operational clarity. Nabhi Labs has tailored 50+ models to unique operating contexts. Serious inquiries usually receive a thoughtful reply within 24 hours.",
+          "A Nabhi Persona architecture typically includes governed ingestion from the tools teams already use, retrieval that respects permissions, memory that updates from real outcomes, and interfaces that answer in the language of the work—not generic chat. Context-aware intelligence means the system understands the situation before surfacing what matters: role, project, policy boundary, and urgency.",
+          "On average, teams that reconnect scattered knowledge into usable understanding report about a 25% increase in operational clarity. Nabhi Labs has tailored 50+ models to unique operating contexts. Serious inquiries usually receive a thoughtful reply within 24 hours. Engagements can stand alone as a private knowledge system or combine with custom RAG engineering and agentic workflows when action—not only answers—is required.",
+          "Implementation stays inspectable. Nabhi Labs aligns practice with responsible AI guidance such as the NIST AI Risk Management Framework and the OECD AI Principles so claims about safety, transparency, and accountability can be audited rather than advertised.",
         ],
       },
       {
-        heading: "How this differs from a knowledge base",
+        heading: "How Nabhi Persona differs from a wiki or generic AI search",
         body: [
-          "A wiki stores. A Nabhi Persona acts. Storage still matters—but the measure of success is fewer rediscovered facts, faster grounded decisions, and less theatre around “AI transformation.” Nabhi Labs aligns practice with responsible AI guidance such as the NIST AI Risk Management Framework and the OECD AI Principles so claims stay inspectable.",
+          "A wiki stores. Nabhi Persona acts. Storage still matters—but the measure of success is fewer rediscovered facts, faster grounded decisions, and less theatre around “AI transformation.” Generic AI search often retrieves plausible text without permission boundaries or evaluation gates. Nabhi Persona is designed as decision-ready AI: refuse when evidence is thin, cite when confidence is high, and keep data private by design.",
+          "Buyers comparing DMS, intranet, and “AI search” products use Nabhi Labs when they need a coherent architecture across products, RAG engineering, and Nabhi Persona outcomes—not another silo. If your target words are institutional knowledge, enterprise knowledge layer, or private knowledge system, the landing intent is the same: clarity under pressure, owned by the organization.",
         ],
       },
     ],
@@ -138,23 +141,26 @@ export const pillarPages: PillarPageContent[] = [
     dateModified: "2026-08-02",
     sections: [
       {
-        heading: "Why generic RAG demos fail in production",
+        heading: "Why generic RAG demos fail enterprise AI search",
         body: [
-          "Demos retrieve a few PDFs. Production must handle messy formats, conflicting policies, multilingual content, and users who will trust a fluent wrong answer. Enterprise RAG engineering is evaluation, chunking strategy, hybrid retrieval, reranking, and observability—not a weekend vector index.",
-          "Nabhi Labs implements custom RAG with clear failure modes: refuse when evidence is thin, show provenance when confidence is high, and measure groundedness alongside latency. Secure document retrieval AI means permissions travel with every chunk.",
+          "Demos retrieve a few PDFs. Production must handle messy formats, conflicting policies, multilingual content, and users who will trust a fluent wrong answer. Enterprise RAG engineering is evaluation, chunking strategy, hybrid retrieval, reranking, and observability—not a weekend vector index. Custom RAG implementation starts by defining what “correct” means for your corpus before celebrating latency charts.",
+          "Nabhi Labs implements custom RAG with clear failure modes: refuse when evidence is thin, show provenance when confidence is high, and measure groundedness alongside latency. Secure document retrieval AI means permissions travel with every chunk. Vector search and lexical search are chosen because they earn recall on your data—not because a tutorial defaulted to embeddings.",
+          "Teams asking for LLM memory without governance usually rediscover the same failure: the model remembers noise. Nabhi Labs treats memory and retrieval as designed systems with owners, tests, and rollback paths.",
         ],
       },
       {
-        heading: "Engagement model",
+        heading: "Custom RAG implementation services from Nabhi Labs",
         body: [
           "Engagements usually start with a retrieval audit: what sources matter, how answers will be judged, and which risks matter most. Then Nabhi Labs builds or hardens pipelines—ingestion, embeddings or lexical search, orchestration, and interfaces—aligned with responsible AI practice from NIST and OECD guidance.",
-          "Teams hire Nabhi Labs for RAG consulting when they need production systems tied to Nabhi Persona or healthcare platforms, not slides about “AI transformation.”",
+          "Teams hire Nabhi Labs for RAG consulting when they need production systems tied to Nabhi Persona or healthcare platforms, not slides about “AI transformation.” Deliverables commonly include evaluation harnesses, citation UX, access-control proofs, and runbooks for model or prompt changes.",
+          "If your target words are retrieval augmented generation, enterprise RAG, data retrieval, or AI search, the page job is the same: grounded answers from trusted context, measurable before they scale.",
         ],
       },
       {
-        heading: "Architecture notes",
+        heading: "RAG architecture notes for production retrieval",
         body: [
-          "Architecture choices follow evidence: hybrid search when vocabulary is precise, graph or structured memory when relationships matter, and continuous evaluation harnesses so regressions surface before users do. See the RAG evaluation checklist for a practical starting point.",
+          "Architecture choices follow evidence: hybrid search when vocabulary is precise, graph or structured memory when relationships matter, and continuous evaluation harnesses so regressions surface before users do. See the RAG evaluation checklist for a practical starting point covering groundedness, permission tests, and canaries.",
+          "Nabhi Labs documents trade-offs in plain language so security, legal, and product stakeholders can inspect the system. Retrieval-augmented generation only creates trust when refusal, citation, and escalation paths are designed with the same care as the happy path.",
         ],
       },
     ],

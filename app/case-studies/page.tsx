@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { caseStudyIndex } from "@/lib/pillar-pages";
+import { getProductByPath, productKeywordsCsv } from "@/lib/products";
+
+const product = getProductByPath(caseStudyIndex.path);
 
 export const metadata: Metadata = {
   title: caseStudyIndex.title,
   description: caseStudyIndex.description,
+  keywords: product?.keywords,
   alternates: { canonical: caseStudyIndex.path },
   openGraph: {
     title: caseStudyIndex.title,
@@ -21,6 +25,7 @@ export default function CaseStudiesPage() {
     description: caseStudyIndex.description,
     url: `https://nabhilabs.com${caseStudyIndex.path}`,
     dateModified: "2026-08-02",
+    keywords: product ? productKeywordsCsv(product) : undefined,
     author: {
       "@type": "Person",
       name: "Nabhi Labs Editorial",
