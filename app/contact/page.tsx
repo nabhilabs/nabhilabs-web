@@ -20,12 +20,12 @@ export default function ContactPage() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: "Contact Nabhi Labs",
-    url: "https://nabhilabs.com/contact",
+    url: "https://www.nabhilabs.com/contact",
     mainEntity: {
       "@type": "Organization",
       name: "Nabhi Labs",
       email: "hello@nabhilabs.com",
-      url: "https://nabhilabs.com",
+      url: "https://www.nabhilabs.com",
     },
   };
 

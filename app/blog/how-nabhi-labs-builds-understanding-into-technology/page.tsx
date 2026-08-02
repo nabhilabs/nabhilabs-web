@@ -31,18 +31,18 @@ export default function HowNabhiLabsBuildsPage() {
     headline: "How Nabhi Labs Builds Understanding Into Technology",
     description:
       "The operating sequence behind Nabhi Labs and Nabhi Persona.",
-    url: "https://nabhilabs.com/blog/how-nabhi-labs-builds-understanding-into-technology",
+    url: "https://www.nabhilabs.com/blog/how-nabhi-labs-builds-understanding-into-technology",
     datePublished: "2026-08-02",
     dateModified: "2026-08-02",
     author: {
       "@type": "Person",
       name: "Nabhi Labs Editorial",
-      url: "https://nabhilabs.com",
+      url: "https://www.nabhilabs.com",
     },
     publisher: {
       "@type": "Organization",
       name: "Nabhi Labs",
-      url: "https://nabhilabs.com",
+      url: "https://www.nabhilabs.com",
     },
   };
 

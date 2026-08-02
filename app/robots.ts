@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
 /**
- * Served at https://nabhilabs.com/robots.txt
- * Companion AI index: https://nabhilabs.com/llms.txt
+ * Served at https://www.nabhilabs.com/robots.txt
+ * Companion AI index: https://www.nabhilabs.com/llms.txt
  */
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -41,7 +42,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://nabhilabs.com/sitemap.xml",
-    host: "https://nabhilabs.com",
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

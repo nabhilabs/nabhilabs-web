@@ -23,13 +23,13 @@ export default function CaseStudiesPage() {
     "@type": "CollectionPage",
     name: caseStudyIndex.title,
     description: caseStudyIndex.description,
-    url: `https://nabhilabs.com${caseStudyIndex.path}`,
+    url: `https://www.nabhilabs.com${caseStudyIndex.path}`,
     dateModified: "2026-08-02",
     keywords: product ? productKeywordsCsv(product) : undefined,
     author: {
       "@type": "Person",
       name: "Nabhi Labs Editorial",
-      url: "https://nabhilabs.com",
+      url: "https://www.nabhilabs.com",
     },
   };
 

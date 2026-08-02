@@ -28,13 +28,13 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "About Nabhi Labs",
-    url: "https://nabhilabs.com/about",
+    url: "https://www.nabhilabs.com/about",
     description:
       "About Nabhi Labs—understanding becomes technology through Nabhi Persona, RAG engineering, and systems work.",
     mainEntity: {
       "@type": "Organization",
       name: "Nabhi Labs",
-      url: "https://nabhilabs.com",
+      url: "https://www.nabhilabs.com",
       email: "hello@nabhilabs.com",
       foundingDate: "2024",
       sameAs: [...sameAsProfiles],

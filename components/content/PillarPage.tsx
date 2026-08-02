@@ -4,6 +4,7 @@ import {
   getProductByPath,
   productKeywordsCsv,
 } from "@/lib/products";
+import { SITE_URL } from "@/lib/site";
 
 type PillarPageProps = {
   page: PillarPageContent;
@@ -33,19 +34,19 @@ export function PillarPage({ page }: PillarPageProps) {
     "@type": "WebPage",
     name: page.title,
     description: page.description,
-    url: `https://nabhilabs.com${page.path}`,
+    url: `${SITE_URL}${page.path}`,
     datePublished: page.datePublished,
     dateModified: page.dateModified,
     inLanguage: "en",
     author: {
       "@type": "Person",
       name: "Nabhi Labs Editorial",
-      url: "https://nabhilabs.com",
+      url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
       name: "Nabhi Labs",
-      url: "https://nabhilabs.com",
+      url: SITE_URL,
     },
     keywords: keywordList,
   };
@@ -56,12 +57,12 @@ export function PillarPage({ page }: PillarPageProps) {
         "@type": product.schemaType,
         name: product.name,
         description: product.description,
-        url: `https://nabhilabs.com${product.url}`,
+        url: `${SITE_URL}${product.url}`,
         keywords: keywordList,
         provider: {
           "@type": "Organization",
           name: "Nabhi Labs",
-          url: "https://nabhilabs.com",
+          url: SITE_URL,
         },
         brand: {
           "@type": "Brand",

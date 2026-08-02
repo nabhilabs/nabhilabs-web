@@ -1,5 +1,5 @@
 # Nabhi Labs
 
-> Compatibility alias for /llms.txt — prefer https://nabhilabs.com/llms.txt
+> Compatibility alias for /llms.txt — prefer https://www.nabhilabs.com/llms.txt
 
-See the canonical AI/agent index: [llms.txt](https://nabhilabs.com/llms.txt)
+See the canonical AI/agent index: [llms.txt](https://www.nabhilabs.com/llms.txt)

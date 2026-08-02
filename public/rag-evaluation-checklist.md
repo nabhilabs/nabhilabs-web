@@ -21,5 +21,5 @@ Practical gates before scaling retrieval-augmented generation.
 - [ ] Canaries for prompt and model changes
 - [ ] Evaluation set ownership documented like on-call
 
-Published at: https://nabhilabs.com/resources/rag-evaluation-checklist
+Published at: https://www.nabhilabs.com/resources/rag-evaluation-checklist
 Contact: hello@nabhilabs.com

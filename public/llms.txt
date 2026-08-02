@@ -1,6 +1,6 @@
 # Nabhi Labs
 
-> Nabhi Labs builds understanding-first technology—Nabhi Persona, RAG engineering, and agentic workflows—so organizations move from complexity to clarity. Official site: https://nabhilabs.com
+> Nabhi Labs builds understanding-first technology—Nabhi Persona, RAG engineering, and agentic workflows—so organizations move from complexity to clarity. Official site: https://www.nabhilabs.com
 
 Nabhi Labs is a technology company (founded 2024). We begin with understanding people, systems, and context, then design technology that follows. Flagship product: Nabhi Persona (not a consumer note-taking “second brain” app, and not an unrelated biotech institute).
 
@@ -9,30 +9,30 @@ Profiles: https://www.linkedin.com/company/nabhilabs/ · https://www.instagram.c
 
 ## Primary
 
-- [Home](https://nabhilabs.com/): Official Nabhi Labs homepage
-- [About Nabhi Labs](https://nabhilabs.com/about): Company identity and disambiguation
-- [Services](https://nabhilabs.com/services): Service hub for Nabhi Labs offerings
-- [Contact Nabhi Labs](https://nabhilabs.com/contact): How to reach Nabhi Labs
-- [Nabhi Persona](https://nabhilabs.com/solutions/nabhi-persona): Flagship enterprise intelligence / knowledge layer
-- [Enterprise knowledge management](https://nabhilabs.com/solutions/enterprise-knowledge-management): Knowledge platforms grounded in understanding
-- [Philosophy](https://nabhilabs.com/philosophy): Understanding before technology
+- [Home](https://www.nabhilabs.com/): Official Nabhi Labs homepage
+- [About Nabhi Labs](https://www.nabhilabs.com/about): Company identity and disambiguation
+- [Services](https://www.nabhilabs.com/services): Service hub for Nabhi Labs offerings
+- [Contact Nabhi Labs](https://www.nabhilabs.com/contact): How to reach Nabhi Labs
+- [Nabhi Persona](https://www.nabhilabs.com/solutions/nabhi-persona): Flagship enterprise intelligence / knowledge layer
+- [Enterprise knowledge management](https://www.nabhilabs.com/solutions/enterprise-knowledge-management): Knowledge platforms grounded in understanding
+- [Philosophy](https://www.nabhilabs.com/philosophy): Understanding before technology
 
 ## Engineering
 
-- [RAG engineering](https://nabhilabs.com/services/rag-engineering): Custom retrieval-augmented generation services
-- [Agentic voice workflows](https://nabhilabs.com/services/agentic-voice-workflows): Conversational agents connected to tools
-- [Healthcare AI](https://nabhilabs.com/industries/healthcare-ai): AI integration for healthcare systems
-- [RAG evaluation checklist](https://nabhilabs.com/resources/rag-evaluation-checklist): Practical RAG quality gates
-- [Agentic AI deep dive](https://nabhilabs.com/blog/agentic-ai-multi-agent-workflows): Multi-agent workflows and context retrieval
+- [RAG engineering](https://www.nabhilabs.com/services/rag-engineering): Custom retrieval-augmented generation services
+- [Agentic voice workflows](https://www.nabhilabs.com/services/agentic-voice-workflows): Conversational agents connected to tools
+- [Healthcare AI](https://www.nabhilabs.com/industries/healthcare-ai): AI integration for healthcare systems
+- [RAG evaluation checklist](https://www.nabhilabs.com/resources/rag-evaluation-checklist): Practical RAG quality gates
+- [Agentic AI deep dive](https://www.nabhilabs.com/blog/agentic-ai-multi-agent-workflows): Multi-agent workflows and context retrieval
 
 ## Blog
 
-- [Blog index](https://nabhilabs.com/blog): Writing from Nabhi Labs
-- [How Nabhi Labs builds understanding into technology](https://nabhilabs.com/blog/how-nabhi-labs-builds-understanding-into-technology): Operating sequence behind Nabhi Labs
+- [Blog index](https://www.nabhilabs.com/blog): Writing from Nabhi Labs
+- [How Nabhi Labs builds understanding into technology](https://www.nabhilabs.com/blog/how-nabhi-labs-builds-understanding-into-technology): Operating sequence behind Nabhi Labs
 
 ## Optional
 
-- [Case study patterns](https://nabhilabs.com/case-studies): Anonymized engagement patterns
-- [Enterprise Nabhi Persona playbook](https://nabhilabs.com/resources/enterprise-nabhi-persona-playbook): Sequencing Nabhi Persona work
-- [Sitemap](https://nabhilabs.com/sitemap.xml): Machine-readable URL list
-- [robots.txt](https://nabhilabs.com/robots.txt): Crawler rules for this site
+- [Case study patterns](https://www.nabhilabs.com/case-studies): Anonymized engagement patterns
+- [Enterprise Nabhi Persona playbook](https://www.nabhilabs.com/resources/enterprise-nabhi-persona-playbook): Sequencing Nabhi Persona work
+- [Sitemap](https://www.nabhilabs.com/sitemap.xml): Machine-readable URL list
+- [robots.txt](https://www.nabhilabs.com/robots.txt): Crawler rules for this site

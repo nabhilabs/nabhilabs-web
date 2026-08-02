@@ -26,7 +26,7 @@ export default function PhilosophyPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Nabhi Labs Philosophy",
-    url: "https://nabhilabs.com/philosophy",
+    url: "https://www.nabhilabs.com/philosophy",
     description:
       "Simplifying complex tech architectures—understanding before technology.",
     keywords: [

@@ -3,8 +3,9 @@ import { DeferredBelowFold } from "@/components/sections/DeferredBelowFold";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { aeoFaqs } from "@/lib/aeo-faq";
 import { brandKeywords } from "@/lib/keyword-strategy";
+import { SITE_URL } from "@/lib/site";
 
-const siteUrl = "https://nabhilabs.com";
+const siteUrl = SITE_URL;
 const siteTitle = "Nabhi Labs | Understanding Becomes Technology";
 const siteDescription =
   "Nabhi Labs builds Nabhi Persona, RAG engineering, and agentic workflows so organizations move from complexity to clarity—understanding first, technology that follows.";

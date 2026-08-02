@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
 import { brandAlternateNames } from "@/lib/keyword-strategy";
 import { sameAsProfiles, socialProfiles } from "@/lib/social";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const sans = Manrope({
@@ -22,7 +23,7 @@ const display = Space_Grotesk({
   adjustFontFallback: true,
 });
 
-const siteUrl = "https://nabhilabs.com";
+const siteUrl = SITE_URL;
 const siteTitle = "Nabhi Labs | Understanding Becomes Technology";
 const siteDescription =
   "Nabhi Labs builds Nabhi Persona, RAG engineering, and agentic workflows so organizations move from complexity to clarity—understanding first, technology that follows.";

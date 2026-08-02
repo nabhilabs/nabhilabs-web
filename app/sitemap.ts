@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { allContentPages, caseStudyIndex } from "@/lib/pillar-pages";
+import { SITE_URL } from "@/lib/site";
 
-const siteUrl = "https://nabhilabs.com";
+const siteUrl = SITE_URL;
 const now = new Date("2026-08-02");
 
 const extraPages = [

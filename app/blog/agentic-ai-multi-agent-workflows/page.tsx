@@ -32,18 +32,18 @@ export default function AgenticAiBlogPost() {
       "Agentic AI and multi-agent workflows for enterprise knowledge retrieval",
     description:
       "Architecture notes from Nabhi Labs on agentic retrieval, multi-agent systems, and context frameworks.",
-    url: "https://nabhilabs.com/blog/agentic-ai-multi-agent-workflows",
+    url: "https://www.nabhilabs.com/blog/agentic-ai-multi-agent-workflows",
     datePublished: "2026-08-02",
     dateModified: "2026-08-02",
     author: {
       "@type": "Person",
       name: "Nabhi Labs Editorial",
-      url: "https://nabhilabs.com",
+      url: "https://www.nabhilabs.com",
     },
     publisher: {
       "@type": "Organization",
       name: "Nabhi Labs",
-      url: "https://nabhilabs.com",
+      url: "https://www.nabhilabs.com",
     },
     keywords: techKeywords.architecture.join(", "),
   };
