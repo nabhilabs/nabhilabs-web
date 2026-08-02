@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { brandKeywords } from "@/lib/keyword-strategy";
+import { sameAsProfiles, socialProfiles } from "@/lib/social";
 
 export const metadata: Metadata = {
   title: "About Nabhi Labs",
@@ -36,7 +37,7 @@ export default function AboutPage() {
       url: "https://nabhilabs.com",
       email: "hello@nabhilabs.com",
       foundingDate: "2024",
-      sameAs: ["https://www.linkedin.com/company/nabhilabs"],
+      sameAs: [...sameAsProfiles],
     },
     keywords: brandKeywords.join(", "),
   };
@@ -86,14 +87,23 @@ export default function AboutPage() {
               >
                 hello@nabhilabs.com
               </a>
-              . Company profile:{" "}
+              . Profiles:{" "}
               <a
                 className="text-[#31543a] underline-offset-4 hover:underline"
-                href="https://www.linkedin.com/company/nabhilabs"
+                href={socialProfiles.linkedin}
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 LinkedIn — Nabhi Labs
+              </a>
+              {" · "}
+              <a
+                className="text-[#31543a] underline-offset-4 hover:underline"
+                href={socialProfiles.instagram}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Instagram — @nabhilabs
               </a>
               .
             </p>

@@ -3,6 +3,7 @@ import { Manrope, Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
 import { brandAlternateNames } from "@/lib/keyword-strategy";
+import { sameAsProfiles, socialProfiles } from "@/lib/social";
 import "./globals.css";
 
 const sans = Manrope({
@@ -94,11 +95,11 @@ const organizationJsonLd = {
   description: siteDescription,
   slogan: "Understanding before technology",
   foundingDate: "2024-06-01",
-  sameAs: [
-    "https://www.linkedin.com/company/nabhilabs",
-  ],
+  sameAs: [...sameAsProfiles],
   address: {
     "@type": "PostalAddress",
+    addressLocality: "Basar",
+    postalCode: "504107",
     addressCountry: "IN",
     addressRegion: "India",
   },
@@ -143,10 +144,7 @@ const authorJsonLd = {
   jobTitle: "Editorial",
   description:
     "Editorial voice of Nabhi Labs—documenting how understanding becomes technology across products, AI engineering, and systems work.",
-  sameAs: [
-    siteUrl,
-    "https://www.linkedin.com/company/nabhilabs",
-  ],
+  sameAs: [...sameAsProfiles],
   worksFor: {
     "@type": "Organization",
     name: "Nabhi Labs",
@@ -214,6 +212,22 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   {link.label}
                 </a>
               ))}
+              <a
+                className="text-[11px] text-[#31543a] underline-offset-4 hover:underline"
+                href={socialProfiles.linkedin}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+              <a
+                className="text-[11px] text-[#31543a] underline-offset-4 hover:underline"
+                href={socialProfiles.instagram}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Instagram
+              </a>
             </nav>
             <div className="flex flex-wrap items-center justify-between gap-4">
               <span>
