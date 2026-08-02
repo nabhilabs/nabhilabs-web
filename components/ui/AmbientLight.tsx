@@ -1,35 +1,56 @@
 "use client";
 
-import { useEffect } from "react";
-import {
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useSpring,
-} from "motion/react";
+import { useEffect, useRef } from "react";
 
+/** Cursor glow without Motion — CSS variables + rAF. */
 export function AmbientLight() {
-  const cursorX = useMotionValue(-400);
-  const cursorY = useMotionValue(-400);
-  const x = useSpring(cursorX, { stiffness: 100, damping: 20 });
-  const y = useSpring(cursorY, { stiffness: 100, damping: 20 });
-  const background = useMotionTemplate`radial-gradient(400px at ${x}px ${y}px, rgba(205,224,184,0.18), transparent 80%)`;
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const updateCursor = (event: PointerEvent) => {
-      cursorX.set(event.clientX);
-      cursorY.set(event.clientY);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const node = ref.current;
+    if (!node) return;
+
+    let targetX = -400;
+    let targetY = -400;
+    let currentX = -400;
+    let currentY = -400;
+    let raf = 0;
+
+    const tick = () => {
+      currentX += (targetX - currentX) * 0.12;
+      currentY += (targetY - currentY) * 0.12;
+      node.style.setProperty("--ax", `${currentX}px`);
+      node.style.setProperty("--ay", `${currentY}px`);
+      raf = requestAnimationFrame(tick);
     };
 
-    window.addEventListener("pointermove", updateCursor, { passive: true });
-    return () => window.removeEventListener("pointermove", updateCursor);
-  }, [cursorX, cursorY]);
+    const onMove = (event: PointerEvent) => {
+      targetX = event.clientX;
+      targetY = event.clientY;
+    };
+
+    window.addEventListener("pointermove", onMove, { passive: true });
+    raf = requestAnimationFrame(tick);
+
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
 
   return (
-    <motion.div
+    <div
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 z-[1]"
-      style={{ background }}
+      ref={ref}
+      style={{
+        background:
+          "radial-gradient(400px at var(--ax, -400px) var(--ay, -400px), rgba(205,224,184,0.18), transparent 80%)",
+      }}
     />
   );
 }

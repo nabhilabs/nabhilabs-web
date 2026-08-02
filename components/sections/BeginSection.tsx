@@ -9,7 +9,6 @@ import {
   UserRound,
 } from "lucide-react";
 import { ChapterTag } from "@/components/ui/ChapterTag";
-import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function BeginSection() {
@@ -148,7 +147,7 @@ export function BeginSection() {
                   <textarea
                     className="mt-1 min-h-20 w-full resize-none border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none placeholder:text-white/30"
                     name="complexity"
-                    placeholder="A few lines are enough — we’ll take it from there."
+                    placeholder="A few lines are enough - we’ll take it from there."
                     required
                   />
                 </span>
@@ -174,15 +173,14 @@ export function BeginSection() {
                 </p>
               </div>
 
-              <MagneticButton
-                className="mt-6 w-full items-center justify-center gap-3 rounded-full bg-[#a3e635] px-8 py-4 text-xs font-medium text-[#0e1012] transition-colors hover:bg-[#bef264]"
+              <button
+                className="mt-6 flex w-full items-center justify-center gap-3 rounded-full bg-[#a3e635] px-8 py-4 text-xs font-medium text-[#0e1012] transition-colors hover:bg-[#bef264]"
                 suppressHydrationWarning
-                threshold={40}
                 type="submit"
               >
                 Schedule a Conversation
                 <ArrowUpRight aria-hidden="true" className="size-4" />
-              </MagneticButton>
+              </button>
             </form>
           </div>
         </div>
@@ -192,7 +190,7 @@ export function BeginSection() {
             <span className="grid size-6 place-items-center rounded-md border border-white/15 font-display text-xs text-[#a3e635]">
               n
             </span>
-            Nabhi Labs — Understanding before technology
+            Nabhi Labs - Understanding before technology
           </span>
           <span>● &nbsp; © 2026 Nabhi Labs</span>
         </footer>

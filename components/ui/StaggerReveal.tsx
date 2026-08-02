@@ -1,7 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
-import { motion } from "motion/react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 type StaggerRevealProps = {
   children: ReactNode;
@@ -10,25 +9,46 @@ type StaggerRevealProps = {
   index?: number;
 };
 
+/** Lightweight stagger reveal — no Motion dependency. */
 export function StaggerReveal({
   children,
   className = "",
   delay = 0,
   index = 0,
 }: StaggerRevealProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      node.dataset.revealed = "true";
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        window.setTimeout(() => {
+          node.dataset.revealed = "true";
+        }, delay + index * 100);
+        io.disconnect();
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -5% 0px" },
+    );
+
+    io.observe(node);
+    return () => io.disconnect();
+  }, [delay, index]);
+
   return (
-    <motion.div
-      className={`h-full will-change-transform ${className}`}
-      initial={{ opacity: 0, y: 20 }}
-      transition={{
-        duration: 0.55,
-        delay: delay + index * 0.1,
-        ease: [0.16, 1, 0.3, 1],
-      }}
-      viewport={{ amount: 0.2, once: true }}
-      whileInView={{ opacity: 1, y: 0 }}
+    <div
+      className={`reveal-block h-full ${className}`}
+      ref={ref}
+      style={{ transitionDelay: `${delay + index * 100}ms` }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

@@ -1,7 +1,3 @@
-"use client";
-
-import { MagneticButton } from "@/components/ui/MagneticButton";
-
 export function HeroActions() {
   return (
     <div className="mt-7 grid max-w-[36rem] gap-3 sm:grid-cols-2">
@@ -18,14 +14,12 @@ export function HeroActions() {
             happening in your system.
           </p>
         </div>
-        <MagneticButton
-          as="a"
+        <a
           className="mt-4 w-fit rounded-full bg-[#1a3323] px-4 py-2.5 text-[10px] font-medium text-white transition-colors hover:bg-[#2c4f37]"
           href="#understanding"
-          threshold={40}
         >
           Unpack the Problem →
-        </MagneticButton>
+        </a>
       </article>
 
       <article className="flex min-h-52 flex-col justify-between rounded-3xl border border-white/60 bg-white/40 p-5 shadow-[0_18px_50px_rgba(26,51,35,0.12)] backdrop-blur-md transition-transform duration-300 hover:-translate-y-1">

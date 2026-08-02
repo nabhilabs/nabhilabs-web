@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 
+/** Lenis + GSAP only after the user scrolls — keeps them off TBT. */
 export function useLenis() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -10,10 +11,12 @@ export function useLenis() {
 
     let destroyed = false;
     let cleanup: (() => void) | undefined;
-    let idleId: number | undefined;
-    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    let started = false;
 
     const start = async () => {
+      if (started || destroyed) return;
+      started = true;
+
       const [{ default: Lenis }, { default: gsap }, { ScrollTrigger }] =
         await Promise.all([
           import("lenis"),
@@ -45,18 +48,33 @@ export function useLenis() {
       };
     };
 
-    if ("requestIdleCallback" in window) {
-      idleId = window.requestIdleCallback(() => void start(), { timeout: 2000 });
-    } else {
-      timeoutId = setTimeout(() => void start(), 1200);
-    }
+    const onIntent = () => {
+      detach();
+      void start();
+    };
+
+    const detach = () => {
+      window.removeEventListener("scroll", onIntent);
+      window.removeEventListener("wheel", onIntent);
+      window.removeEventListener("touchstart", onIntent);
+      window.removeEventListener("keydown", onIntent);
+    };
+
+    window.addEventListener("scroll", onIntent, { passive: true, once: true });
+    window.addEventListener("wheel", onIntent, { passive: true, once: true });
+    window.addEventListener("touchstart", onIntent, {
+      passive: true,
+      once: true,
+    });
+    window.addEventListener("keydown", onIntent, { once: true });
+
+    // Fallback so deep-linked anchors still get smooth scroll eventually
+    const fallback = window.setTimeout(() => void start(), 8000);
 
     return () => {
       destroyed = true;
-      if (idleId !== undefined && "cancelIdleCallback" in window) {
-        window.cancelIdleCallback(idleId);
-      }
-      if (timeoutId !== undefined) clearTimeout(timeoutId);
+      detach();
+      window.clearTimeout(fallback);
       cleanup?.();
     };
   }, []);

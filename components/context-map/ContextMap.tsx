@@ -1,5 +1,3 @@
-"use client";
-
 import "./context-map.css";
 
 const layers = [

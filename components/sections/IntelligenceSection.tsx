@@ -9,7 +9,6 @@ import {
   Shapes,
   UserRound,
 } from "lucide-react";
-import { motion } from "motion/react";
 import { ChapterTag } from "@/components/ui/ChapterTag";
 import { Reveal } from "@/components/ui/Reveal";
 import { applyPointerTilt, clearPointerTilt } from "@/lib/pointer-tilt";
@@ -30,7 +29,7 @@ const pillars = [
   {
     title: "AI Integration",
     description:
-      "We use intelligence where context and judgement benefit—not where novelty merely permits it.",
+      "We use intelligence where context and judgement benefit-not where novelty merely permits it.",
     icon: GitBranch,
   },
   {
@@ -245,22 +244,19 @@ export function IntelligenceSection() {
                     <span className="block font-display text-base font-medium tracking-[-0.02em] text-[#0f1c13] md:text-lg">
                       {pillar.title}
                     </span>
-                    <motion.span
-                      animate={{
-                        height: isActive ? "auto" : 0,
-                        opacity: isActive ? 1 : 0,
-                      }}
-                      className="block overflow-hidden"
-                      initial={false}
-                      transition={{
-                        duration: 0.45,
-                        ease: [0.16, 1, 0.3, 1],
-                      }}
+                    <span
+                      className={`grid overflow-hidden transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                        isActive
+                          ? "grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0"
+                      }`}
                     >
-                      <span className="block max-w-lg pt-2 text-[11px] leading-5 text-[#4a5b4e]">
-                        {pillar.description}
+                      <span className="min-h-0">
+                        <span className="block max-w-lg pt-2 text-[11px] leading-5 text-[#4a5b4e]">
+                          {pillar.description}
+                        </span>
                       </span>
-                    </motion.span>
+                    </span>
                   </span>
                   <span
                     className={`bento-plus font-mono text-sm text-[#4a5b4e] ${
