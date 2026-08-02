@@ -80,12 +80,16 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
   name: "Nabhi Labs",
   legalName: "Nabhi Labs",
   alternateName: [...brandAlternateNames],
   url: siteUrl,
+  logo: `${siteUrl}/nabhi-logo.svg`,
+  image: `${siteUrl}/assets/hero-landing-day.webp`,
   email: "hello@nabhilabs.com",
   description: siteDescription,
+  slogan: "Understanding before technology",
   foundingDate: "2024",
   sameAs: [
     siteUrl,
@@ -106,6 +110,18 @@ const organizationJsonLd = {
     contactType: "customer support",
     availableLanguage: ["English"],
   },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  name: "Nabhi Labs",
+  alternateName: ["Nabhi", "Nabhilabs", "Nabi Labs", "Navi Labs"],
+  url: siteUrl,
+  description: siteDescription,
+  publisher: { "@id": `${siteUrl}/#organization` },
+  inLanguage: "en",
 };
 
 const authorJsonLd = {
@@ -150,6 +166,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <script
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd),
+          }}
+          type="application/ld+json"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
           }}
           type="application/ld+json"
         />

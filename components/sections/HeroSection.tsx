@@ -14,15 +14,25 @@ export function HeroSection() {
             + &nbsp; Understanding → Intelligence → Impact
           </span>
 
+          <p
+            className="mt-7 text-sm font-semibold tracking-[0.28em] text-[#0f1c13]"
+            style={{
+              fontFamily:
+                "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+            }}
+          >
+            NABHI LABS
+          </p>
+
           <h1
-            className="mt-7 max-w-[42rem] text-[clamp(3.4rem,6.4vw,6.8rem)] font-medium leading-[0.9] tracking-[-0.065em] text-[#0f1c13]"
+            className="mt-4 max-w-[42rem] text-[clamp(3.4rem,6.4vw,6.8rem)] font-medium leading-[0.9] tracking-[-0.065em] text-[#0f1c13]"
             id="hero-title"
             style={{
               fontFamily:
                 "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
             }}
           >
-            Where complexity becomes{" "}
+            Nabhi Labs — where complexity becomes{" "}
             <mark className="rounded-[0.14em] bg-[#cde0b8] px-[0.04em] text-inherit">
               clarity
             </mark>
@@ -30,7 +40,8 @@ export function HeroSection() {
           </h1>
 
           <p className="mt-6 max-w-md text-base font-light leading-7 text-[#314238] md:text-lg">
-            Before code, before AI, before design - comes understanding.
+            The official site for Nabhi Labs. Before code, before AI, before
+            design — comes understanding.
           </p>
 
           <div className="mt-7 grid max-w-[36rem] gap-3 sm:grid-cols-2">

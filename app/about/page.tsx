@@ -67,6 +67,43 @@ export default function AboutPage() {
       <section className="border-b border-[#d8e0d5] bg-[#f7f6f1]">
         <div className="mx-auto max-w-[95rem] px-6 py-14 md:px-10">
           <h2 className="max-w-3xl font-display text-[clamp(1.8rem,3vw,2.6rem)] font-medium tracking-[-0.04em] text-[#0f1c13]">
+            Looking for Nabhi Labs?
+          </h2>
+          <div className="mt-8 max-w-3xl space-y-5 text-sm leading-7 text-[#4a5b4e]">
+            <p>
+              This is the official website for <strong>Nabhi Labs</strong>{" "}
+              (nabhilabs.com)—a technology company founded in 2024. We are not a
+              biotech institute, medical accreditation body, or consumer “second
+              brain” note app. If you searched Nabhi Labs, Nabhi Persona, Nabhi
+              technology, Nabhilabs, Nabi Labs, or Navi Labs understanding, you
+              are in the right place.
+            </p>
+            <p>
+              Contact:{" "}
+              <a
+                className="text-[#31543a] underline-offset-4 hover:underline"
+                href="mailto:hello@nabhilabs.com"
+              >
+                hello@nabhilabs.com
+              </a>
+              . Company profile:{" "}
+              <a
+                className="text-[#31543a] underline-offset-4 hover:underline"
+                href="https://www.linkedin.com/company/nabhilabs"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                LinkedIn — Nabhi Labs
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-[#d8e0d5] bg-[#f2f4f0]">
+        <div className="mx-auto max-w-[95rem] px-6 py-14 md:px-10">
+          <h2 className="max-w-3xl font-display text-[clamp(1.8rem,3vw,2.6rem)] font-medium tracking-[-0.04em] text-[#0f1c13]">
             What Nabhi Labs builds
           </h2>
           <div className="mt-8 max-w-3xl space-y-5 text-sm leading-7 text-[#4a5b4e]">

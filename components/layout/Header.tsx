@@ -14,12 +14,12 @@ export function Header() {
         className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8"
       >
         <a
-          aria-label="Nabhi - home"
+          aria-label="Nabhi Labs - home"
           className="text-lg font-semibold tracking-[0.2em] text-[#0f1c13]"
           href="/"
           style={{ fontFamily: "system-ui, -apple-system, Segoe UI, sans-serif" }}
         >
-          NABHI
+          NABHI LABS
         </a>
 
         <div className="flex items-center gap-4 text-xs text-[#4a5b4e] sm:gap-7">

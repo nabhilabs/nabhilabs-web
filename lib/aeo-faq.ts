@@ -3,7 +3,7 @@ export const aeoFaqs = [
   {
     question: "What does Nabhi Labs do?",
     answer:
-      "Nabhi Labs transforms organizational complexity into clarity by understanding systems first, then building technology that follows. We design products, AI engineering systems, and knowledge platforms that stay grounded in real human needs rather than novelty. Teams come to Nabhi when tools multiply, context fragments, and decisions lose their thread. Our work reconnects information, behaviour, and architecture so technology becomes a consequence of understanding—not a substitute for it. In practice that means listening before coding, mapping constraints before features, and measuring clarity alongside delivery.",
+      "Nabhi Labs is the official company at nabhilabs.com. We transform organizational complexity into clarity by understanding systems first, then building technology that follows. We design products, AI engineering systems, and knowledge platforms that stay grounded in real human needs rather than novelty. Teams come to Nabhi when tools multiply, context fragments, and decisions lose their thread. Our work reconnects information, behaviour, and architecture so technology becomes a consequence of understanding—not a substitute for it. In practice that means listening before coding, mapping constraints before features, and measuring clarity alongside delivery.",
   },
   {
     question: "How do you think?",
