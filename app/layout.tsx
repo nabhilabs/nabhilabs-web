@@ -2,22 +2,22 @@ import type { Metadata } from "next";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
-import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
-import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import "./globals.css";
 
 const sans = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
-  display: "swap",
-  preload: true,
+  display: "optional",
+  preload: false,
+  adjustFontFallback: true,
 });
 
 const display = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space",
-  display: "swap",
-  preload: true,
+  display: "optional",
+  preload: false,
+  adjustFontFallback: true,
 });
 
 const siteUrl = "https://nabhilabs.com";
@@ -171,19 +171,9 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <head>
-        <link
-          as="image"
-          href="/assets/hero-landing-day-mobile.avif"
-          imageSrcSet="/assets/hero-landing-day-mobile.avif"
-          rel="preload"
-          type="image/avif"
-        />
-      </head>
       <body
         className={`${sans.variable} ${display.variable} bg-[#f2f4f0] font-sans text-[#0f1c13]`}
-      >
-        <script
+      >        <script
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd),
           }}
@@ -213,22 +203,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           Skip to content
         </a>
-        <SmoothScrollProvider>
-          <Header />
-          {children}
-          <footer className="relative z-10 border-t border-[#d8e0d5] bg-[#f7f6f1] px-6 py-6 font-mono text-[8px] uppercase tracking-[0.16em] text-[#4a5b4e] md:px-10">
-            <div className="mx-auto flex max-w-[95rem] flex-wrap items-center justify-between gap-4">
-              <span>
-                Nabhi Labs - Understanding before technology
-                <span className="sr-only">
-                  . Authored by Nabhi Labs. Updated August 2026.
-                </span>
+        <Header />
+        {children}
+        <footer className="relative z-10 border-t border-[#d8e0d5] bg-[#f7f6f1] px-6 py-6 font-mono text-[8px] uppercase tracking-[0.16em] text-[#4a5b4e] md:px-10">
+          <div className="mx-auto flex max-w-[95rem] flex-wrap items-center justify-between gap-4">
+            <span>
+              Nabhi Labs - Understanding before technology
+              <span className="sr-only">
+                . Authored by Nabhi Labs. Updated August 2026.
               </span>
-              <span>© 2026 Nabhi Labs · hello@nabhilabs.com</span>
-            </div>
-          </footer>
-          <GrainOverlay />
-        </SmoothScrollProvider>
+            </span>
+            <span>© 2026 Nabhi Labs · hello@nabhilabs.com</span>
+          </div>
+        </footer>
       </body>
     </html>
   );

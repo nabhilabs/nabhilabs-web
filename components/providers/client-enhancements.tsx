@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState } from "react";
 import { useLenis } from "@/hooks/use-lenis";
 
 const AmbientLight = dynamic(
@@ -14,11 +14,8 @@ const GrainOverlay = dynamic(
   { ssr: false },
 );
 
-type SmoothScrollProviderProps = {
-  children: ReactNode;
-};
-
-export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
+/** Lenis + ambient effects — does not wrap page content (avoids hydration delay on LCP). */
+export function ClientEnhancements() {
   useLenis();
   const [showEffects, setShowEffects] = useState(false);
 
@@ -37,15 +34,12 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     };
   }, []);
 
+  if (!showEffects) return null;
+
   return (
     <>
-      {showEffects ? (
-        <>
-          <AmbientLight />
-          <GrainOverlay />
-        </>
-      ) : null}
-      {children}
+      <AmbientLight />
+      <GrainOverlay />
     </>
   );
 }

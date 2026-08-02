@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-manrope);
-  --font-display: var(--font-space);
+  --font-sans: var(--font-manrope), "Avenir Next", "Segoe UI", ui-sans-serif, sans-serif;
+  --font-display: var(--font-space), "Avenir Next", "Segoe UI", ui-sans-serif, sans-serif;
   --color-nabhi-bg: #f2f4f0;
   --color-nabhi-surface: #ffffff;
   --color-nabhi-soft: #ebf0e8;
@@ -34,7 +34,7 @@ body {
   overflow-x: clip;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-manrope), sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -61,40 +61,50 @@ a {
 }
 
 .reveal-block {
-  opacity: 0;
-  transform: translate3d(0, 20px, 0);
-  transition:
-    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-block[data-revealed="true"] {
+  /* Visible by default for LCP/SSR; optional enhance later */
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .reveal-block {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
+.below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 8000px;
 }
 
 @keyframes hero-enter {
   from {
-    opacity: 0;
     transform: translate3d(0, 24px, 0);
   }
   to {
-    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
 
 .hero-enter {
   animation: hero-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Decorative hero plane — CSS bg so it does not become / delay LCP. */
+.hero-landing {
+  background-color: #f2f4f0;
+  background-image: image-set(
+    url("/assets/hero-landing-day-mobile.avif") type("image/avif"),
+    url("/assets/hero-landing-day-mobile.webp") type("image/webp"),
+    url("/assets/hero-landing-day.jpg") type("image/jpeg")
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 641px) {
+  .hero-landing {
+    background-image: image-set(
+      url("/assets/hero-landing-day.avif") type("image/avif"),
+      url("/assets/hero-landing-day.webp") type("image/webp"),
+      url("/assets/hero-landing-day.jpg") type("image/jpeg")
+    );
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

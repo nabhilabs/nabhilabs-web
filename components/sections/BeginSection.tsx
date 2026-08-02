@@ -53,51 +53,11 @@ export function BeginSection() {
               Complexity slows progress.
               <br />
               Clarity changes everything.
-              <br />
-              <strong className="font-medium text-white">
-                Let&apos;s build what matters.
-              </strong>
             </p>
-
-            <div className="absolute inset-x-0 bottom-0 hidden h-44 overflow-hidden lg:block">
-              <svg
-                aria-hidden="true"
-                className="absolute inset-0 h-full w-full"
-                preserveAspectRatio="none"
-                viewBox="0 0 600 180"
-              >
-                {Array.from({ length: 12 }, (_, index) => (
-                  <path
-                    d={`M -30 ${95 + index * 6} C 110 ${20 + index * 4}, 190 ${160 - index * 3}, 310 ${90 + index * 2} S 490 ${40 + index * 5}, 650 ${95 + index * 4}`}
-                    fill="none"
-                    key={index}
-                    stroke={`rgba(163,230,53,${0.08 + index * 0.008})`}
-                    strokeWidth="1"
-                  />
-                ))}
-              </svg>
-              <span className="absolute left-1/2 top-1/2 size-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#a3e635]/20 blur-xl" />
-              <span className="absolute left-1/2 top-1/2 grid size-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#a3e635] font-display text-lg font-semibold text-[#0e1012] shadow-[0_0_25px_9px_rgba(163,230,53,0.25)]">
-                n
-              </span>
-              <span className="absolute left-[18%] top-[55%] size-1.5 rounded-full bg-[#a3e635]" />
-              <span className="absolute right-[15%] top-[35%] size-1.5 rounded-full bg-[#a3e635]" />
-            </div>
           </div>
 
-          <div>
-            <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/45">
-              What feels complex in your world right now?
-            </p>
-            <p className="mt-4 font-serif text-2xl text-white md:text-3xl">
-              Tell us where{" "}
-              <span className="italic text-[#a3e635]">clarity</span> is missing.
-            </p>
-
-            <form
-              className="mt-7 rounded-[24px] border border-white/12 bg-white/[0.04] p-5 md:p-7"
-              onSubmit={submitInquiry}
-            >
+          <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-6 md:p-8">
+            <form onSubmit={submitInquiry}>
               <label className="grid grid-cols-[2.5rem_1fr] gap-4">
                 <span className="mt-1 grid size-10 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-[#a3e635]">
                   <Mail className="size-4" strokeWidth={1.5} />
@@ -111,7 +71,6 @@ export function BeginSection() {
                     name="email"
                     placeholder="you@company.com"
                     required
-                    suppressHydrationWarning
                     type="email"
                   />
                 </span>
@@ -130,7 +89,6 @@ export function BeginSection() {
                     name="name"
                     placeholder="Your name"
                     required
-                    suppressHydrationWarning
                     type="text"
                   />
                 </span>
@@ -147,7 +105,7 @@ export function BeginSection() {
                   <textarea
                     className="mt-1 min-h-20 w-full resize-none border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none placeholder:text-white/30"
                     name="complexity"
-                    placeholder="A few lines are enough - we’ll take it from there."
+                    placeholder="A few lines are enough - we'll take it from there."
                     required
                   />
                 </span>
@@ -175,7 +133,6 @@ export function BeginSection() {
 
               <button
                 className="mt-6 flex w-full items-center justify-center gap-3 rounded-full bg-[#a3e635] px-8 py-4 text-xs font-medium text-[#0e1012] transition-colors hover:bg-[#bef264]"
-                suppressHydrationWarning
                 type="submit"
               >
                 Schedule a Conversation

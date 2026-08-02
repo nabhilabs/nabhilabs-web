@@ -11,16 +11,15 @@ type LazySectionProps = {
   loader: () => Promise<{ default: ComponentType } | ComponentType>;
   minHeight?: string;
   rootMargin?: string;
+  /** Wait for scroll or idle before observing (keeps first paint free). */
+  deferUntilIdle?: boolean;
 };
 
-/**
- * Downloads and mounts a section only when it nears the viewport.
- * Keeps below-fold client JS off first paint / TBT.
- */
 export function LazySection({
   loader,
   minHeight = "70vh",
-  rootMargin = "480px 0px",
+  rootMargin = "120px 0px",
+  deferUntilIdle = true,
 }: LazySectionProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [Comp, setComp] = useState<ComponentType | null>(null);
@@ -30,6 +29,9 @@ export function LazySection({
     if (!node) return;
 
     let cancelled = false;
+    let io: IntersectionObserver | undefined;
+    let idleId: number | undefined;
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
     const mount = async () => {
       const mod = await loader();
@@ -45,26 +47,57 @@ export function LazySection({
       setComp(() => resolved);
     };
 
-    if (!("IntersectionObserver" in window)) {
-      void mount();
-      return;
+    const observe = () => {
+      if (!("IntersectionObserver" in window)) {
+        void mount();
+        return;
+      }
+
+      io = new IntersectionObserver(
+        (entries) => {
+          if (!entries.some((e) => e.isIntersecting)) return;
+          io?.disconnect();
+          void mount();
+        },
+        { rootMargin, threshold: 0.01 },
+      );
+      io.observe(node);
+    };
+
+    const onScroll = () => {
+      window.removeEventListener("scroll", onScroll);
+      if (idleId !== undefined && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId !== undefined) clearTimeout(timeoutId);
+      observe();
+    };
+
+    if (!deferUntilIdle) {
+      observe();
+      return () => {
+        cancelled = true;
+        io?.disconnect();
+      };
     }
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (!entries.some((e) => e.isIntersecting)) return;
-        io.disconnect();
-        void mount();
-      },
-      { rootMargin, threshold: 0.01 },
-    );
+    window.addEventListener("scroll", onScroll, { passive: true });
+    if ("requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(observe, { timeout: 4000 });
+    } else {
+      timeoutId = setTimeout(observe, 2800);
+    }
 
-    io.observe(node);
     return () => {
       cancelled = true;
-      io.disconnect();
+      window.removeEventListener("scroll", onScroll);
+      io?.disconnect();
+      if (idleId !== undefined && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId !== undefined) clearTimeout(timeoutId);
     };
-  }, [loader, rootMargin]);
+  }, [deferUntilIdle, loader, rootMargin]);
 
   return (
     <div ref={ref} style={Comp ? undefined : { minHeight }}>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState, type ComponentType } from "react";
+import { ClientEnhancements } from "@/components/providers/client-enhancements";
 import { LazySection } from "@/components/ui/LazySection";
 
 /**
@@ -42,6 +43,13 @@ export function HomeBelowFold() {
     };
   }, []);
 
+  const loadUnderstanding = useCallback(
+    () =>
+      import("@/components/sections/UnderstandingSection").then(
+        (m) => m.UnderstandingSection,
+      ),
+    [],
+  );
   const loadSecondBrain = useCallback(
     () =>
       import("@/components/sections/SecondBrainSection").then(
@@ -93,7 +101,9 @@ export function HomeBelowFold() {
 
   return (
     <>
+      <ClientEnhancements />
       {Progress ? <Progress /> : null}
+      <LazySection loader={loadUnderstanding} />
       <LazySection loader={loadSecondBrain} />
       <LazySection loader={loadEcosystem} />
       <LazySection loader={loadIntelligence} />
