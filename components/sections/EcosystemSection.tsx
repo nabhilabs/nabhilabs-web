@@ -12,6 +12,7 @@ const capabilities = [
     description: "Useful products shaped around real human needs.",
     visual: "products",
     span: "md:col-span-8",
+    href: "/solutions/second-brain",
   },
   {
     number: "02",
@@ -20,6 +21,7 @@ const capabilities = [
     description: "Retrieval and reasoning systems grounded in trusted context.",
     visual: "network",
     span: "md:col-span-4",
+    href: "/services/rag-engineering",
   },
   {
     number: "03",
@@ -28,6 +30,7 @@ const capabilities = [
     description: "Connected platforms that make care and operations clearer.",
     visual: "health",
     span: "md:col-span-4",
+    href: "/industries/healthcare-ai",
   },
   {
     number: "04",
@@ -36,6 +39,7 @@ const capabilities = [
     description: "Identity systems that make an organization easier to know.",
     visual: "identity",
     span: "md:col-span-4",
+    href: "/#begin",
   },
   {
     number: "05",
@@ -44,6 +48,7 @@ const capabilities = [
     description: "Quiet infrastructure that removes repetitive complexity.",
     visual: "automation",
     span: "md:col-span-4",
+    href: "/solutions/enterprise-knowledge-management",
   },
   {
     number: "06",
@@ -52,6 +57,7 @@ const capabilities = [
     description: "Natural conversations connected to useful action.",
     visual: "voice",
     span: "md:col-span-8",
+    href: "/services/agentic-voice-workflows",
   },
 ] as const;
 
@@ -225,7 +231,7 @@ export function EcosystemSection() {
                     <a
                       aria-label={`Explore ${capability.title}`}
                       className="absolute bottom-5 right-5 z-20 grid size-8 place-items-center rounded-full border border-[#aebcac] bg-white/60 text-[#31543a] transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:border-[#a3e635] group-hover:bg-[#cde0b8]"
-                      href="#begin"
+                      href={capability.href}
                     >
                       <ArrowUpRight className="size-3.5" />
                     </a>

@@ -103,7 +103,7 @@ export function SecondBrainSection() {
             </div>
             <a
               className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#cde0b8] px-6 py-3 text-xs font-medium text-[#0f1c13] transition-colors hover:bg-white"
-              href="#begin"
+              href="/solutions/second-brain"
             >
               Explore Second Brain
               <ArrowUpRight aria-hidden="true" className="size-4" />

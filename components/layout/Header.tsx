@@ -1,7 +1,7 @@
 const navigation = [
-  { label: "Second Brain", href: "#second-brain" },
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Philosophy", href: "#understanding" },
+  { label: "Second Brain", href: "/solutions/second-brain" },
+  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Philosophy", href: "/#understanding" },
 ] as const;
 
 export function Header() {
@@ -14,7 +14,7 @@ export function Header() {
         <a
           aria-label="Nabhi - home"
           className="text-lg font-semibold tracking-[0.2em] text-[#0f1c13]"
-          href="#top"
+          href="/"
           style={{ fontFamily: "system-ui, -apple-system, Segoe UI, sans-serif" }}
         >
           NABHI
@@ -32,7 +32,7 @@ export function Header() {
           ))}
           <a
             className="rounded-full bg-[#1a3323] px-5 py-2.5 text-white transition-colors duration-300 hover:bg-[#2c4f37]"
-            href="#begin"
+            href="/#begin"
           >
             Connect
           </a>

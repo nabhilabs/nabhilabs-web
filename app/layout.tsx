@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
-import { aeoFaqs } from "@/lib/aeo-faq";
 import "./globals.css";
 
 const sans = Manrope({
@@ -36,9 +35,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Nabhi Labs Editorial", url: siteUrl }],
   creator: "Nabhi Labs",
   publisher: "Nabhi Labs",
-  alternates: {
-    canonical: siteUrl,
-  },
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -120,48 +116,18 @@ const authorJsonLd = {
   },
 };
 
-const webPageJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: siteTitle,
-  description: siteDescription,
-  url: siteUrl,
-  datePublished: "2024-06-01",
-  dateModified: "2026-08-02",
-  inLanguage: "en",
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Nabhi Labs",
-    url: siteUrl,
-  },
-  author: {
-    "@type": "Person",
-    name: "Nabhi Labs Editorial",
-    url: siteUrl,
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Nabhi Labs",
-    url: siteUrl,
-  },
-};
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: aeoFaqs.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
-
 type RootLayoutProps = Readonly<{
   children: ReactNode;
 }>;
+
+const footerLinks = [
+  { href: "/solutions/second-brain", label: "Second Brain" },
+  { href: "/services/rag-engineering", label: "RAG Engineering" },
+  { href: "/services/agentic-voice-workflows", label: "Voice Workflows" },
+  { href: "/industries/healthcare-ai", label: "Healthcare AI" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/resources/rag-evaluation-checklist", label: "RAG Checklist" },
+] as const;
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
@@ -181,18 +147,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }}
           type="application/ld+json"
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(webPageJsonLd),
-          }}
-          type="application/ld+json"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqJsonLd),
-          }}
-          type="application/ld+json"
-        />
         <a
           className="sr-only z-[100] bg-stone-50 px-4 py-3 text-stone-950 focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
           href="#main-content"
@@ -201,15 +155,31 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </a>
         <Header />
         {children}
-        <footer className="relative z-10 border-t border-[#d8e0d5] bg-[#f7f6f1] px-6 py-6 font-mono text-[8px] uppercase tracking-[0.16em] text-[#4a5b4e] md:px-10">
-          <div className="mx-auto flex max-w-[95rem] flex-wrap items-center justify-between gap-4">
-            <span>
-              Nabhi Labs - Understanding before technology
-              <span className="sr-only">
-                . Authored by Nabhi Labs. Updated August 2026.
+        <footer className="relative z-10 border-t border-[#d8e0d5] bg-[#f7f6f1] px-6 py-8 font-mono text-[8px] uppercase tracking-[0.16em] text-[#4a5b4e] md:px-10">
+          <div className="mx-auto flex max-w-[95rem] flex-col gap-6">
+            <nav
+              aria-label="Solutions and resources"
+              className="flex flex-wrap gap-x-6 gap-y-2 normal-case tracking-normal"
+            >
+              {footerLinks.map((link) => (
+                <a
+                  className="text-[11px] text-[#31543a] underline-offset-4 hover:underline"
+                  href={link.href}
+                  key={link.href}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <span>
+                Nabhi Labs - Understanding before technology
+                <span className="sr-only">
+                  . Authored by Nabhi Labs. Updated August 2026.
+                </span>
               </span>
-            </span>
-            <span>© 2026 Nabhi Labs · hello@nabhilabs.com</span>
+              <span>© 2026 Nabhi Labs · hello@nabhilabs.com</span>
+            </div>
           </div>
         </footer>
       </body>
