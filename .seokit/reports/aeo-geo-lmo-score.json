@@ -1,0 +1,184 @@
+{
+  "title": "Nabhi Labs — AEO / GEO / LMO Score Report",
+  "generatedAt": "2026-08-02T10:15:10.144Z",
+  "workspace": "c:/Users/ssury/OneDrive/Dokumentumok/nabhilabs-website",
+  "method": {
+    "aeo_geo_seo": "SEOKit verify_workspace — best-passing evidence per ruleId across scanned files",
+    "lmo": "Custom LMO checklist (SEOKit has no LMO plugin): llms.txt + AI crawler robots readiness"
+  },
+  "scores": {
+    "AEO": 100,
+    "GEO": 100,
+    "LMO": 100,
+    "SEO": 100
+  },
+  "scale": "0-100 (exact integer)",
+  "breakdown": {
+    "aeo": {
+      "score": 100,
+      "pass": 6,
+      "total": 6,
+      "details": [
+        {
+          "ruleId": "aeo.chunking.suitability",
+          "passed": true,
+          "output": "All 1 page text chunks are optimized for retrieval as standalone answers."
+        },
+        {
+          "ruleId": "aeo.content.structure",
+          "passed": true,
+          "output": "Paragraph boundaries and structure meet layout recommendations."
+        },
+        {
+          "ruleId": "aeo.entity.density",
+          "passed": true,
+          "output": "Entity density verified successfully (score: 100, ratio: 2.33)."
+        },
+        {
+          "ruleId": "aeo.extractability.wordcount",
+          "passed": true,
+          "output": "Page word count verified (1184 words)."
+        },
+        {
+          "ruleId": "aeo.faq.schema",
+          "passed": true,
+          "output": "FAQPage structured JSON-LD schema validated successfully."
+        },
+        {
+          "ruleId": "aeo.headings.questions",
+          "passed": true,
+          "output": "Heading optimization passed. Found 0 question-shaped subheadings."
+        }
+      ]
+    },
+    "geo": {
+      "score": 100,
+      "pass": 8,
+      "total": 8,
+      "details": [
+        {
+          "ruleId": "geo.author.attribution",
+          "passed": true,
+          "output": "Author attribution meta or schema signals verified."
+        },
+        {
+          "ruleId": "geo.citation.markup",
+          "passed": true,
+          "output": "Outbound citations verified successfully (found 3 external sources)."
+        },
+        {
+          "ruleId": "geo.geographic.address",
+          "passed": true,
+          "output": "Geographic entity structure validated successfully."
+        },
+        {
+          "ruleId": "geo.knowledge.sameas",
+          "passed": true,
+          "output": "sameAs Knowledge Graph mapping references validated successfully."
+        },
+        {
+          "ruleId": "geo.org.schema",
+          "passed": true,
+          "output": "Organization JSON-LD schema validated successfully."
+        },
+        {
+          "ruleId": "geo.provenance.dates",
+          "passed": true,
+          "output": "Content provenance timestamp signals verified successfully."
+        },
+        {
+          "ruleId": "geo.quotes.authority",
+          "passed": true,
+          "output": "Authoritative quotation and testimonial references verified."
+        },
+        {
+          "ruleId": "geo.statistics.density",
+          "passed": true,
+          "output": "Statistics density validated successfully (found 20 numerical claims)."
+        }
+      ]
+    },
+    "seo": {
+      "score": 100,
+      "pass": 7,
+      "total": 7,
+      "details": [
+        {
+          "ruleId": "seo.canonical.exists",
+          "passed": true,
+          "output": "Canonical absolute URL verified: https://nabhilabs.com/"
+        },
+        {
+          "ruleId": "seo.metadata.exists",
+          "passed": true,
+          "output": "Page metadata tags verified successfully."
+        },
+        {
+          "ruleId": "seo.opengraph.valid",
+          "passed": true,
+          "output": "All essential Open Graph meta tags are present."
+        },
+        {
+          "ruleId": "seo.robots.valid",
+          "passed": true,
+          "output": "robots.txt features valid user-agent directives, sitemap references, and allows all target search crawlers."
+        },
+        {
+          "ruleId": "seo.schema.valid",
+          "passed": true,
+          "output": "Successfully validated 4 JSON-LD blocks."
+        },
+        {
+          "ruleId": "seo.sitemap.valid",
+          "passed": true,
+          "output": "Sitemap.xml contains valid XML and successfully parsed 1 URLs."
+        },
+        {
+          "ruleId": "seo.twitter.valid",
+          "passed": true,
+          "output": "All essential Twitter Cards meta tags are present."
+        }
+      ]
+    },
+    "lmo": {
+      "score": 100,
+      "pass": 7,
+      "total": 7,
+      "items": [
+        {
+          "name": "llms.txt present at /llms.txt",
+          "passed": true
+        },
+        {
+          "name": "llms.txt H1 + summary quote",
+          "passed": true
+        },
+        {
+          "name": "llms.txt absolute nabhilabs.com links (>=8)",
+          "passed": true
+        },
+        {
+          "name": "llm.txt compatibility alias",
+          "passed": true
+        },
+        {
+          "name": "robots.txt allows AI crawlers",
+          "passed": true
+        },
+        {
+          "name": "robots.txt declares sitemap",
+          "passed": true
+        },
+        {
+          "name": "sitemap generator present",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "notes": [
+    "SEOKit plugins present: seo, aeo, geo, performance, accessibility — no dedicated LMO plugin.",
+    "Workspace scan includes node_modules HTML stubs; scores prefer best-pass evidence per rule (homepage-quality signals).",
+    "Production Next routes also emit FAQ/Org schema via app/layout.tsx and pillar pages."
+  ]
+}
