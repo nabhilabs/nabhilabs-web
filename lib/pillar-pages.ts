@@ -28,7 +28,7 @@ export const pillarPages: PillarPageContent[] = [
       "Nabhi Labs designs Nabhi Persona architectures that turn scattered institutional knowledge into active, private, decision-ready intelligence.",
     headline: "Nabhi Persona architecture for enterprises",
     lede: "Nabhi Labs builds Nabhi Persona systems that connect what your organization already knows to the moment a decision is made—private by design, continuously learning from real work.",
-    primaryKeyword: "Nabhi Persona architecture for enterprises",
+    primaryKeyword: "private enterprise Nabhi Persona",
     datePublished: "2026-08-02",
     dateModified: "2026-08-02",
     sections: [

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
+import { brandAlternateNames } from "@/lib/keyword-strategy";
 import "./globals.css";
 
 const sans = Manrope({
@@ -21,17 +22,26 @@ const display = Space_Grotesk({
 });
 
 const siteUrl = "https://nabhilabs.com";
-const siteTitle = "Nabhi - Where understanding becomes technology";
+const siteTitle =
+  "Nabhi Labs — Understanding Becomes Technology | Nabhi Persona";
 const siteDescription =
-  "Nabhi transforms complexity into clarity. Understanding first. Technology that follows.";
+  "Nabhi Labs transforms complexity into clarity. Nabhi Persona, RAG engineering, and agentic workflows—understanding first, technology that follows.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: siteTitle,
-    template: "%s - Nabhi",
+    template: "%s | Nabhi Labs",
   },
   description: siteDescription,
+  keywords: [
+    "Nabhi Labs",
+    "Nabhi Persona",
+    "Nabhi technology",
+    "Nabhi Labs philosophy",
+    "institutional knowledge AI",
+    "agentic AI workflows",
+  ],
   authors: [{ name: "Nabhi Labs Editorial", url: siteUrl }],
   creator: "Nabhi Labs",
   publisher: "Nabhi Labs",
@@ -71,6 +81,8 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Nabhi Labs",
+  legalName: "Nabhi Labs",
+  alternateName: [...brandAlternateNames],
   url: siteUrl,
   email: "hello@nabhilabs.com",
   description: siteDescription,
@@ -121,12 +133,12 @@ type RootLayoutProps = Readonly<{
 }>;
 
 const footerLinks = [
+  { href: "/about", label: "About" },
+  { href: "/philosophy", label: "Philosophy" },
   { href: "/solutions/nabhi-persona", label: "Nabhi Persona" },
   { href: "/services/rag-engineering", label: "RAG Engineering" },
-  { href: "/services/agentic-voice-workflows", label: "Voice Workflows" },
-  { href: "/industries/healthcare-ai", label: "Healthcare AI" },
+  { href: "/blog/agentic-ai-multi-agent-workflows", label: "Agentic AI Blog" },
   { href: "/case-studies", label: "Case Studies" },
-  { href: "/resources/rag-evaluation-checklist", label: "RAG Checklist" },
 ] as const;
 
 export default function RootLayout({ children }: RootLayoutProps) {

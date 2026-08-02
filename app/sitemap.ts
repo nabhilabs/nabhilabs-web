@@ -2,10 +2,15 @@ import type { MetadataRoute } from "next";
 import { allContentPages, caseStudyIndex } from "@/lib/pillar-pages";
 
 const siteUrl = "https://nabhilabs.com";
+const now = new Date("2026-08-02");
+
+const extraPages = [
+  "/about",
+  "/philosophy",
+  "/blog/agentic-ai-multi-agent-workflows",
+] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date("2026-08-02");
-
   return [
     {
       url: `${siteUrl}/`,
@@ -13,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    ...extraPages.map((path) => ({
+      url: `${siteUrl}${path}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: path === "/about" ? 0.9 : 0.75,
+    })),
     ...allContentPages.map((page) => ({
       url: `${siteUrl}${page.path}`,
       lastModified: new Date(page.dateModified),

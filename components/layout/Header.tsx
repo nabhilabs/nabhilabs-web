@@ -2,8 +2,8 @@ import { SiteSearch } from "@/components/search/SiteSearch";
 
 const navigation = [
   { label: "Nabhi Persona", href: "/solutions/nabhi-persona" },
-  { label: "Capabilities", href: "/#capabilities" },
-  { label: "Philosophy", href: "/#understanding" },
+  { label: "About", href: "/about" },
+  { label: "Philosophy", href: "/philosophy" },
 ] as const;
 
 export function Header() {

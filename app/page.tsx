@@ -2,15 +2,27 @@ import type { Metadata } from "next";
 import { DeferredBelowFold } from "@/components/sections/DeferredBelowFold";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { aeoFaqs } from "@/lib/aeo-faq";
+import { brandKeywords } from "@/lib/keyword-strategy";
 
 const siteUrl = "https://nabhilabs.com";
-const siteTitle = "Nabhi - Where understanding becomes technology";
+const siteTitle =
+  "Nabhi Labs — Understanding Becomes Technology | Nabhi Persona";
 const siteDescription =
-  "Nabhi transforms complexity into clarity. Understanding first. Technology that follows.";
+  "Nabhi Labs transforms complexity into clarity with Nabhi Persona, RAG engineering, and agentic workflows. Understanding first. Technology that follows.";
 
 export const metadata: Metadata = {
+  title: {
+    absolute: siteTitle,
+  },
+  description: siteDescription,
+  keywords: [...brandKeywords],
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    url: "/",
   },
 };
 
@@ -23,10 +35,16 @@ const webPageJsonLd = {
   datePublished: "2024-06-01",
   dateModified: "2026-08-02",
   inLanguage: "en",
+  keywords: brandKeywords.join(", "),
   isPartOf: {
     "@type": "WebSite",
     name: "Nabhi Labs",
     url: siteUrl,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
   },
   author: {
     "@type": "Person",
@@ -34,6 +52,11 @@ const webPageJsonLd = {
     url: siteUrl,
   },
   publisher: {
+    "@type": "Organization",
+    name: "Nabhi Labs",
+    url: siteUrl,
+  },
+  about: {
     "@type": "Organization",
     name: "Nabhi Labs",
     url: siteUrl,
