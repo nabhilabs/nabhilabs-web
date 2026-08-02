@@ -12,9 +12,10 @@ export function Header() {
         className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8"
       >
         <a
-          aria-label="Nabhi — home"
-          className="font-display text-lg font-medium tracking-[0.2em] text-[#0f1c13]"
+          aria-label="Nabhi - home"
+          className="text-lg font-semibold tracking-[0.2em] text-[#0f1c13]"
           href="#top"
+          style={{ fontFamily: "system-ui, -apple-system, Segoe UI, sans-serif" }}
         >
           NABHI
         </a>

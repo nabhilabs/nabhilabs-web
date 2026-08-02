@@ -54,7 +54,7 @@ const milestones = [
     title: "The Beginning",
     period: "Summer 2024",
     description:
-      "We decided to build—not just another tool, but a new kind of intelligence layer.",
+      "We decided to build-not just another tool, but a new kind of intelligence layer.",
     icon: "Box",
   },
   {
@@ -123,11 +123,13 @@ export function TeamSection() {
                   <article className="group grid grid-rows-[auto_auto_1fr]">
                     <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-[#d8e0d5] bg-[#edf3e8]">
                       <Image
-                        alt={member.name}
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        fill
+                        alt={`${member.name}, ${member.role} at Nabhi Labs`}
+                        className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        height={500}
+                        loading="lazy"
                         sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
                         src={member.image}
+                        width={400}
                       />
                     </div>
                     <div className="mt-4 flex items-start gap-3">

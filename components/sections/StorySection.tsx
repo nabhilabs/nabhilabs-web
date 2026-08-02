@@ -47,7 +47,7 @@ export function StorySection() {
               </span>
             </h2>
             <p className="mt-8 max-w-lg text-sm leading-7 text-[#4a5b4e]">
-              Nabhi represents the navel — the universal mark of the first
+              Nabhi represents the navel - the universal mark of the first
               connection. Before language, identity, or ambition, there was
               connection.
             </p>
@@ -61,19 +61,20 @@ export function StorySection() {
           <div className="relative mx-auto aspect-square w-full max-w-[36rem]">
             <div className="absolute inset-0 animate-story-spin">
               <Image
-                alt=""
-                aria-hidden="true"
+                alt="Decorative orbit ring for Nabhi origin story diagram"
                 className="h-full w-full object-contain"
                 height={800}
+                loading="lazy"
                 src="/assets/inner-circle.svg"
                 width={800}
               />
             </div>
             <div className="absolute inset-0">
               <Image
-                alt="Nabhi connection map — people, possibility, purpose, and first connection"
+                alt="Nabhi connection map - people, possibility, purpose, and first connection"
                 className="h-full w-full object-contain"
                 height={800}
+                loading="lazy"
                 src="/assets/our-story-outer-circle.svg"
                 width={800}
               />

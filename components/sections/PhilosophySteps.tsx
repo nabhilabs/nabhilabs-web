@@ -43,12 +43,13 @@ export function PhilosophySteps({ principles }: PhilosophyStepsProps) {
             style={{ animationDelay: `${index * 0.55}s` }}
           >
             <Image
-              alt={principle.title}
+              alt={`${principle.title} - ${principle.prompt}`}
               className="object-contain object-center"
-              fill
-              loading="eager"
+              height={220}
+              loading="lazy"
               sizes="(max-width: 640px) 60vw, 220px"
               src={principle.image}
+              width={220}
             />
           </div>
 

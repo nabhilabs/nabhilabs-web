@@ -37,30 +37,37 @@ const philosophyLayers = [
   {
     src: "/assets/Philosophy/OL 2.svg",
     className: "philosophy-spin-cw",
+    alt: "Outer philosophy orbit ring",
   },
   {
     src: "/assets/Philosophy/OL 1.svg",
     className: "philosophy-spin-ccw",
+    alt: "Second philosophy orbit ring",
   },
   {
     src: "/assets/Philosophy/OL 0.svg",
     className: "philosophy-spin-cw-mid",
+    alt: "Third philosophy orbit ring",
   },
   {
     src: "/assets/Philosophy/Middle Circle.svg",
     className: "philosophy-spin-cw-fast",
+    alt: "Middle philosophy ring",
   },
   {
     src: "/assets/Philosophy/Inner Circle.svg",
     className: "philosophy-spin-ccw-fast",
+    alt: "Inner philosophy ring",
   },
   {
-    src: "/assets/Philosophy/Main Object.svg",
+    src: "/assets/Philosophy/main-object.webp",
     className: "",
+    alt: "Nabhi philosophy core symbol",
   },
   {
     src: "/assets/Philosophy/Main Object Floatings.svg",
     className: "philosophy-float",
+    alt: "Floating accents around the Nabhi philosophy core",
   },
 ] as const;
 
@@ -101,10 +108,13 @@ export function UnderstandingSection() {
                 style={{ zIndex: index + 1 }}
               >
                 <img
-                  alt=""
-                  aria-hidden="true"
+                  alt={layer.alt}
                   className="h-full w-full object-contain"
+                  decoding="async"
+                  height={800}
+                  loading="lazy"
                   src={layer.src}
+                  width={800}
                 />
               </div>
             ))}

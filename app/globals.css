@@ -60,9 +60,24 @@ a {
   background-size: 32px 32px;
 }
 
-@keyframes story-spin {
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-enter {
+  animation: hero-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter {
+    animation: none;
   }
 }
 

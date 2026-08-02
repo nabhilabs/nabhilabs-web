@@ -1,14 +1,55 @@
-import { BeginSection } from "@/components/sections/BeginSection";
-import { EcosystemSection } from "@/components/sections/EcosystemSection";
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { IntelligenceSection } from "@/components/sections/IntelligenceSection";
-import { ProofSection } from "@/components/sections/ProofSection";
-import { SecondBrainSection } from "@/components/sections/SecondBrainSection";
-import { StorySection } from "@/components/sections/StorySection";
-import { TeamSection } from "@/components/sections/TeamSection";
-import { UnderstandingSection } from "@/components/sections/UnderstandingSection";
-import { WhyNabhiSection } from "@/components/sections/WhyNabhiSection";
-import { SectionProgress } from "@/components/ui/SectionProgress";
+
+const SectionProgress = dynamic(() =>
+  import("@/components/ui/SectionProgress").then((m) => m.SectionProgress),
+);
+
+const UnderstandingSection = dynamic(() =>
+  import("@/components/sections/UnderstandingSection").then(
+    (m) => m.UnderstandingSection,
+  ),
+);
+
+const SecondBrainSection = dynamic(() =>
+  import("@/components/sections/SecondBrainSection").then(
+    (m) => m.SecondBrainSection,
+  ),
+);
+
+const EcosystemSection = dynamic(() =>
+  import("@/components/sections/EcosystemSection").then(
+    (m) => m.EcosystemSection,
+  ),
+);
+
+const IntelligenceSection = dynamic(() =>
+  import("@/components/sections/IntelligenceSection").then(
+    (m) => m.IntelligenceSection,
+  ),
+);
+
+const ProofSection = dynamic(() =>
+  import("@/components/sections/ProofSection").then((m) => m.ProofSection),
+);
+
+const WhyNabhiSection = dynamic(() =>
+  import("@/components/sections/WhyNabhiSection").then(
+    (m) => m.WhyNabhiSection,
+  ),
+);
+
+const StorySection = dynamic(() =>
+  import("@/components/sections/StorySection").then((m) => m.StorySection),
+);
+
+const TeamSection = dynamic(() =>
+  import("@/components/sections/TeamSection").then((m) => m.TeamSection),
+);
+
+const BeginSection = dynamic(() =>
+  import("@/components/sections/BeginSection").then((m) => m.BeginSection),
+);
 
 export default function HomePage() {
   return (
