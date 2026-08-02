@@ -62,6 +62,16 @@ const nextConfig: NextConfig = {
         destination: "/resources/enterprise-nabhi-persona-playbook",
         permanent: true,
       },
+      {
+        source: "/ai-development",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/software-development",
+        destination: "/services",
+        permanent: true,
+      },
     ];
   },
   async headers() {

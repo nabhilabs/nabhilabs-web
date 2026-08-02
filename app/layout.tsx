@@ -22,10 +22,9 @@ const display = Space_Grotesk({
 });
 
 const siteUrl = "https://nabhilabs.com";
-const siteTitle =
-  "Nabhi Labs — Understanding Becomes Technology | Nabhi Persona";
+const siteTitle = "Nabhi Labs | Understanding Becomes Technology";
 const siteDescription =
-  "Nabhi Labs transforms complexity into clarity. Nabhi Persona, RAG engineering, and agentic workflows—understanding first, technology that follows.";
+  "Nabhi Labs builds Nabhi Persona, RAG engineering, and agentic workflows so organizations move from complexity to clarity—understanding first, technology that follows.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -57,7 +56,7 @@ export const metadata: Metadata = {
         url: "/assets/hero-landing-day.webp",
         width: 1600,
         height: 900,
-        alt: "Nabhi Labs - understanding becomes technology",
+        alt: "Nabhi Labs",
       },
     ],
   },
@@ -83,16 +82,19 @@ const organizationJsonLd = {
   "@id": `${siteUrl}/#organization`,
   name: "Nabhi Labs",
   legalName: "Nabhi Labs",
-  alternateName: [...brandAlternateNames],
+  alternateName: ["NabhiLabs", ...brandAlternateNames],
   url: siteUrl,
-  logo: `${siteUrl}/nabhi-logo.svg`,
+  logo: {
+    "@type": "ImageObject",
+    url: `${siteUrl}/nabhi-logo.svg`,
+    contentUrl: `${siteUrl}/nabhi-logo.svg`,
+  },
   image: `${siteUrl}/assets/hero-landing-day.webp`,
   email: "hello@nabhilabs.com",
   description: siteDescription,
   slogan: "Understanding before technology",
-  foundingDate: "2024",
+  foundingDate: "2024-06-01",
   sameAs: [
-    siteUrl,
     "https://www.linkedin.com/company/nabhilabs",
   ],
   address: {
@@ -104,12 +106,20 @@ const organizationJsonLd = {
     "@type": "Country",
     name: "India",
   },
-  contactPoint: {
-    "@type": "ContactPoint",
-    email: "hello@nabhilabs.com",
-    contactType: "customer support",
-    availableLanguage: ["English"],
-  },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      email: "hello@nabhilabs.com",
+      contactType: "sales",
+      availableLanguage: ["English"],
+    },
+    {
+      "@type": "ContactPoint",
+      email: "hello@nabhilabs.com",
+      contactType: "customer support",
+      availableLanguage: ["English"],
+    },
+  ],
 };
 
 const websiteJsonLd = {
@@ -149,12 +159,12 @@ type RootLayoutProps = Readonly<{
 }>;
 
 const footerLinks = [
-  { href: "/about", label: "About" },
-  { href: "/philosophy", label: "Philosophy" },
+  { href: "/about", label: "About Nabhi Labs" },
+  { href: "/services", label: "Services" },
   { href: "/solutions/nabhi-persona", label: "Nabhi Persona" },
-  { href: "/services/rag-engineering", label: "RAG Engineering" },
-  { href: "/blog/agentic-ai-multi-agent-workflows", label: "Agentic AI Blog" },
-  { href: "/case-studies", label: "Case Studies" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
+  { href: "/philosophy", label: "Philosophy" },
 ] as const;
 
 export default function RootLayout({ children }: RootLayoutProps) {

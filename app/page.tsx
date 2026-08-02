@@ -5,10 +5,9 @@ import { aeoFaqs } from "@/lib/aeo-faq";
 import { brandKeywords } from "@/lib/keyword-strategy";
 
 const siteUrl = "https://nabhilabs.com";
-const siteTitle =
-  "Nabhi Labs — Understanding Becomes Technology | Nabhi Persona";
+const siteTitle = "Nabhi Labs | Understanding Becomes Technology";
 const siteDescription =
-  "Nabhi Labs transforms complexity into clarity with Nabhi Persona, RAG engineering, and agentic workflows. Understanding first. Technology that follows.";
+  "Nabhi Labs builds Nabhi Persona, RAG engineering, and agentic workflows so organizations move from complexity to clarity—understanding first, technology that follows.";
 
 export const metadata: Metadata = {
   title: {
@@ -23,6 +22,7 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     url: "/",
+    siteName: "Nabhi Labs",
   },
 };
 

@@ -14,34 +14,29 @@ export function HeroSection() {
             + &nbsp; Understanding → Intelligence → Impact
           </span>
 
-          <p
-            className="mt-7 text-sm font-semibold tracking-[0.28em] text-[#0f1c13]"
-            style={{
-              fontFamily:
-                "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-            }}
-          >
-            NABHI LABS
-          </p>
-
           <h1
-            className="mt-4 max-w-[42rem] text-[clamp(3.4rem,6.4vw,6.8rem)] font-medium leading-[0.9] tracking-[-0.065em] text-[#0f1c13]"
+            className="mt-7 max-w-[42rem] text-[clamp(3.4rem,6.4vw,6.8rem)] font-medium leading-[0.9] tracking-[-0.065em] text-[#0f1c13]"
             id="hero-title"
             style={{
               fontFamily:
                 "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
             }}
           >
-            Nabhi Labs — where complexity becomes{" "}
+            Nabhi Labs
+          </h1>
+
+          <h2 className="mt-5 max-w-[36rem] font-display text-[clamp(1.6rem,3vw,2.4rem)] font-medium leading-[1.05] tracking-[-0.04em] text-[#0f1c13]">
+            Where complexity becomes{" "}
             <mark className="rounded-[0.14em] bg-[#cde0b8] px-[0.04em] text-inherit">
               clarity
             </mark>
             .
-          </h1>
+          </h2>
 
           <p className="mt-6 max-w-md text-base font-light leading-7 text-[#314238] md:text-lg">
             The official site for Nabhi Labs. Before code, before AI, before
-            design — comes understanding.
+            design — comes understanding. Nabhi Persona, RAG engineering, and
+            agentic workflows follow from that order.
           </p>
 
           <div className="mt-7 grid max-w-[36rem] gap-3 sm:grid-cols-2">

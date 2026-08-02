@@ -204,9 +204,15 @@ export default function AgenticAiBlogPost() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 className="rounded-full bg-[#a3e635] px-6 py-3 text-sm text-[#0f1c13]"
-                href="/#begin"
+                href="/contact"
               >
-                Begin a conversation
+                Contact Nabhi Labs
+              </Link>
+              <Link
+                className="rounded-full border border-white/20 px-6 py-3 text-sm text-white"
+                href="/"
+              >
+                Nabhi Labs homepage
               </Link>
               <Link
                 className="rounded-full border border-white/20 px-6 py-3 text-sm text-white"

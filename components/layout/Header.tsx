@@ -2,8 +2,8 @@ import { SiteSearch } from "@/components/search/SiteSearch";
 
 const navigation = [
   { label: "Nabhi Persona", href: "/solutions/nabhi-persona" },
+  { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
-  { label: "Philosophy", href: "/philosophy" },
 ] as const;
 
 export function Header() {
@@ -15,11 +15,11 @@ export function Header() {
       >
         <a
           aria-label="Nabhi Labs - home"
-          className="text-lg font-semibold tracking-[0.2em] text-[#0f1c13]"
+          className="text-base font-semibold tracking-[-0.02em] text-[#0f1c13] sm:text-lg"
           href="/"
           style={{ fontFamily: "system-ui, -apple-system, Segoe UI, sans-serif" }}
         >
-          NABHI LABS
+          Nabhi Labs
         </a>
 
         <div className="flex items-center gap-4 text-xs text-[#4a5b4e] sm:gap-7">
@@ -35,9 +35,9 @@ export function Header() {
           <SiteSearch />
           <a
             className="rounded-full bg-[#1a3323] px-5 py-2.5 text-white transition-colors duration-300 hover:bg-[#2c4f37]"
-            href="/#begin"
+            href="/contact"
           >
-            Connect
+            Contact
           </a>
         </div>
       </nav>

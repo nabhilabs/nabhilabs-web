@@ -6,8 +6,12 @@ const now = new Date("2026-08-02");
 
 const extraPages = [
   "/about",
+  "/services",
+  "/contact",
   "/philosophy",
+  "/blog",
   "/blog/agentic-ai-multi-agent-workflows",
+  "/blog/how-nabhi-labs-builds-understanding-into-technology",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -22,7 +26,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteUrl}${path}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
-      priority: path === "/about" ? 0.9 : 0.75,
+      priority:
+        path === "/about" || path === "/services" || path === "/contact"
+          ? 0.9
+          : 0.75,
     })),
     ...allContentPages.map((page) => ({
       url: `${siteUrl}${page.path}`,

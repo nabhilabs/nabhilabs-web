@@ -195,6 +195,31 @@ export const products: Product[] = [
     ],
     schemaType: "Product",
   },
+  {
+    id: "page-services",
+    name: "Services from Nabhi Labs",
+    url: "/services",
+    description:
+      "Nabhi Labs services hub—Nabhi Persona, RAG, voice, healthcare AI.",
+    keywords: ["nabhi labs services", "nabhi labs", "services"],
+    schemaType: "Product",
+  },
+  {
+    id: "page-contact",
+    name: "Contact Nabhi Labs",
+    url: "/contact",
+    description: "Contact Nabhi Labs at hello@nabhilabs.com.",
+    keywords: ["contact nabhi labs", "nabhi labs email", "hello@nabhilabs.com"],
+    schemaType: "Product",
+  },
+  {
+    id: "page-blog",
+    name: "Blog from Nabhi Labs",
+    url: "/blog",
+    description: "Blog index for Nabhi Labs engineering and philosophy notes.",
+    keywords: ["nabhi labs blog", "nabhi labs engineering", "nabhi labs ai"],
+    schemaType: "Product",
+  },
 ];
 
 export function searchProducts(query: string): Product[] {
