@@ -12,6 +12,8 @@ const extraPages = [
   "/blog",
   "/blog/agentic-ai-multi-agent-workflows",
   "/blog/how-nabhi-labs-builds-understanding-into-technology",
+  "/llms.txt",
+  "/llm.txt",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
