@@ -170,6 +170,9 @@ export function TeamSection() {
             <span className="mt-4 block h-px w-10 bg-[#78966a]" />
             <blockquote className="mt-5 max-w-xs font-serif text-sm leading-6 text-[#31543a]">
               “Why is there so much information, yet so little understanding?”
+              <footer className="mt-3 font-sans font-mono text-[9px] uppercase tracking-[0.12em] text-[#5a7052]">
+                — Nabhi Labs co-founders, 2024
+              </footer>
             </blockquote>
           </div>
 

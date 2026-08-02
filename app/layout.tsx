@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
+import { aeoFaqs } from "@/lib/aeo-faq";
 import "./globals.css";
 
 const sans = Manrope({
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s - Nabhi",
   },
   description: siteDescription,
-  authors: [{ name: "Nabhi Labs", url: siteUrl }],
+  authors: [{ name: "Nabhi Labs Editorial", url: siteUrl }],
   creator: "Nabhi Labs",
   publisher: "Nabhi Labs",
   alternates: {
@@ -65,7 +66,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   other: {
-    "article:author": "Nabhi Labs",
+    "article:author": "Nabhi Labs Editorial",
+    author: "Nabhi Labs Editorial",
   },
 };
 
@@ -84,6 +86,11 @@ const organizationJsonLd = {
   address: {
     "@type": "PostalAddress",
     addressCountry: "IN",
+    addressRegion: "India",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "India",
   },
   contactPoint: {
     "@type": "ContactPoint",
@@ -96,10 +103,16 @@ const organizationJsonLd = {
 const authorJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Nabhi Labs",
+  name: "Nabhi Labs Editorial",
   url: siteUrl,
   email: "hello@nabhilabs.com",
   jobTitle: "Editorial",
+  description:
+    "Editorial voice of Nabhi Labs—documenting how understanding becomes technology across products, AI engineering, and systems work.",
+  sameAs: [
+    siteUrl,
+    "https://www.linkedin.com/company/nabhilabs",
+  ],
   worksFor: {
     "@type": "Organization",
     name: "Nabhi Labs",
@@ -123,7 +136,7 @@ const webPageJsonLd = {
   },
   author: {
     "@type": "Person",
-    name: "Nabhi Labs",
+    name: "Nabhi Labs Editorial",
     url: siteUrl,
   },
   publisher: {
@@ -136,32 +149,14 @@ const webPageJsonLd = {
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What does Nabhi Labs do?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Nabhi Labs transforms complexity into clarity by understanding systems first, then building technology that follows-products, AI engineering, and platforms grounded in real human needs.",
-      },
+  mainEntity: aeoFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
     },
-    {
-      "@type": "Question",
-      name: "How do you approach complex problems?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We listen, observe, simplify, and build. We start with deep understanding of the system before writing code or deploying AI, so what we create truly matters.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How can I start a conversation with Nabhi Labs?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Reach out at hello@nabhilabs.com or use the Begin form on nabhilabs.com. We usually reply within 24 hours for a thoughtful discussion-not a sales pitch.",
-      },
-    },
-  ],
+  })),
 };
 
 type RootLayoutProps = Readonly<{
@@ -173,7 +168,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body
         className={`${sans.variable} ${display.variable} bg-[#f2f4f0] font-sans text-[#0f1c13]`}
-      >        <script
+      >
+        <script
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd),
           }}

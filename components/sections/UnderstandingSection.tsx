@@ -93,7 +93,17 @@ export function UnderstandingSection() {
             </h2>
             <p className="mt-7 max-w-lg text-sm leading-7 text-[#4a5b4e]">
               We don&apos;t rush to build. We first understand, so what we
-              build truly matters.
+              build truly matters. Nabhi Labs listens, observes, simplifies, and
+              then builds—guided by{" "}
+              <a
+                className="underline decoration-[#c8d6c4] underline-offset-2 hover:text-[#0f1c13]"
+                href="https://en.wikipedia.org/wiki/Systems_thinking"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                systems thinking
+              </a>{" "}
+              so technology follows clarity rather than creating more noise.
             </p>
           </div>
 

@@ -18,13 +18,33 @@ export function ProofSection() {
           </div>
 
           <div className="lg:pt-14">
-            <p className="font-mono text-[9px] text-[#5a7052]">
-              Why should I trust you?
-            </p>
+            <h3 className="font-mono text-[9px] font-normal uppercase tracking-[0.08em] text-[#5a7052]">
+              Why should I trust Nabhi Labs?
+            </h3>
             <span className="mt-4 block h-px w-8 bg-[#78966a]" />
             <p className="mt-5 max-w-xs text-xs leading-6 text-[#4a5b4e]">
               Selected systems where clearer information created more useful
-              decisions.
+              decisions—backed by 50+ tailored models, about 25% average gains
+              in operational clarity, and responses within 24 hours. We align
+              practice with the{" "}
+              <a
+                className="underline decoration-[#c8d6c4] underline-offset-2 hover:text-[#0f1c13]"
+                href="https://www.nist.gov/itl/ai-risk-management-framework"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                NIST AI RMF
+              </a>{" "}
+              and{" "}
+              <a
+                className="underline decoration-[#c8d6c4] underline-offset-2 hover:text-[#0f1c13]"
+                href="https://oecd.ai/en/ai-principles"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                OECD AI Principles
+              </a>
+              .
             </p>
           </div>
 
