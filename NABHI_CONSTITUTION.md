@@ -134,7 +134,7 @@ Products that solve real problems.
 
 Our flagship product:
 
-Second Brain.
+Nabhi Persona.
 
 ---
 

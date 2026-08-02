@@ -50,10 +50,10 @@ export function HomeBelowFold() {
       ),
     [],
   );
-  const loadSecondBrain = useCallback(
+  const loadNabhiPersona = useCallback(
     () =>
-      import("@/components/sections/SecondBrainSection").then(
-        (m) => m.SecondBrainSection,
+      import("@/components/sections/NabhiPersonaSection").then(
+        (m) => m.NabhiPersonaSection,
       ),
     [],
   );
@@ -111,7 +111,7 @@ export function HomeBelowFold() {
       <ClientEnhancements />
       {Progress ? <Progress /> : null}
       <LazySection loader={loadUnderstanding} />
-      <LazySection loader={loadSecondBrain} />
+      <LazySection loader={loadNabhiPersona} />
       <LazySection loader={loadEcosystem} />
       <LazySection loader={loadIntelligence} />
       <LazySection loader={loadProof} />

@@ -8,12 +8,12 @@ export const aeoFaqs = [
   {
     question: "How do you think?",
     answer:
-      "We think in systems: listen, observe, simplify, then build. Before writing code or deploying models, Nabhi Labs absorbs the real problem, finds patterns in complexity, and removes what does not matter. That sequence keeps AI and software from becoming more noise. It is the same philosophy behind Second Brain and our client engagements—understanding first, technology second. Research on systems thinking and responsible AI design reinforces this order: durable solutions emerge when context, constraints, and human behaviour are treated as primary inputs rather than afterthoughts.",
+      "We think in systems: listen, observe, simplify, then build. Before writing code or deploying models, Nabhi Labs absorbs the real problem, finds patterns in complexity, and removes what does not matter. That sequence keeps AI and software from becoming more noise. It is the same philosophy behind Nabhi Persona and our client engagements—understanding first, technology second. Research on systems thinking and responsible AI design reinforces this order: durable solutions emerge when context, constraints, and human behaviour are treated as primary inputs rather than afterthoughts.",
   },
   {
     question: "What is your signature creation?",
     answer:
-      "Second Brain is Nabhi Labs’ signature creation: an intelligence layer that turns scattered institutional knowledge into active, context-aware understanding. Instead of leaving insight trapped in folders, tools, and forgotten conversations, Second Brain connects what people know with the moment a decision is made. It is private by design, continuously learning from real work, and built to act—not merely to store. Organizations use it when they need clarity under pressure: fewer rediscovered facts, faster grounded decisions, and a shared picture of how the system actually behaves.",
+      "Nabhi Persona is Nabhi Labs’ signature creation: an intelligence layer that turns scattered institutional knowledge into active, context-aware understanding. Instead of leaving insight trapped in folders, tools, and forgotten conversations, Nabhi Persona connects what people know with the moment a decision is made. It is private by design, continuously learning from real work, and built to act—not merely to store. Organizations use it when they need clarity under pressure: fewer rediscovered facts, faster grounded decisions, and a shared picture of how the system actually behaves.",
   },
   {
     question: "Why should I trust Nabhi Labs?",

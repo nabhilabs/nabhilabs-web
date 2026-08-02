@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PillarPage } from "@/components/content/PillarPage";
 import { getPageByPath } from "@/lib/pillar-pages";
 
-const path = "/resources/enterprise-second-brain-playbook";
+const path = "/resources/enterprise-nabhi-persona-playbook";
 const page = getPageByPath(path)!;
 
 export const metadata: Metadata = {
@@ -16,6 +16,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SecondBrainPlaybookPage() {
+export default function NabhiPersonaPlaybookPage() {
   return <PillarPage page={page} />;
 }

@@ -12,7 +12,7 @@ const capabilities = [
     description: "Useful products shaped around real human needs.",
     visual: "products",
     span: "md:col-span-8",
-    href: "/solutions/second-brain",
+    href: "/solutions/nabhi-persona",
   },
   {
     number: "02",

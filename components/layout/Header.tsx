@@ -1,5 +1,5 @@
 const navigation = [
-  { label: "Second Brain", href: "/solutions/second-brain" },
+  { label: "Nabhi Persona", href: "/solutions/nabhi-persona" },
   { label: "Capabilities", href: "/#capabilities" },
   { label: "Philosophy", href: "/#understanding" },
 ] as const;

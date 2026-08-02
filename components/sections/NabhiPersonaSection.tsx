@@ -73,11 +73,11 @@ const promises = [
   },
 ] as const;
 
-export function SecondBrainSection() {
+export function NabhiPersonaSection() {
   return (
     <section
       className="section-theme-dark relative z-10 bg-[#0e1012] text-white transition-colors duration-700"
-      id="second-brain"
+      id="nabhi-persona"
     >
       <Reveal className="mx-auto max-w-[95rem] bg-[radial-gradient(circle_at_70%_30%,#1a3d24_0%,#121a16_34%,#0e1012_76%)] p-6 md:p-10 lg:p-14">
         <div className="grid gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
@@ -87,9 +87,9 @@ export function SecondBrainSection() {
               What is your signature creation?
             </p>
             <h2 className="mt-8 font-display text-[clamp(4rem,7vw,7.5rem)] font-medium leading-[0.82] tracking-[-0.065em]">
-              Second
+              Nabhi
               <br />
-              Brain<span className="text-[#cde0b8]">.</span>
+              Persona<span className="text-[#cde0b8]">.</span>
             </h2>
             <div className="mt-8 max-w-lg space-y-4 text-sm font-light leading-7 text-white/65">
               <p>
@@ -97,15 +97,15 @@ export function SecondBrainSection() {
                 folders, tools, and forgotten conversations.
               </p>
               <p>
-                Second Brain turns that knowledge into active intelligence—
+                Nabhi Persona turns that knowledge into active intelligence—
                 available when context matters.
               </p>
             </div>
             <a
               className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#cde0b8] px-6 py-3 text-xs font-medium text-[#0f1c13] transition-colors hover:bg-white"
-              href="/solutions/second-brain"
+              href="/solutions/nabhi-persona"
             >
-              Explore Second Brain
+              Explore Nabhi Persona
               <ArrowUpRight aria-hidden="true" className="size-4" />
             </a>
 

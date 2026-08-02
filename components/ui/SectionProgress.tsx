@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const SECTIONS = [
   { id: "top", label: "01" },
   { id: "understanding", label: "02" },
-  { id: "second-brain", label: "03" },
+  { id: "nabhi-persona", label: "03" },
   { id: "capabilities", label: "04" },
   { id: "intelligence", label: "05" },
   { id: "proof", label: "06" },

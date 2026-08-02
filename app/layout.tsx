@@ -121,7 +121,7 @@ type RootLayoutProps = Readonly<{
 }>;
 
 const footerLinks = [
-  { href: "/solutions/second-brain", label: "Second Brain" },
+  { href: "/solutions/nabhi-persona", label: "Nabhi Persona" },
   { href: "/services/rag-engineering", label: "RAG Engineering" },
   { href: "/services/agentic-voice-workflows", label: "Voice Workflows" },
   { href: "/industries/healthcare-ai", label: "Healthcare AI" },

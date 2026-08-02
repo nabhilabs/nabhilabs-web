@@ -50,6 +50,20 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     qualities: [60, 75],
   },
+  async redirects() {
+    return [
+      {
+        source: "/solutions/second-brain",
+        destination: "/solutions/nabhi-persona",
+        permanent: true,
+      },
+      {
+        source: "/resources/enterprise-second-brain-playbook",
+        destination: "/resources/enterprise-nabhi-persona-playbook",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

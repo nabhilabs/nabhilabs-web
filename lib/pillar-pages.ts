@@ -20,47 +20,47 @@ export type PillarPageContent = {
 
 export const pillarPages: PillarPageContent[] = [
   {
-    slug: "second-brain",
-    path: "/solutions/second-brain",
-    eyebrow: "Solutions // Second Brain",
-    title: "Second Brain Architecture for Enterprises",
+    slug: "nabhi-persona",
+    path: "/solutions/nabhi-persona",
+    eyebrow: "Solutions // Nabhi Persona",
+    title: "Nabhi Persona Architecture for Enterprises",
     description:
-      "Nabhi Labs designs Second Brain architectures that turn scattered institutional knowledge into active, private, decision-ready intelligence.",
-    headline: "Second Brain architecture for enterprises",
-    lede: "Nabhi Labs builds Second Brain systems that connect what your organization already knows to the moment a decision is made—private by design, continuously learning from real work.",
-    primaryKeyword: "second brain architecture for enterprises",
+      "Nabhi Labs designs Nabhi Persona architectures that turn scattered institutional knowledge into active, private, decision-ready intelligence.",
+    headline: "Nabhi Persona architecture for enterprises",
+    lede: "Nabhi Labs builds Nabhi Persona systems that connect what your organization already knows to the moment a decision is made—private by design, continuously learning from real work.",
+    primaryKeyword: "Nabhi Persona architecture for enterprises",
     datePublished: "2026-08-02",
     dateModified: "2026-08-02",
     sections: [
       {
         heading: "Why institutional knowledge stays trapped",
         body: [
-          "Most enterprises already own the answers. They live in tickets, decks, chats, CRMs, wikis, and the heads of people who leave. Search returns documents; meetings rediscover the same facts; AI chatbots invent when context is thin. A Second Brain is not another repository. It is an intelligence layer that keeps knowledge active—retrieved with provenance, reasoned over with constraints, and ready when pressure is highest.",
-          "Nabhi Labs treats Second Brain work as systems design first. Before models or vector stores, we map who decides, which sources are trusted, and where clarity collapses. That sequence keeps the product from becoming more noise.",
+          "Most enterprises already own the answers. They live in tickets, decks, chats, CRMs, wikis, and the heads of people who leave. Search returns documents; meetings rediscover the same facts; AI chatbots invent when context is thin. A Nabhi Persona is not another repository. It is an intelligence layer that keeps knowledge active—retrieved with provenance, reasoned over with constraints, and ready when pressure is highest.",
+          "Nabhi Labs treats Nabhi Persona work as systems design first. Before models or vector stores, we map who decides, which sources are trusted, and where clarity collapses. That sequence keeps the product from becoming more noise.",
         ],
       },
       {
         heading: "What Nabhi Labs implements",
         body: [
-          "A Nabhi Second Brain architecture typically includes governed ingestion from the tools teams already use, retrieval that respects permissions, memory that updates from real outcomes, and interfaces that answer in the language of the work—not generic chat. Teams use it when rediscovery costs more than delivery, and when leadership needs a shared picture of how the system actually behaves.",
+          "A Nabhi Persona architecture typically includes governed ingestion from the tools teams already use, retrieval that respects permissions, memory that updates from real outcomes, and interfaces that answer in the language of the work—not generic chat. Teams use it when rediscovery costs more than delivery, and when leadership needs a shared picture of how the system actually behaves.",
           "On average, teams that reconnect scattered knowledge into usable understanding report about a 25% increase in operational clarity. Nabhi Labs has tailored 50+ models to unique operating contexts. Serious inquiries usually receive a thoughtful reply within 24 hours.",
         ],
       },
       {
         heading: "How this differs from a knowledge base",
         body: [
-          "A wiki stores. A Second Brain acts. Storage still matters—but the measure of success is fewer rediscovered facts, faster grounded decisions, and less theatre around “AI transformation.” Nabhi Labs aligns practice with responsible AI guidance such as the NIST AI Risk Management Framework and the OECD AI Principles so claims stay inspectable.",
+          "A wiki stores. A Nabhi Persona acts. Storage still matters—but the measure of success is fewer rediscovered facts, faster grounded decisions, and less theatre around “AI transformation.” Nabhi Labs aligns practice with responsible AI guidance such as the NIST AI Risk Management Framework and the OECD AI Principles so claims stay inspectable.",
         ],
       },
     ],
     faqs: [
       {
-        question: "What is a Second Brain architecture for enterprises?",
+        question: "What is a Nabhi Persona architecture for enterprises?",
         answer:
-          "A Second Brain architecture for enterprises is a private intelligence layer that turns institutional knowledge into active, context-aware understanding. Nabhi Labs designs these systems so retrieval, memory, and action stay grounded in trusted sources rather than public web guesses.",
+          "A Nabhi Persona architecture for enterprises is a private intelligence layer that turns institutional knowledge into active, context-aware understanding. Nabhi Labs designs these systems so retrieval, memory, and action stay grounded in trusted sources rather than public web guesses.",
       },
       {
-        question: "How does Nabhi Labs build an enterprise Second Brain?",
+        question: "How does Nabhi Labs build an enterprise Nabhi Persona?",
         answer:
           "Nabhi Labs listens and maps the decision system first, then implements governed ingestion, permission-aware retrieval, and interfaces that surface answers with provenance. Technology follows understanding—not the other way around.",
       },
@@ -72,8 +72,8 @@ export const pillarPages: PillarPageContent[] = [
       },
       { href: "/services/rag-engineering", label: "RAG engineering services" },
       {
-        href: "/resources/enterprise-second-brain-playbook",
-        label: "Second Brain playbook",
+        href: "/resources/enterprise-nabhi-persona-playbook",
+        label: "Nabhi Persona playbook",
       },
     ],
   },
@@ -101,7 +101,7 @@ export const pillarPages: PillarPageContent[] = [
         heading: "Platform capabilities Nabhi Labs delivers",
         body: [
           "Typical engagements cover source connectors, access control, knowledge graphs or structured memory where they earn their keep, AI-assisted retrieval with citations, and workflows that push insight into the tools teams already open. The goal is institutional knowledge that is private by design and continuously refined from real use—not a one-time migration project.",
-          "Buyers comparing DMS, intranet, and “AI search” products use Nabhi Labs when they need a coherent architecture across products, RAG engineering, and Second Brain outcomes—not another silo.",
+          "Buyers comparing DMS, intranet, and “AI search” products use Nabhi Labs when they need a coherent architecture across products, RAG engineering, and Nabhi Persona outcomes—not another silo.",
         ],
       },
     ],
@@ -115,11 +115,11 @@ export const pillarPages: PillarPageContent[] = [
       {
         question: "How is Nabhi Labs different from a wiki vendor?",
         answer:
-          "Nabhi Labs is not a single wiki product. We architect knowledge systems—often combining Second Brain patterns, RAG engineering, and operational workflows—so organizations gain clarity rather than another place to dump files.",
+          "Nabhi Labs is not a single wiki product. We architect knowledge systems—often combining Nabhi Persona patterns, RAG engineering, and operational workflows—so organizations gain clarity rather than another place to dump files.",
       },
     ],
     related: [
-      { href: "/solutions/second-brain", label: "Second Brain solutions" },
+      { href: "/solutions/nabhi-persona", label: "Nabhi Persona solutions" },
       { href: "/services/rag-engineering", label: "Custom RAG implementation" },
       { href: "/industries/healthcare-ai", label: "Healthcare AI systems" },
     ],
@@ -148,7 +148,7 @@ export const pillarPages: PillarPageContent[] = [
         heading: "Engagement model",
         body: [
           "Engagements usually start with a retrieval audit: what sources matter, how answers will be judged, and which risks matter most. Then Nabhi Labs builds or hardens pipelines—ingestion, embeddings or lexical search, orchestration, and interfaces—aligned with responsible AI practice from NIST and OECD guidance.",
-          "Teams hire Nabhi Labs for RAG consulting when they need production systems tied to Second Brain or healthcare platforms, not slides about “AI transformation.”",
+          "Teams hire Nabhi Labs for RAG consulting when they need production systems tied to Nabhi Persona or healthcare platforms, not slides about “AI transformation.”",
         ],
       },
       {
@@ -175,7 +175,7 @@ export const pillarPages: PillarPageContent[] = [
         href: "/resources/rag-evaluation-checklist",
         label: "RAG evaluation checklist",
       },
-      { href: "/solutions/second-brain", label: "Second Brain" },
+      { href: "/solutions/nabhi-persona", label: "Nabhi Persona" },
       {
         href: "/services/agentic-voice-workflows",
         label: "Agentic voice workflows",
@@ -199,7 +199,7 @@ export const pillarPages: PillarPageContent[] = [
         heading: "Conversation without action is theatre",
         body: [
           "Call centers and ops teams do not need another novelty demo. They need voice agents connected to internal tools: ticketing, scheduling, knowledge retrieval, and escalation paths that humans trust. Agentic voice workflow automation means intent, tool calling, confirmation, and recovery when the world is messy.",
-          "Nabhi Labs designs conversational AI for enterprise ops with guardrails first—what the agent may never do, what requires confirmation, and how every action is logged. Retrieval from a Second Brain or RAG layer keeps answers grounded.",
+          "Nabhi Labs designs conversational AI for enterprise ops with guardrails first—what the agent may never do, what requires confirmation, and how every action is logged. Retrieval from a Nabhi Persona or RAG layer keeps answers grounded.",
         ],
       },
       {
@@ -223,7 +223,7 @@ export const pillarPages: PillarPageContent[] = [
     ],
     related: [
       { href: "/services/rag-engineering", label: "RAG engineering" },
-      { href: "/solutions/second-brain", label: "Second Brain" },
+      { href: "/solutions/nabhi-persona", label: "Nabhi Persona" },
       { href: "/industries/healthcare-ai", label: "Healthcare AI" },
     ],
   },
@@ -325,19 +325,19 @@ export const resourcePages: PillarPageContent[] = [
     ],
     related: [
       { href: "/services/rag-engineering", label: "RAG engineering services" },
-      { href: "/solutions/second-brain", label: "Second Brain" },
+      { href: "/solutions/nabhi-persona", label: "Nabhi Persona" },
     ],
   },
   {
-    slug: "enterprise-second-brain-playbook",
-    path: "/resources/enterprise-second-brain-playbook",
+    slug: "enterprise-nabhi-persona-playbook",
+    path: "/resources/enterprise-nabhi-persona-playbook",
     eyebrow: "Resources // Playbook",
-    title: "Enterprise Second Brain Playbook",
+    title: "Enterprise Nabhi Persona Playbook",
     description:
-      "Nabhi Labs’ enterprise Second Brain playbook: how to move from scattered knowledge to active intelligence without adding more noise.",
-    headline: "Enterprise Second Brain playbook",
-    lede: "This playbook outlines how Nabhi Labs sequences Second Brain work—understanding first, technology second—so enterprises gain clarity instead of another unused tool.",
-    primaryKeyword: "second brain for enterprises playbook",
+      "Nabhi Labs’ enterprise Nabhi Persona playbook: how to move from scattered knowledge to active intelligence without adding more noise.",
+    headline: "Enterprise Nabhi Persona playbook",
+    lede: "This playbook outlines how Nabhi Labs sequences Nabhi Persona work—understanding first, technology second—so enterprises gain clarity instead of another unused tool.",
+    primaryKeyword: "Nabhi Persona for enterprises playbook",
     datePublished: "2026-08-02",
     dateModified: "2026-08-02",
     sections: [
@@ -362,13 +362,13 @@ export const resourcePages: PillarPageContent[] = [
     ],
     faqs: [
       {
-        question: "How do you start a Second Brain for enterprises?",
+        question: "How do you start a Nabhi Persona for enterprises?",
         answer:
           "Start by mapping decisions and trusted sources, then govern ownership, then implement retrieval and interfaces with evaluations. Nabhi Labs follows listen, observe, simplify, build.",
       },
     ],
     related: [
-      { href: "/solutions/second-brain", label: "Second Brain solutions" },
+      { href: "/solutions/nabhi-persona", label: "Nabhi Persona solutions" },
       {
         href: "/solutions/enterprise-knowledge-management",
         label: "Knowledge management",
@@ -388,7 +388,7 @@ export const caseStudyIndex = {
   patterns: [
     {
       title: "Institutional knowledge → active answers",
-      body: "A multi-team organization drowned in drives and chat history. Nabhi Labs mapped decision paths, then shipped a permissioned Second Brain layer. Outcome pattern: fewer rediscovery loops and clearer handoffs; teams reported on the order of a 25% lift in operational clarity after knowledge became usable.",
+      body: "A multi-team organization drowned in drives and chat history. Nabhi Labs mapped decision paths, then shipped a permissioned Nabhi Persona layer. Outcome pattern: fewer rediscovery loops and clearer handoffs; teams reported on the order of a 25% lift in operational clarity after knowledge became usable.",
     },
     {
       title: "RAG hardening after a brittle demo",
@@ -400,11 +400,11 @@ export const caseStudyIndex = {
     },
   ],
   related: [
-    { href: "/solutions/second-brain", label: "Second Brain" },
+    { href: "/solutions/nabhi-persona", label: "Nabhi Persona" },
     { href: "/services/rag-engineering", label: "RAG engineering" },
     {
-      href: "/resources/enterprise-second-brain-playbook",
-      label: "Second Brain playbook",
+      href: "/resources/enterprise-nabhi-persona-playbook",
+      label: "Nabhi Persona playbook",
     },
   ],
 } as const;
