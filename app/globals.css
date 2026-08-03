@@ -163,6 +163,28 @@ a {
   animation: philosophy-float 4.5s ease-in-out infinite;
 }
 
+@keyframes flagship-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.flagship-float {
+  animation: flagship-float 6.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flagship-float,
+  .philosophy-float {
+    animation: none;
+  }
+}
+
 .bento-card {
   transform-style: preserve-3d;
 }

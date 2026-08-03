@@ -1,59 +1,14 @@
 import {
   ArrowUpRight,
-  Bookmark,
   BrainCircuit,
-  FileText,
   Infinity,
   Layers3,
-  Network,
-  Search,
   ShieldCheck,
-  Sparkles,
   Sunrise,
   Target,
-  Zap,
 } from "lucide-react";
 import { ChapterTag } from "@/components/ui/ChapterTag";
 import { Reveal } from "@/components/ui/Reveal";
-
-const intelligenceActions = [
-  {
-    title: "Captures",
-    copy: "Notes, docs, chats, emails, meetings, and more.",
-    icon: FileText,
-    position: "left-[2%] top-[13%]",
-  },
-  {
-    title: "Understands",
-    copy: "Finds patterns and connects the dots.",
-    icon: Network,
-    position: "left-0 top-[40%]",
-  },
-  {
-    title: "Remembers",
-    copy: "Retains what matters, for you. Forever.",
-    icon: Bookmark,
-    position: "left-[3%] top-[67%]",
-  },
-  {
-    title: "Retrieves",
-    copy: "Instant answers from your knowledge, not the web.",
-    icon: Search,
-    position: "right-[2%] top-[13%]",
-  },
-  {
-    title: "Reasons",
-    copy: "Synthesizes insights so you can decide with clarity.",
-    icon: Sparkles,
-    position: "right-0 top-[40%]",
-  },
-  {
-    title: "Acts",
-    copy: "Turns understanding into action—faster.",
-    icon: Zap,
-    position: "right-[3%] top-[67%]",
-  },
-] as const;
 
 const promises = [
   {
@@ -135,71 +90,15 @@ export function NabhiPersonaSection() {
             </div>
           </div>
 
-          <div className="relative min-h-[38rem] overflow-hidden rounded-[28px] border border-white/10 bg-black/10 md:min-h-[42rem]">
-            <p className="absolute left-6 top-5 z-20 font-mono text-[9px] uppercase tracking-[0.16em] text-[#cde0b8]/70">
-              :: Active intelligence map
-            </p>
-
-            <span className="absolute left-1/2 top-[43%] size-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#cde0b8]/10" />
-            <span className="absolute left-1/2 top-[43%] size-[23rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#cde0b8]/10" />
-            <span className="absolute left-1/2 top-[43%] size-[16rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#cde0b8]/15" />
-            <span className="absolute left-1/2 top-[43%] h-px w-[90%] -translate-x-1/2 bg-[#cde0b8]/10" />
-            <span className="absolute left-1/2 top-[43%] h-[70%] w-px -translate-y-1/2 bg-[#cde0b8]/10" />
-
-            <div className="absolute left-1/2 top-[42%] z-10 -translate-x-1/2 -translate-y-1/2">
-              <div className="relative grid h-52 w-44 place-items-center rounded-[50%_50%_42%_42%] border border-[#cde0b8]/30 bg-[linear-gradient(90deg,rgba(255,255,255,0.03),rgba(205,224,184,0.12),rgba(255,255,255,0.03))] shadow-[inset_0_0_50px_rgba(205,224,184,0.08),0_0_60px_rgba(156,207,108,0.15)] backdrop-blur-sm">
-                <BrainCircuit
-                  aria-label="Knowledge intelligence core"
-                  className="size-28 text-[#cde0b8] drop-shadow-[0_0_18px_rgba(205,224,184,0.7)]"
-                  strokeWidth={1}
-                />
-                <span className="absolute inset-x-2 bottom-2 h-5 rounded-[50%] border border-[#cde0b8]/20 bg-[#cde0b8]/10" />
-              </div>
-              <div className="mx-auto h-5 w-52 rounded-[50%] border border-[#cde0b8]/30 bg-[#163c27] shadow-[0_8px_0_#0a2518,0_16px_0_#071c13,0_24px_35px_rgba(0,0,0,0.45)]" />
-            </div>
-
-            {intelligenceActions.map((action) => {
-              const Icon = action.icon;
-
-              return (
-                <article
-                  className={`absolute z-20 hidden w-32 rounded-xl border border-white/10 bg-white/[0.045] p-3 backdrop-blur-md sm:block ${action.position}`}
-                  key={action.title}
-                >
-                  <Icon className="size-4 text-[#cde0b8]" />
-                  <h3 className="mt-2 font-mono text-[8px] uppercase tracking-[0.12em] text-[#cde0b8]">
-                    {action.title}
-                  </h3>
-                  <p className="mt-2 text-[9px] leading-4 text-white/55">
-                    {action.copy}
-                  </p>
-                </article>
-              );
-            })}
-
-            <div className="absolute inset-x-5 bottom-5 z-20 grid gap-4 rounded-2xl border border-white/10 bg-white/[0.045] p-4 backdrop-blur-md sm:grid-cols-[0.65fr_1fr] sm:items-center">
-              <div>
-                <p className="font-mono text-[8px] uppercase tracking-[0.14em] text-[#cde0b8]">
-                  Synthesis
-                </p>
-                <p className="mt-2 text-xs leading-5 text-white/70">
-                  Three connected insights,
-                  <br />
-                  one clear next step.
-                </p>
-              </div>
-              <div className="flex h-14 items-center gap-[3px] overflow-hidden">
-                {Array.from({ length: 52 }, (_, index) => (
-                  <span
-                    className="w-px shrink-0 bg-[#cde0b8]/70"
-                    key={index}
-                    style={{
-                      height: `${8 + ((index * 17) % 38)}px`,
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
+          <div className="relative flex items-center justify-center pt-10 lg:pt-16">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="Nabhi Persona intelligence"
+              className="flagship-float h-auto w-[112%] max-w-none object-contain lg:w-[118%]"
+              height={808}
+              src="/assets/Brain Section.svg"
+              width={1132}
+            />
           </div>
         </div>
 
