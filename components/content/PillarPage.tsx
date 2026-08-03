@@ -52,29 +52,52 @@ export function PillarPage({ page }: PillarPageProps) {
   };
 
   const offeringJsonLd = product
-    ? {
-        "@context": "https://schema.org",
-        "@type": product.schemaType,
-        name: product.name,
-        description: product.description,
-        url: `${SITE_URL}${product.url}`,
-        keywords: keywordList,
-        provider: {
-          "@type": "Organization",
-          name: "Nabhi Labs",
-          url: SITE_URL,
-        },
-        brand: {
-          "@type": "Brand",
-          name: "Nabhi Labs",
-        },
-        ...(product.schemaType === "SoftwareApplication"
-          ? {
-              applicationCategory: "BusinessApplication",
-              operatingSystem: "Web",
-            }
-          : {}),
-      }
+    ? product.schemaType === "Article" || product.schemaType === "TechArticle"
+      ? {
+          "@context": "https://schema.org",
+          "@type": product.schemaType,
+          headline: product.name,
+          name: product.name,
+          description: product.description,
+          url: `${SITE_URL}${product.url}`,
+          keywords: keywordList,
+          datePublished: page.datePublished,
+          dateModified: page.dateModified,
+          author: {
+            "@type": "Person",
+            name: "Nabhi Labs Editorial",
+            url: SITE_URL,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Nabhi Labs",
+            url: SITE_URL,
+          },
+          mainEntityOfPage: `${SITE_URL}${product.url}`,
+        }
+      : {
+          "@context": "https://schema.org",
+          "@type": product.schemaType,
+          name: product.name,
+          description: product.description,
+          url: `${SITE_URL}${product.url}`,
+          keywords: keywordList,
+          provider: {
+            "@type": "Organization",
+            name: "Nabhi Labs",
+            url: SITE_URL,
+          },
+          brand: {
+            "@type": "Brand",
+            name: "Nabhi Labs",
+          },
+          ...(product.schemaType === "SoftwareApplication"
+            ? {
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "Web",
+              }
+            : {}),
+        }
     : null;
 
   return (

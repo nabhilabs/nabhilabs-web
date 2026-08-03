@@ -4,7 +4,8 @@ export type Product = {
   url: string;
   description: string;
   keywords: string[];
-  schemaType: "SoftwareApplication" | "Service" | "Product";
+  /** Never use Product for free guides — Google Product snippets require offers/review. */
+  schemaType: "SoftwareApplication" | "Service" | "Article" | "TechArticle";
 };
 
 /**
@@ -119,7 +120,7 @@ export const products: Product[] = [
       "rag groundedness",
       "retrieval metrics",
     ],
-    schemaType: "Product",
+    schemaType: "TechArticle",
   },
   {
     id: "res-persona-playbook",
@@ -132,7 +133,7 @@ export const products: Product[] = [
       "enterprise persona playbook",
       "knowledge system playbook",
     ],
-    schemaType: "Product",
+    schemaType: "TechArticle",
   },
   {
     id: "res-case-studies",
@@ -145,7 +146,7 @@ export const products: Product[] = [
       "rag case study",
       "knowledge platform case study",
     ],
-    schemaType: "Product",
+    schemaType: "Article",
   },
   {
     id: "page-about",
@@ -163,7 +164,7 @@ export const products: Product[] = [
       "navi labs",
       "nabhilabs",
     ],
-    schemaType: "Product",
+    schemaType: "Article",
   },
   {
     id: "page-philosophy",
@@ -178,7 +179,7 @@ export const products: Product[] = [
       "understanding before technology",
       "automating workflows with active intelligence",
     ],
-    schemaType: "Product",
+    schemaType: "Article",
   },
   {
     id: "blog-agentic",
@@ -193,7 +194,7 @@ export const products: Product[] = [
       "agentic ai workflows",
       "langchain",
     ],
-    schemaType: "Product",
+    schemaType: "TechArticle",
   },
   {
     id: "page-services",
@@ -202,7 +203,7 @@ export const products: Product[] = [
     description:
       "Nabhi Labs services hub—Nabhi Persona, RAG, voice, healthcare AI.",
     keywords: ["nabhi labs services", "nabhi labs", "services"],
-    schemaType: "Product",
+    schemaType: "Article",
   },
   {
     id: "page-contact",
@@ -210,7 +211,7 @@ export const products: Product[] = [
     url: "/contact",
     description: "Contact Nabhi Labs at hello@nabhilabs.com.",
     keywords: ["contact nabhi labs", "nabhi labs email", "hello@nabhilabs.com"],
-    schemaType: "Product",
+    schemaType: "Article",
   },
   {
     id: "page-blog",
@@ -218,7 +219,7 @@ export const products: Product[] = [
     url: "/blog",
     description: "Blog index for Nabhi Labs engineering and philosophy notes.",
     keywords: ["nabhi labs blog", "nabhi labs engineering", "nabhi labs ai"],
-    schemaType: "Product",
+    schemaType: "Article",
   },
 ];
 
