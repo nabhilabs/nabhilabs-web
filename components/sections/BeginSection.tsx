@@ -35,7 +35,7 @@ export function BeginSection() {
       <Reveal className="mx-auto max-w-[95rem]">
         <div className="grid gap-12 px-6 py-12 md:px-10 md:py-16 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="relative min-h-[34rem] lg:sticky lg:top-24 lg:self-start lg:min-h-0">
-            <ChapterTag inverse>10 // Begin</ChapterTag>
+            <ChapterTag inverse>11 // Begin</ChapterTag>
             <p className="mt-6 font-mono text-[10px] text-white/50">
               What&apos;s next?
             </p>
@@ -49,14 +49,12 @@ export function BeginSection() {
               </span>
             </h2>
             <span className="mt-7 block h-px w-7 bg-[#a3e635]" />
-            <p className="mt-6 text-sm leading-7 text-white/55">
-              Complexity slows progress.
-              <br />
-              Clarity changes everything.
+            <p className="mt-6 section-copy text-white/60">
+              Complexity slows progress. Clarity changes everything.
             </p>
           </div>
 
-          <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-6 md:p-8">
+          <div className="ui-card-dark rounded-[28px] border border-white/10 bg-white/[0.03] p-6 md:p-8">
             <form onSubmit={submitInquiry}>
               <label className="grid grid-cols-[2.5rem_1fr] gap-4">
                 <span className="mt-1 grid size-10 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-[#a3e635]">

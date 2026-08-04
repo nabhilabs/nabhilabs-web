@@ -100,8 +100,29 @@ export function LazySection({
   }, [deferUntilIdle, loader, rootMargin]);
 
   return (
-    <div ref={ref} style={Comp ? undefined : { minHeight }}>
-      {Comp ? <Comp /> : null}
+    <div
+      aria-busy={!Comp}
+      className={Comp ? undefined : "relative"}
+      ref={ref}
+      style={Comp ? undefined : { minHeight }}
+    >
+      {Comp ? (
+        <Comp />
+      ) : (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-6 top-10 mx-auto max-w-[95rem] md:inset-x-10"
+        >
+          <div className="lazy-skeleton mb-4 h-3 w-28" />
+          <div className="lazy-skeleton mb-3 h-12 w-[min(100%,28rem)]" />
+          <div className="lazy-skeleton mb-8 h-4 w-[min(100%,36rem)]" />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="lazy-skeleton h-36" />
+            <div className="lazy-skeleton h-36" />
+            <div className="lazy-skeleton hidden h-36 lg:block" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -6,76 +6,72 @@ export function HeroSection() {
       className="hero-landing relative z-10 min-h-[100svh] overflow-hidden"
       id="top"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(242,244,240,0.56)_0%,rgba(242,244,240,0.28)_48%,rgba(242,244,240,0.04)_76%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(242,244,240,0.62)_0%,rgba(242,244,240,0.32)_48%,rgba(242,244,240,0.06)_78%)]" />
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-[95rem] items-center px-6 pb-10 pt-24 md:px-12 lg:px-20">
-        <div className="w-full max-w-[44rem]">
-          <span className="inline-flex rounded-full border border-white/70 bg-white/70 px-4 py-2 font-mono text-[10px] tracking-[0.12em] text-[#31543a] shadow-sm">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-[95rem] items-center px-6 pb-12 pt-24 md:px-12 lg:px-20">
+        <div className="w-full max-w-[46rem]">
+          <span className="hero-enter inline-flex rounded-full border border-white/70 bg-white/75 px-4 py-2 font-mono text-[10px] tracking-[0.12em] text-[#31543a] shadow-sm">
             + &nbsp; Understanding → Intelligence → Impact
           </span>
 
           <h1
-            className="mt-7 max-w-[42rem] text-[clamp(3.4rem,6.4vw,6.8rem)] font-medium leading-[0.9] tracking-[-0.065em] text-[#0f1c13]"
+            className="hero-enter hero-enter-delay-1 mt-6 max-w-[42rem] font-display text-[clamp(3.6rem,7vw,7rem)] font-medium leading-[0.88] tracking-[-0.065em] text-[#0f1c13]"
             id="hero-title"
-            style={{
-              fontFamily:
-                "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-            }}
           >
             Nabhi Labs
           </h1>
 
-          <h2 className="mt-5 max-w-[36rem] font-display text-[clamp(1.6rem,3vw,2.4rem)] font-medium leading-[1.05] tracking-[-0.04em] text-[#0f1c13]">
+          <h2 className="hero-enter hero-enter-delay-2 mt-4 max-w-[38rem] font-display text-[clamp(1.75rem,3.2vw,2.65rem)] font-medium leading-[1.08] tracking-[-0.04em] text-[#0f1c13]">
             Where complexity becomes{" "}
-            <mark className="rounded-[0.14em] bg-[#cde0b8] px-[0.04em] text-inherit">
+            <mark className="rounded-[0.14em] bg-[#cde0b8] px-[0.06em] text-inherit">
               clarity
             </mark>
             .
           </h2>
 
-          <p className="mt-6 max-w-md text-base font-light leading-7 text-[#314238] md:text-lg">
+          <p className="hero-enter hero-enter-delay-3 mt-5 max-w-lg section-copy font-light text-[#314238]">
             The official site for Nabhi Labs. Before code, before AI, before
             design — comes understanding. Nabhi Persona, RAG engineering, and
             agentic workflows follow from that order.
           </p>
 
-          <div className="mt-7 grid max-w-[36rem] gap-3 sm:grid-cols-2">
-            <article className="flex flex-col justify-between rounded-3xl border border-white/60 bg-white/55 p-5 shadow-[0_18px_50px_rgba(26,51,35,0.10)]">
+          <div className="hero-enter hero-enter-delay-3 mt-7 grid max-w-[38rem] gap-3 sm:grid-cols-2">
+            <article className="ui-card flex flex-col justify-between rounded-3xl border border-white/70 bg-white/65 p-5 shadow-[0_18px_50px_rgba(26,51,35,0.10)]">
               <div>
                 <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#5a7052]">
                   01 // Perspective
                 </p>
-                <h2 className="mt-3 font-display text-xl font-medium tracking-[-0.03em] text-[#0f1c13]">
+                <h3 className="mt-3 font-display text-xl font-medium tracking-[-0.03em] text-[#0f1c13]">
                   Carrying Complexity?
-                </h2>
-                <p className="mt-2 text-xs leading-5 text-[#4a5b4e]">
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#4a5b4e]">
                   Too many tools? Too much noise? Let&apos;s unpack what is
                   actually happening in your system.
                 </p>
               </div>
               <a
-                className="mt-4 w-fit rounded-full bg-[#1a3323] px-4 py-2.5 text-[10px] font-medium text-white transition-colors hover:bg-[#2c4f37]"
+                className="mt-5 w-fit rounded-full bg-[#1a3323] px-4 py-2.5 text-xs font-medium text-white transition-colors hover:bg-[#2c4f37]"
                 href="#understanding"
               >
                 Unpack the Problem →
               </a>
             </article>
 
-            <article className="flex flex-col justify-between rounded-3xl border border-white/60 bg-white/55 p-5 shadow-[0_18px_50px_rgba(26,51,35,0.10)]">
+            <article className="ui-card flex flex-col justify-between rounded-3xl border border-white/70 bg-white/65 p-5 shadow-[0_18px_50px_rgba(26,51,35,0.10)]">
               <div>
                 <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#5a7052]">
                   02 // Conversation
                 </p>
-                <h2 className="mt-3 font-display text-xl font-medium tracking-[-0.03em] text-[#0f1c13]">
+                <h3 className="mt-3 font-display text-xl font-medium tracking-[-0.03em] text-[#0f1c13]">
                   Start with Understanding
-                </h2>
-                <p className="mt-2 text-xs leading-5 text-[#4a5b4e]">
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#4a5b4e]">
                   No sales pitches. Just a thoughtful discussion about your
                   architecture and goals.
                 </p>
               </div>
               <a
-                className="mt-4 w-fit rounded-full border border-[#c8d6c4] bg-white/80 px-4 py-2.5 text-[10px] font-semibold text-[#0f1c13] transition-colors hover:bg-white"
+                className="mt-5 w-fit rounded-full border border-[#c8d6c4] bg-white/85 px-4 py-2.5 text-xs font-semibold text-[#0f1c13] transition-colors hover:bg-white"
                 href="#begin"
               >
                 Schedule a Call →
@@ -83,22 +79,19 @@ export function HeroSection() {
             </article>
           </div>
 
-          <div className="mt-5 flex max-w-[42rem] flex-wrap items-center gap-x-4 gap-y-2 rounded-3xl border border-white/70 bg-white/70 px-5 py-3 font-mono text-[9px] tracking-[0.04em] text-[#314238] shadow-sm sm:rounded-full">
-            <span>Trusted by thinkers and builders worldwide</span>
-            <span
-              aria-hidden="true"
-              className="hidden text-[#5a7052]/45 sm:block"
-            >
-              |
-            </span>
-            <span>Enterprise-grade. Human-first.</span>
-            <span
-              aria-hidden="true"
-              className="hidden text-[#5a7052]/45 sm:block"
-            >
-              |
-            </span>
-            <span>Built for depth. Designed for clarity.</span>
+          <div className="hero-enter hero-enter-delay-4 mt-5 grid max-w-[42rem] overflow-hidden rounded-2xl border border-white/80 bg-white/70 shadow-sm sm:grid-cols-3">
+            {[
+              "Trusted by thinkers and builders worldwide",
+              "Enterprise-grade. Human-first.",
+              "Built for depth. Designed for clarity.",
+            ].map((line) => (
+              <p
+                className="flex min-h-[3.5rem] items-center justify-center border-b border-[#d8e0d5]/70 px-4 py-3 text-center font-mono text-[11px] leading-snug tracking-[0.01em] text-[#314238] last:border-b-0 sm:min-h-[4rem] sm:border-b-0 sm:border-r sm:border-[#d8e0d5]/70 sm:px-3.5 sm:last:border-r-0"
+                key={line}
+              >
+                {line}
+              </p>
+            ))}
           </div>
         </div>
       </div>
