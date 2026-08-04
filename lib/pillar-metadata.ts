@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
-import { getProductByPath, productKeywordsCsv } from "@/lib/products";
+import { getProductByPath } from "@/lib/products";
 import { getPageByPath } from "@/lib/pillar-pages";
+import {
+  clusterKeywordsFor,
+  primaryKeywords,
+} from "@/lib/keyword-strategy";
 
 export function pillarMetadata(path: string): Metadata {
   const page = getPageByPath(path);
@@ -9,9 +13,15 @@ export function pillarMetadata(path: string): Metadata {
   }
 
   const product = getProductByPath(path);
-  const keywords = product
-    ? product.keywords
-    : [page.primaryKeyword];
+  const baseKeywords = product ? product.keywords : [page.primaryKeyword];
+  const relatedSecondaries = clusterKeywordsFor(page.primaryKeyword, 12);
+  const keywords = Array.from(
+    new Set(
+      [...baseKeywords, ...primaryKeywords, ...relatedSecondaries].map((k) =>
+        k.trim(),
+      ),
+    ),
+  );
 
   return {
     title: page.title,
@@ -24,7 +34,7 @@ export function pillarMetadata(path: string): Metadata {
       url: path,
     },
     other: {
-      keywords: product ? productKeywordsCsv(product) : page.primaryKeyword,
+      keywords: keywords.join(", "),
     },
   };
 }

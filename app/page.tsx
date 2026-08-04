@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DeferredBelowFold } from "@/components/sections/DeferredBelowFold";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { aeoFaqs } from "@/lib/aeo-faq";
-import { brandKeywords } from "@/lib/keyword-strategy";
+import { brandKeywords, primaryKeywords } from "@/lib/keyword-strategy";
 import { SITE_URL } from "@/lib/site";
 
 const siteUrl = SITE_URL;
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     absolute: siteTitle,
   },
   description: siteDescription,
-  keywords: [...brandKeywords],
+  keywords: [...brandKeywords, ...primaryKeywords],
   alternates: {
     canonical: "/",
   },
@@ -36,7 +36,7 @@ const webPageJsonLd = {
   datePublished: "2024-06-01",
   dateModified: "2026-08-02",
   inLanguage: "en",
-  keywords: brandKeywords.join(", "),
+  keywords: [...brandKeywords, ...primaryKeywords].join(", "),
   isPartOf: {
     "@type": "WebSite",
     name: "Nabhi Labs",

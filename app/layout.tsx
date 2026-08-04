@@ -42,6 +42,12 @@ export const metadata: Metadata = {
     "Nabhi Labs philosophy",
     "institutional knowledge AI",
     "agentic AI workflows",
+    "Hospital Management System",
+    "Artificial Intelligence",
+    "Software Development",
+    "Knowledge Management",
+    "AI Agents",
+    "Second Brain",
   ],
   authors: [{ name: "Nabhi Labs Editorial", url: siteUrl }],
   creator: "Nabhi Labs",
@@ -71,6 +77,11 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   other: {
     "article:author": "Nabhi Labs Editorial",

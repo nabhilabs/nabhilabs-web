@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { brandKeywords } from "@/lib/keyword-strategy";
+import { brandKeywords, primaryKeywords } from "@/lib/keyword-strategy";
 import { sameAsProfiles, socialProfiles } from "@/lib/social";
 
 export const metadata: Metadata = {
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     "Nabhi Labs",
     "Nabhi technology",
     ...brandKeywords.slice(0, 8),
+    ...primaryKeywords,
   ],
   alternates: { canonical: "/about" },
   openGraph: {
@@ -39,7 +40,7 @@ export default function AboutPage() {
       foundingDate: "2024",
       sameAs: [...sameAsProfiles],
     },
-    keywords: brandKeywords.join(", "),
+    keywords: [...brandKeywords, ...primaryKeywords].join(", "),
   };
 
   return (

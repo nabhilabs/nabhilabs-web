@@ -1,3 +1,8 @@
+import {
+  clusterKeywordsFor,
+  resolveKeywordPath,
+} from "@/lib/keyword-strategy";
+
 export type Product = {
   id: string;
   name: string;
@@ -10,6 +15,7 @@ export type Product = {
 
 /**
  * Searchable offerings — target words for on-site search and JSON-LD keywords.
+ * Cluster secondaries from nabhilabsKeysWord.txt are merged in below.
  */
 export const products: Product[] = [
   {
@@ -32,9 +38,12 @@ export const products: Product[] = [
       "private knowledge system",
       "decision ready ai",
       "enterprise knowledge layer",
-      // Legacy / competing-term capture → Nabhi Persona
       "nabhi second brain",
       "private enterprise second brain",
+      "second brain",
+      "ai knowledge",
+      ...clusterKeywordsFor("NABHI Persona", 20),
+      ...clusterKeywordsFor("Second Brain", 10),
     ],
     schemaType: "SoftwareApplication",
   },
@@ -52,6 +61,8 @@ export const products: Product[] = [
       "wiki replacement",
       "document organizer",
       "knowledge graph",
+      "knowledge management",
+      ...clusterKeywordsFor("Knowledge Management", 20),
     ],
     schemaType: "SoftwareApplication",
   },
@@ -71,6 +82,8 @@ export const products: Product[] = [
       "data retrieval",
       "retrieval augmented generation",
       "enterprise rag",
+      ...clusterKeywordsFor("Artificial Intelligence", 12),
+      ...clusterKeywordsFor("AI Knowledge", 8),
     ],
     schemaType: "Service",
   },
@@ -90,6 +103,8 @@ export const products: Product[] = [
       "agentic ai workflows",
       "multi-agent workflows",
       "agentic ai for knowledge retrieval",
+      "ai agents",
+      ...clusterKeywordsFor("AI Agents", 20),
     ],
     schemaType: "Service",
   },
@@ -105,6 +120,21 @@ export const products: Product[] = [
       "clinical knowledge management",
       "hipaa aware rag",
       "hospital operations ai",
+      "hospital management system",
+      "patient management",
+      "doctor management",
+      "pharmacy management",
+      "laboratory management",
+      "hospital administration",
+      "appointment management",
+      "healthcare",
+      ...clusterKeywordsFor("Hospital Management System", 16),
+      ...clusterKeywordsFor("Patient Management", 8),
+      ...clusterKeywordsFor("Doctor Management", 8),
+      ...clusterKeywordsFor("Pharmacy Management", 8),
+      ...clusterKeywordsFor("Laboratory Management", 8),
+      ...clusterKeywordsFor("Hospital Administration", 8),
+      ...clusterKeywordsFor("Appointment Management", 8),
     ],
     schemaType: "Service",
   },
@@ -132,6 +162,7 @@ export const products: Product[] = [
       "nabhi persona playbook",
       "enterprise persona playbook",
       "knowledge system playbook",
+      "second brain",
     ],
     schemaType: "TechArticle",
   },
@@ -163,6 +194,8 @@ export const products: Product[] = [
       "nabi labs tech",
       "navi labs",
       "nabhilabs",
+      "technology company",
+      ...clusterKeywordsFor("NABHI Labs", 24),
     ],
     schemaType: "Article",
   },
@@ -178,6 +211,8 @@ export const products: Product[] = [
       "architecture clarity",
       "understanding before technology",
       "automating workflows with active intelligence",
+      "research & innovation",
+      ...clusterKeywordsFor("Research & Innovation", 10),
     ],
     schemaType: "Article",
   },
@@ -193,6 +228,8 @@ export const products: Product[] = [
       "langchain context retrieval frameworks",
       "agentic ai workflows",
       "langchain",
+      "ai agents",
+      ...clusterKeywordsFor("AI Agents", 12),
     ],
     schemaType: "TechArticle",
   },
@@ -202,7 +239,26 @@ export const products: Product[] = [
     url: "/services",
     description:
       "Nabhi Labs services hub—Nabhi Persona, RAG, voice, healthcare AI.",
-    keywords: ["nabhi labs services", "nabhi labs", "services"],
+    keywords: [
+      "nabhi labs services",
+      "nabhi labs",
+      "services",
+      "software development",
+      "software engineering",
+      "product development",
+      "website development",
+      "mobile app development",
+      "startup technology",
+      "enterprise software",
+      "technology services",
+      "business automation",
+      "digital transformation",
+      ...clusterKeywordsFor("Software Engineering", 12),
+      ...clusterKeywordsFor("Product Development", 10),
+      ...clusterKeywordsFor("Website Development", 10),
+      ...clusterKeywordsFor("Mobile App Development", 10),
+      ...clusterKeywordsFor("Startup Technology", 10),
+    ],
     schemaType: "Article",
   },
   {
@@ -229,12 +285,8 @@ export function searchProducts(query: string): Product[] {
 
   const tokens = cleanQuery.split(/\s+/).filter(Boolean);
 
-  return products.filter((product) => {
-    const haystack = [
-      product.name,
-      product.description,
-      ...product.keywords,
-    ]
+  const direct = products.filter((product) => {
+    const haystack = [product.name, product.description, ...product.keywords]
       .join(" ")
       .toLowerCase();
 
@@ -253,6 +305,13 @@ export function searchProducts(query: string): Product[] {
 
     return matchesText || matchesKeywords || matchesTokens;
   });
+
+  if (direct.length) return direct;
+
+  const path = resolveKeywordPath(cleanQuery);
+  if (!path) return [];
+  const mapped = products.filter((product) => product.url === path);
+  return mapped.length ? mapped : products.filter((p) => p.url === "/");
 }
 
 export function getProductByPath(path: string): Product | undefined {

@@ -1,8 +1,10 @@
 /**
  * Branded + tech keyword map for Nabhi Labs.
- * Product name is Nabhi Persona (not "Second Brain").
- * Fuzzy/misspell entries help on-site search and schema alternateName signals.
+ * Full cluster bank lives in `lib/keyword-bank.json` (built from nabhilabsKeysWord.txt).
+ * Product name is Nabhi Persona; "Second Brain" is retained as a capture/legacy term.
  */
+
+import keywordBank from "@/lib/keyword-bank.json";
 
 export const brandKeywords = [
   "Nabhi Labs",
@@ -44,6 +46,131 @@ export const techKeywords = {
   ],
 } as const;
 
+/**
+ * Primary SEO keywords provided by the business (30).
+ * Used for page meta keywords / schema keyword fields (not as visible H1 spam).
+ */
+export const primaryKeywords = [
+  "Nabhi Labs",
+  "Artificial Intelligence",
+  "Software Development",
+  "Hospital Management System",
+  "Second Brain",
+  "AI Agents",
+  "Product Development",
+  "Website Development",
+  "Mobile App Development",
+  "Enterprise Software",
+  "Digital Transformation",
+  "Cloud Computing",
+  "Data Analytics",
+  "Knowledge Management",
+  "Research & Innovation",
+  "Healthcare",
+  "Technology Services",
+  "Technology Company",
+  "Business Automation",
+  "Productivity",
+  "Cyber Security",
+  "Patient Management",
+  "Doctor Management",
+  "Pharmacy Management",
+  "Laboratory Management",
+  "Hospital Administration",
+  "Appointment Management",
+  "AI Knowledge",
+  "Software Engineering",
+  "Startup Technology",
+] as const;
+
+/** Parsed clusters + flat keyword list from nabhilabsKeysWord.txt */
+export const keywordClusters = keywordBank.clusters;
+export const allBankKeywords = keywordBank.allKeywords as string[];
+
+/** Map each cluster primary → canonical on-site page. */
+export const clusterPageMap: Record<string, string> = {
+  "NABHI Labs": "/",
+  "Nabhi Labs": "/",
+  "Artificial Intelligence": "/",
+  "Hospital Management System": "/industries/healthcare-ai",
+  "NABHI Persona": "/solutions/nabhi-persona",
+  "Nabhi Persona": "/solutions/nabhi-persona",
+  "Second Brain": "/solutions/nabhi-persona",
+  "Knowledge Management": "/solutions/enterprise-knowledge-management",
+  "AI Agents": "/services/agentic-voice-workflows",
+  "Patient Management": "/industries/healthcare-ai",
+  "Doctor Management": "/industries/healthcare-ai",
+  "Pharmacy Management": "/industries/healthcare-ai",
+  "Laboratory Management": "/industries/healthcare-ai",
+  "Hospital Administration": "/industries/healthcare-ai",
+  "Appointment Management": "/industries/healthcare-ai",
+  "Healthcare": "/industries/healthcare-ai",
+  "Software Engineering": "/services",
+  "Software Development": "/services",
+  "Product Development": "/services",
+  "Website Development": "/services",
+  "Mobile App Development": "/services",
+  "Startup Technology": "/services",
+  "Enterprise Software": "/services",
+  "Technology Services": "/services",
+  "Technology Company": "/about",
+  "Business Automation": "/services",
+  "Digital Transformation": "/services",
+  "Cloud Computing": "/services",
+  "Data Analytics": "/services",
+  "Research & Innovation": "/philosophy",
+  "Productivity": "/solutions/nabhi-persona",
+  "Cyber Security": "/services",
+  "AI Knowledge": "/solutions/nabhi-persona",
+};
+
+export function getClusterByPrimary(primary: string) {
+  const needle = primary.toLowerCase();
+  return keywordClusters.find(
+    (cluster) =>
+      cluster.primary.toLowerCase() === needle ||
+      cluster.name.toLowerCase() === needle,
+  );
+}
+
+/** Secondary keywords for a primary cluster (capped for meta / product tags). */
+export function clusterKeywordsFor(
+  primary: string,
+  limit = 24,
+): string[] {
+  const cluster = getClusterByPrimary(primary);
+  if (!cluster) return [];
+  return cluster.keywords
+    .filter((kw) => kw.toLowerCase() !== primary.toLowerCase())
+    .slice(0, limit);
+}
+
+/** Resolve a search phrase to a site path via the keyword bank. */
+export function resolveKeywordPath(query: string): string | undefined {
+  const clean = query.toLowerCase().trim();
+  if (!clean) return undefined;
+
+  for (const [primary, page] of Object.entries(clusterPageMap)) {
+    if (primary.toLowerCase() === clean) return page;
+  }
+
+  for (const cluster of keywordClusters) {
+    const hit = cluster.keywords.some((kw) => {
+      const k = kw.toLowerCase();
+      return k === clean || k.includes(clean) || clean.includes(k);
+    });
+    if (hit) {
+      return (
+        clusterPageMap[cluster.primary] ||
+        clusterPageMap[cluster.name] ||
+        "/"
+      );
+    }
+  }
+
+  return undefined;
+}
+
 export const keywordPageMap = [
   {
     intent: "Navigational",
@@ -57,8 +184,24 @@ export const keywordPageMap = [
       "private enterprise Nabhi Persona",
       "institutional knowledge AI",
       "context-aware enterprise intelligence",
+      "Second Brain",
+      "AI Knowledge",
     ],
     page: "/solutions/nabhi-persona",
+  },
+  {
+    intent: "Healthcare / HMS",
+    keywords: [
+      "Hospital Management System",
+      "Patient Management",
+      "Doctor Management",
+      "Pharmacy Management",
+      "Laboratory Management",
+      "Hospital Administration",
+      "Appointment Management",
+      "Healthcare",
+    ],
+    page: "/industries/healthcare-ai",
   },
   {
     intent: "Technical Architecture",
@@ -66,9 +209,23 @@ export const keywordPageMap = [
       "agentic AI workflows",
       "multi-agent workflows in enterprise systems",
       "LangChain context retrieval frameworks",
+      "AI Agents",
     ],
     page: "/blog/agentic-ai-multi-agent-workflows",
     also: "/services/agentic-voice-workflows",
+  },
+  {
+    intent: "Services",
+    keywords: [
+      "Software Development",
+      "Software Engineering",
+      "Product Development",
+      "Website Development",
+      "Mobile App Development",
+      "Startup Technology",
+      "Enterprise Software",
+    ],
+    page: "/services",
   },
   {
     intent: "Philosophical",
@@ -76,6 +233,7 @@ export const keywordPageMap = [
       "simplifying complex tech systems",
       "architecture clarity",
       "Nabhi Labs philosophy",
+      "Research & Innovation",
     ],
     page: "/philosophy",
   },
@@ -88,4 +246,9 @@ export const brandAlternateNames = [
   "Nabi Labs",
   "Navi Labs",
   "Nabhi Lab",
+  "NABHI",
+  "NABHI Labs",
+  "NABHI Studio",
+  "Nabhi Studio",
+  "NABHI Technologies",
 ] as const;
