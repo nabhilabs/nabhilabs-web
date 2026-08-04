@@ -61,25 +61,9 @@ a {
 }
 
 .reveal-block {
-  opacity: 0;
-  transform: translate3d(0, 28px, 0);
-  transition:
-    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-block.is-visible {
+  /* Visible by default for LCP/SSR; optional enhance later */
   opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal-block {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
+  transform: none;
 }
 
 .below-fold {
@@ -90,131 +74,14 @@ a {
 @keyframes hero-enter {
   from {
     transform: translate3d(0, 24px, 0);
-    opacity: 0;
   }
   to {
     transform: translate3d(0, 0, 0);
-    opacity: 1;
   }
 }
 
 .hero-enter {
-  animation: hero-enter 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.hero-enter-delay-1 {
-  animation-delay: 0.08s;
-}
-
-.hero-enter-delay-2 {
-  animation-delay: 0.16s;
-}
-
-.hero-enter-delay-3 {
-  animation-delay: 0.24s;
-}
-
-.hero-enter-delay-4 {
-  animation-delay: 0.32s;
-}
-
-/* Interactive surface — highlight on hover across homepage boxes */
-.ui-card {
-  transition:
-    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.3s ease,
-    background-color 0.3s ease,
-    box-shadow 0.35s ease;
-}
-
-.ui-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(163, 230, 53, 0.55);
-  background-color: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 16px 40px rgba(26, 51, 35, 0.08);
-}
-
-.ui-card-dark {
-  transition:
-    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.3s ease,
-    background-color 0.3s ease,
-    box-shadow 0.35s ease;
-}
-
-.ui-card-dark:hover {
-  transform: translateY(-3px);
-  border-color: rgba(205, 224, 184, 0.45);
-  background-color: rgba(255, 255, 255, 0.07);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
-}
-
-.stat-number {
-  transition:
-    color 0.3s ease,
-    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-    text-shadow 0.35s ease;
-}
-
-.group:hover .stat-number,
-.ui-card:hover .stat-number {
-  color: #78966a;
-  transform: scale(1.04);
-  text-shadow: 0 0 28px rgba(120, 150, 106, 0.35);
-}
-
-.pipeline-step {
-  position: relative;
-}
-
-.pipeline-rail {
-  background: linear-gradient(
-    90deg,
-    rgba(120, 150, 106, 0.15),
-    rgba(120, 150, 106, 0.55),
-    rgba(120, 150, 106, 0.15)
-  );
-}
-
-.section-copy {
-  font-size: 1.05rem;
-  line-height: 1.75;
-}
-
-@media (min-width: 768px) {
-  .section-copy {
-    font-size: 1.125rem;
-    line-height: 1.8;
-  }
-}
-
-.lazy-skeleton {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1.5rem;
-  background: #ebf0e8;
-}
-
-.lazy-skeleton::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    100deg,
-    transparent 20%,
-    rgba(255, 255, 255, 0.55) 50%,
-    transparent 80%
-  );
-  animation: skeleton-shimmer 1.4s ease-in-out infinite;
-}
-
-@keyframes skeleton-shimmer {
-  from {
-    transform: translateX(-60%);
-  }
-  to {
-    transform: translateX(60%);
-  }
+  animation: hero-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* Decorative hero plane — CSS bg so it does not become / delay LCP. */
@@ -244,29 +111,10 @@ a {
   .hero-enter {
     animation: none;
   }
-
-  .lazy-skeleton::after {
-    animation: none;
-  }
-
-  .animate-story-spin,
-  .animate-story-spin-reverse {
-    animation: none;
-  }
-}
-
-@keyframes story-spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .animate-story-spin {
-  animation: story-spin 18s linear infinite;
-}
-
-.animate-story-spin-reverse {
-  animation: story-spin 28s linear infinite reverse;
+  animation: story-spin 10s linear infinite;
 }
 
 @keyframes philosophy-spin-cw {
@@ -332,13 +180,7 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   .flagship-float,
-  .philosophy-float,
-  .animate-story-spin,
-  .philosophy-spin-cw,
-  .philosophy-spin-cw-mid,
-  .philosophy-spin-cw-fast,
-  .philosophy-spin-ccw,
-  .philosophy-spin-ccw-fast {
+  .philosophy-float {
     animation: none;
   }
 }

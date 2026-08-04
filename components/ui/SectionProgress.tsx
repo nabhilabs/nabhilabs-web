@@ -12,8 +12,7 @@ const SECTIONS = [
   { id: "why-nabhi", label: "07" },
   { id: "our-story", label: "08" },
   { id: "team", label: "09" },
-  { id: "answers", label: "10" },
-  { id: "begin", label: "11" },
+  { id: "begin", label: "10" },
 ] as const;
 
 export function SectionProgress() {

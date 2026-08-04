@@ -22,7 +22,7 @@ export function ProofSection() {
               Why should I trust Nabhi Labs?
             </h3>
             <span className="mt-4 block h-px w-8 bg-[#78966a]" />
-            <p className="mt-5 max-w-sm section-copy text-[#4a5b4e]">
+            <p className="mt-5 max-w-xs text-xs leading-6 text-[#4a5b4e]">
               Selected systems where clearer information created more useful
               decisions—backed by 50+ tailored models, about 25% average gains
               in operational clarity, and responses within 24 hours. We align
@@ -66,7 +66,7 @@ export function ProofSection() {
             <h3 className="mt-4 font-display text-2xl font-medium tracking-[-0.035em] text-[#0f1c13]">
               Institutional knowledge, made active.
             </h3>
-            <p className="mt-3 max-w-xl text-sm leading-6 text-[#4a5b4e]">
+            <p className="mt-3 max-w-xl text-xs leading-6 text-[#4a5b4e]">
               We help organizations turn scattered information into connected
               understanding—so every decision is backed by clarity, not chance.
             </p>
@@ -74,36 +74,36 @@ export function ProofSection() {
             <ContextMap />
           </article>
 
-          <div className="grid gap-3 lg:border-l lg:border-[#d8e0d5] lg:pl-6">
-            <article className="ui-card group grid grid-cols-[4.5rem_1fr] gap-5 rounded-2xl border border-[#d8e0d5] bg-white/55 p-5 lg:p-6">
-              <span className="grid size-16 place-items-center rounded-2xl border border-[#d8e0d5] bg-white/70 text-[#78966a] transition-colors group-hover:border-[#a3e635]/50 group-hover:bg-[#cde0b8]/35">
-                <Box className="size-7" strokeWidth={1.2} />
+          <div className="grid border-l-0 border-[#d8e0d5] lg:border-l">
+            <article className="grid grid-cols-[5rem_1fr] gap-6 border-b border-[#d8e0d5] p-5 lg:p-8">
+              <span className="grid size-20 place-items-center rounded-2xl border border-[#d8e0d5] bg-white/40 text-[#78966a]">
+                <Box className="size-8" strokeWidth={1.2} />
               </span>
               <div>
-                <p className="stat-number font-display text-5xl font-medium tracking-[-0.065em] text-[#0f1c13] md:text-6xl">
+                <p className="font-display text-6xl font-medium tracking-[-0.065em] text-[#0f1c13]">
                   50+
                 </p>
-                <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.16em] text-[#5a7052]">
+                <p className="mt-2 font-mono text-[8px] uppercase tracking-[0.16em] text-[#5a7052]">
                   Models tailored
                 </p>
-                <p className="mt-3 max-w-xs text-sm leading-5 text-[#4a5b4e]">
+                <p className="mt-4 max-w-xs text-[10px] leading-5 text-[#4a5b4e]">
                   Purpose-built for unique contexts across industries.
                 </p>
               </div>
             </article>
 
-            <article className="ui-card group grid grid-cols-[4.5rem_1fr] gap-5 rounded-2xl border border-[#d8e0d5] bg-white/55 p-5 lg:p-6">
-              <span className="grid size-16 place-items-center rounded-2xl border border-[#d8e0d5] bg-white/70 text-[#78966a] transition-colors group-hover:border-[#a3e635]/50 group-hover:bg-[#cde0b8]/35">
-                <BarChart3 className="size-7" strokeWidth={1.2} />
+            <article className="grid grid-cols-[5rem_1fr] gap-6 p-5 lg:p-8">
+              <span className="grid size-20 place-items-center rounded-2xl border border-[#d8e0d5] bg-white/40 text-[#78966a]">
+                <BarChart3 className="size-8" strokeWidth={1.2} />
               </span>
               <div>
-                <p className="stat-number font-display text-5xl font-medium tracking-[-0.065em] text-[#0f1c13] md:text-6xl">
+                <p className="font-display text-6xl font-medium tracking-[-0.065em] text-[#0f1c13]">
                   25%
                 </p>
-                <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.16em] text-[#5a7052]">
+                <p className="mt-2 font-mono text-[8px] uppercase tracking-[0.16em] text-[#5a7052]">
                   Increase in operational clarity
                 </p>
-                <p className="mt-3 max-w-xs text-sm leading-5 text-[#4a5b4e]">
+                <p className="mt-4 max-w-xs text-[10px] leading-5 text-[#4a5b4e]">
                   On average, teams make better decisions—faster.
                 </p>
               </div>

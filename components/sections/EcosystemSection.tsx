@@ -164,56 +164,68 @@ export function EcosystemSection() {
       className="section-theme-light relative z-10 bg-[#f7f6f1]"
       id="capabilities"
     >
-      <Reveal className="mx-auto max-w-[95rem] px-6 py-10 md:px-10 md:py-14">
-        <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+      <Reveal className="mx-auto max-w-[95rem] px-6 py-12 md:px-10 md:py-16">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <ChapterTag>04 // What We Build</ChapterTag>
-            <h2 className="mt-6 font-display text-[clamp(2.8rem,5.5vw,5.6rem)] font-medium leading-[0.9] tracking-[-0.06em] text-[#0f1c13]">
+            <h2 className="mt-7 font-display text-[clamp(3rem,6vw,6.4rem)] font-medium leading-[0.88] tracking-[-0.06em] text-[#0f1c13]">
               One ecosystem.
               <br />
               Many useful forms<span className="text-[#78966a]">.</span>
             </h2>
-            <p className="mt-5 max-w-lg section-copy text-[#4a5b4e]">
+            <p className="mt-7 max-w-lg text-sm leading-6 text-[#4a5b4e]">
               Products, AI engineering, software, and systems—all consequences
               of the same philosophy.
             </p>
 
-            <div className="ui-card mt-6 max-w-sm rounded-2xl border border-[#d8e0d5] bg-white/55 p-4">
+            <div className="mt-10 max-w-sm">
               <p className="font-mono text-[9px] text-[#5a7052]">
                 — &nbsp; What do you build?
               </p>
-              <p className="mt-3 text-base leading-7 text-[#4a5b4e]">
-                Different outputs. Same foundation. We build solutions that
-                understand, connect, and create real impact.
+              <p className="mt-5 text-xs leading-5 text-[#4a5b4e]">
+                Different outputs. Same foundation.
+                <br />
+                We build solutions that understand, connect, and create real
+                impact.
               </p>
+            </div>
+
+            <div className="relative mt-12 hidden aspect-square w-full max-w-40 lg:block">
+              <span className="absolute inset-0 rounded-full border border-[#5a7052]/15" />
+              <span className="absolute inset-[18%] rounded-full border border-[#5a7052]/15" />
+              <span className="absolute inset-[37%] rounded-full border border-[#5a7052]/20" />
+              <span className="absolute inset-[46%] rounded-full bg-[#cde0b8] shadow-[0_0_28px_10px_rgba(205,224,184,0.35)]" />
+              <span className="absolute left-[12%] top-[30%] size-1.5 rounded-full bg-[#78966a]" />
+              <span className="absolute right-[9%] top-[20%] size-1 rounded-full bg-[#78966a]" />
+              <span className="absolute bottom-[13%] right-[32%] size-1.5 rounded-full bg-[#78966a]" />
             </div>
           </div>
 
           <div>
-            <div className="grid auto-rows-[minmax(12rem,auto)] grid-cols-1 gap-3 md:grid-cols-12">
+            <div className="grid auto-rows-[minmax(13.5rem,auto)] grid-cols-1 gap-2 md:grid-cols-12">
               {capabilities.map((capability, index) => (
                 <StaggerReveal
                   className={`h-full ${capability.span}`}
                   index={index}
                   key={capability.title}
                 >
-                  <BentoCard className="ui-card relative h-full min-h-[12rem] overflow-hidden rounded-2xl border border-[#d8e0d5] bg-white/55 p-5 shadow-[0_10px_30px_rgba(26,51,35,0.04)]">
-                    <div className="relative z-10 max-w-[62%]">
+                  <BentoCard className="relative h-full min-h-[13.5rem] overflow-hidden rounded-2xl border border-[#d8e0d5] bg-white/45 p-5 shadow-[0_10px_30px_rgba(26,51,35,0.04)] hover:border-[#a3e635]/45 hover:bg-white/75">
+                    <div className="relative z-10 max-w-[58%]">
                       <p className="font-mono text-sm text-[#78966a]">
                         {capability.number}
                       </p>
-                      <p className="mt-4 font-mono text-[8px] uppercase tracking-[0.16em] text-[#5a7052]">
+                      <p className="mt-5 font-mono text-[8px] uppercase tracking-[0.16em] text-[#5a7052]">
                         [ {capability.category} ]
                       </p>
-                      <h3 className="mt-2 font-display text-xl font-medium tracking-[-0.035em] text-[#0f1c13]">
+                      <h3 className="mt-3 font-display text-xl font-medium tracking-[-0.035em] text-[#0f1c13]">
                         {capability.title}
                       </h3>
-                      <p className="mt-3 max-w-xs text-base leading-7 text-[#4a5b4e]">
+                      <p className="mt-3 max-w-52 text-[11px] leading-5 text-[#4a5b4e]">
                         {capability.description}
                       </p>
                     </div>
 
-                    <div className="absolute inset-y-0 right-0 z-[1] w-[44%] opacity-80 transition-opacity duration-500 group-hover:opacity-100">
+                    <div className="absolute inset-y-0 right-0 z-[1] w-[48%] opacity-80 transition-opacity duration-500 group-hover:opacity-100">
                       <CapabilityVisual type={capability.visual} />
                     </div>
                     <a
@@ -231,7 +243,7 @@ export function EcosystemSection() {
               ))}
 
               <StaggerReveal className="h-full md:col-span-4" index={6}>
-                <BentoCard className="ui-card relative flex h-full min-h-[12rem] flex-col justify-center overflow-hidden rounded-2xl border border-[#d8e0d5] bg-white/40 p-6">
+                <BentoCard className="relative flex h-full min-h-[13.5rem] flex-col justify-center overflow-hidden rounded-2xl border border-[#d8e0d5] bg-white/30 p-6 hover:border-[#a3e635]/40">
                   <span className="absolute -left-5 top-1/2 size-36 -translate-y-1/2 rounded-full border border-[#5a7052]/10" />
                   <span className="absolute left-5 top-1/2 size-20 -translate-y-1/2 rounded-full border border-[#5a7052]/15" />
                   <span className="absolute left-[3.7rem] top-1/2 size-3 -translate-y-1/2 rounded-full bg-[#8fac79]" />
@@ -239,7 +251,7 @@ export function EcosystemSection() {
                     <p className="font-mono text-[8px] text-[#5a7052]">
                       Same foundation.
                     </p>
-                    <p className="mt-3 font-display text-2xl leading-7 tracking-[-0.04em] text-[#0f1c13]">
+                    <p className="mt-4 font-display text-2xl leading-7 tracking-[-0.04em] text-[#0f1c13]">
                       Different outputs.
                       <br />
                       One outcome—
@@ -250,7 +262,7 @@ export function EcosystemSection() {
               </StaggerReveal>
             </div>
 
-            <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[10px] tracking-[0.08em] text-[#4a5b4e]">
+            <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[8px] tracking-[0.08em] text-[#4a5b4e]">
               <span className="size-2 rounded-full bg-[#8fac79]" />
               <span>Every capability. Same philosophy.</span>
               <span>Understanding first. Technology second.</span>

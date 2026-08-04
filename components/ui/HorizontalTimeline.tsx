@@ -30,40 +30,35 @@ type HorizontalTimelineProps = {
 export function HorizontalTimeline({ steps }: HorizontalTimelineProps) {
   return (
     <div className="relative">
-      <span
-        aria-hidden
-        className="pipeline-rail pointer-events-none absolute left-6 right-6 top-[2.15rem] hidden h-0.5 rounded-full sm:block"
-      />
+      <span className="pointer-events-none absolute left-5 right-5 top-12 hidden h-px bg-[#c8d6c4] sm:block" />
 
-      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-3 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
-        {steps.map((step, index) => {
+      <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-7 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
+        {steps.map((step) => {
           const Icon: LucideIcon = ICONS[step.icon];
 
           return (
             <article
-              className="ui-card relative z-10 w-[78%] shrink-0 snap-center rounded-2xl border border-[#d8e0d5] bg-[#f7f6f1]/80 p-4 sm:w-auto sm:flex-1 sm:shrink"
+              className="relative z-10 w-[78%] shrink-0 snap-center rounded-2xl border border-transparent bg-transparent p-4 sm:w-auto sm:flex-1 sm:shrink"
               key={step.title}
             >
-              <div className="flex items-center gap-3">
-                <span className="grid size-10 place-items-center rounded-full border border-[#d8e0d5] bg-white text-[#5a7052] shadow-[0_0_0_4px_#f7f6f1]">
-                  <Icon className="size-4" strokeWidth={1.25} />
-                </span>
-                {index < steps.length - 1 ? (
-                  <span
-                    aria-hidden
-                    className="hidden h-px flex-1 bg-[#c8d6c4] sm:block lg:hidden"
-                  />
-                ) : null}
-              </div>
+              <span className="grid size-10 place-items-center rounded-full bg-[#edf3e8] text-[#5a7052]">
+                <Icon className="size-4" strokeWidth={1.25} />
+              </span>
 
-              <div className="mt-5">
-                <p className="font-mono text-[9px] text-[#78966a]">
-                  {step.number} · {step.period}
+              <span
+                aria-hidden
+                className="absolute left-[14px] top-[42px] size-3 rounded-full border-4 border-[#edf3e8] bg-[#78966a]"
+              />
+
+              <div className="mt-8">
+                <p className="font-mono text-[7px] text-[#5a7052]">
+                  {step.number}
                 </p>
-                <h3 className="mt-2 font-display text-base font-medium tracking-[-0.02em] text-[#0f1c13]">
+                <h3 className="mt-2 text-xs font-medium text-[#31543a]">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-[#4a5b4e]">
+                <p className="mt-1 text-[9px] text-[#4a5b4e]">{step.period}</p>
+                <p className="mt-3 text-[9px] leading-4 text-[#4a5b4e]">
                   {step.description}
                 </p>
               </div>

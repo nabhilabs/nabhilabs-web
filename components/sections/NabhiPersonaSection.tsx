@@ -46,7 +46,7 @@ export function NabhiPersonaSection() {
               <br />
               Persona<span className="text-[#cde0b8]">.</span>
             </h2>
-            <div className="mt-8 max-w-lg space-y-4 section-copy font-light text-white/70">
+            <div className="mt-8 max-w-lg space-y-4 text-sm font-light leading-7 text-white/65">
               <p>
                 Personal and institutional knowledge shouldn&apos;t live in
                 folders, tools, and forgotten conversations.
@@ -64,37 +64,37 @@ export function NabhiPersonaSection() {
               <ArrowUpRight aria-hidden="true" className="size-4" />
             </a>
 
-            <div className="mt-8 grid gap-3 border-t border-white/10 pt-6 sm:grid-cols-3">
-              <div className="ui-card-dark rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="mt-10 grid gap-5 border-t border-white/10 pt-6 sm:grid-cols-3">
+              <div>
                 <BrainCircuit className="size-5 text-[#cde0b8]" />
-                <h3 className="mt-3 text-sm">Always learning</h3>
-                <p className="mt-2 text-sm leading-5 text-white/50">
+                <h3 className="mt-3 text-xs">Always learning</h3>
+                <p className="mt-2 text-[10px] leading-4 text-white/45">
                   Continuously ingests and refines knowledge from every source.
                 </p>
               </div>
-              <div className="ui-card-dark rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+              <div>
                 <Layers3 className="size-5 text-[#cde0b8]" />
-                <h3 className="mt-3 text-sm">Context aware</h3>
-                <p className="mt-2 text-sm leading-5 text-white/50">
+                <h3 className="mt-3 text-xs">Context aware</h3>
+                <p className="mt-2 text-[10px] leading-4 text-white/45">
                   Understands the situation before surfacing what truly
                   matters.
                 </p>
               </div>
-              <div className="ui-card-dark rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+              <div>
                 <ShieldCheck className="size-5 text-[#cde0b8]" />
-                <h3 className="mt-3 text-sm">Private by design</h3>
-                <p className="mt-2 text-sm leading-5 text-white/50">
+                <h3 className="mt-3 text-xs">Private by design</h3>
+                <p className="mt-2 text-[10px] leading-4 text-white/45">
                   Your data stays yours. Secure, compliant, and built to trust.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="relative flex items-center justify-center pt-4 lg:pt-8">
+          <div className="relative flex items-center justify-center pt-10 lg:pt-16">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt="Nabhi Persona intelligence"
-              className="flagship-float h-auto w-[108%] max-w-none object-contain lg:w-[112%]"
+              className="flagship-float h-auto w-[112%] max-w-none object-contain lg:w-[118%]"
               height={808}
               src="/assets/Brain Section.svg"
               width={1132}
@@ -102,12 +102,12 @@ export function NabhiPersonaSection() {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-3 rounded-[24px] border border-white/10 bg-white/[0.04] p-3 md:grid-cols-[1.15fr_repeat(3,1fr)] md:items-stretch">
-          <div className="flex flex-col justify-center rounded-2xl bg-black/25 px-5 py-5">
-            <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#cde0b8]">
+        <div className="mt-8 grid gap-8 rounded-[28px] border border-white/10 bg-white/[0.035] p-6 md:grid-cols-[1.25fr_repeat(3,0.75fr)] md:items-center md:p-8">
+          <div>
+            <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#cde0b8]">
               This is our promise
             </p>
-            <p className="mt-3 font-display text-xl leading-snug tracking-[-0.03em] text-white/90 md:text-2xl">
+            <p className="mt-3 max-w-md font-display text-2xl leading-8 tracking-[-0.03em] text-white/80">
               You won&apos;t just get a solution.
               <br />
               <span className="text-[#cde0b8]">
@@ -120,14 +120,12 @@ export function NabhiPersonaSection() {
 
             return (
               <div
-                className="ui-card-dark flex flex-col justify-center rounded-2xl border border-white/10 bg-white/[0.04] p-5"
+                className="border-t border-white/10 pt-5 md:border-l md:border-t-0 md:pl-6 md:pt-0"
                 key={promise.title}
               >
                 <Icon className="size-5 text-[#cde0b8]" />
-                <h3 className="mt-3 font-display text-base text-white/90">
-                  {promise.title}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-white/55">
+                <h3 className="mt-3 text-xs text-white/80">{promise.title}</h3>
+                <p className="mt-2 text-[9px] leading-4 text-white/40">
                   {promise.copy}
                 </p>
               </div>
