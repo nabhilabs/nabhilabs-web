@@ -37,7 +37,7 @@ export function HeroActions() {
         </div>
         <a
           className="mt-4 w-fit rounded-full border border-[#c8d6c4] bg-white/80 px-4 py-2.5 text-[10px] font-semibold text-[#0f1c13] transition-colors hover:bg-white"
-          href="#begin"
+          href="/contact"
         >
           Schedule a Call →
         </a>

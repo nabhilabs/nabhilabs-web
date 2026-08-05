@@ -165,7 +165,7 @@ export function EcosystemSection() {
       id="capabilities"
     >
       <Reveal className="mx-auto max-w-[95rem] px-6 py-12 md:px-10 md:py-16">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+        <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-10">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <ChapterTag>04 // What We Build</ChapterTag>
             <h2 className="mt-7 font-display text-[clamp(3rem,6vw,6.4rem)] font-medium leading-[0.88] tracking-[-0.06em] text-[#0f1c13]">
@@ -178,11 +178,11 @@ export function EcosystemSection() {
               of the same philosophy.
             </p>
 
-            <div className="mt-10 max-w-sm">
+            <div className="mt-4 max-w-sm">
               <p className="font-mono text-[9px] text-[#5a7052]">
                 — &nbsp; What do you build?
               </p>
-              <p className="mt-5 text-xs leading-5 text-[#4a5b4e]">
+              <p className="mt-2 text-xs leading-5 text-[#4a5b4e]">
                 Different outputs. Same foundation.
                 <br />
                 We build solutions that understand, connect, and create real
@@ -190,10 +190,11 @@ export function EcosystemSection() {
               </p>
             </div>
 
-            <div className="relative mt-12 hidden aspect-square w-full max-w-40 lg:block">
-              <span className="absolute inset-0 rounded-full border border-[#5a7052]/15" />
-              <span className="absolute inset-[18%] rounded-full border border-[#5a7052]/15" />
-              <span className="absolute inset-[37%] rounded-full border border-[#5a7052]/20" />
+            <div className="relative mt-5 hidden aspect-square w-full max-w-40 lg:block">
+              <span className="orbit-spin-cw absolute inset-0 rounded-full border border-[#5a7052]/15" />
+              <span className="orbit-spin-ccw absolute inset-[18%] rounded-full border border-[#5a7052]/15" />
+              <span className="orbit-spin-cw-fast absolute inset-[37%] rounded-full border border-[#5a7052]/20" />
+              <span className="bullseye-pulse absolute inset-[42%] rounded-full bg-[#cde0b8]/50" />
               <span className="absolute inset-[46%] rounded-full bg-[#cde0b8] shadow-[0_0_28px_10px_rgba(205,224,184,0.35)]" />
               <span className="absolute left-[12%] top-[30%] size-1.5 rounded-full bg-[#78966a]" />
               <span className="absolute right-[9%] top-[20%] size-1 rounded-full bg-[#78966a]" />
@@ -201,7 +202,7 @@ export function EcosystemSection() {
             </div>
           </div>
 
-          <div>
+          <div className="lg:pt-1">
             <div className="grid auto-rows-[minmax(13.5rem,auto)] grid-cols-1 gap-2 md:grid-cols-12">
               {capabilities.map((capability, index) => (
                 <StaggerReveal

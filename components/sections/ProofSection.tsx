@@ -1,5 +1,6 @@
-import { BarChart3, Box } from "lucide-react";
+import { BarChart3, Box, Clock3, ShieldCheck, Sparkles } from "lucide-react";
 import { ContextMap } from "@/components/context-map/ContextMap";
+import { BullseyeOrb } from "@/components/ui/BullseyeOrb";
 import { ChapterTag } from "@/components/ui/ChapterTag";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -48,14 +49,7 @@ export function ProofSection() {
             </p>
           </div>
 
-          <div className="relative mx-auto hidden aspect-square w-full max-w-52 lg:block">
-            <span className="absolute inset-0 rounded-full border border-[#5a7052]/12" />
-            <span className="absolute inset-[16%] rounded-full border border-[#5a7052]/12" />
-            <span className="absolute inset-[32%] rounded-full border border-[#5a7052]/15" />
-            <span className="absolute inset-[43%] rounded-full bg-[#78966a] shadow-[0_0_28px_12px_rgba(120,150,106,0.26)]" />
-            <span className="absolute left-[10%] top-[29%] size-1 rounded-full bg-[#78966a]" />
-            <span className="absolute bottom-[8%] right-[28%] size-1.5 rounded-full bg-[#8fac79]" />
-          </div>
+          <BullseyeOrb className="hidden lg:block" />
         </div>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[1.45fr_0.85fr]">
@@ -80,7 +74,7 @@ export function ProofSection() {
                 <Box className="size-8" strokeWidth={1.2} />
               </span>
               <div>
-                <p className="font-display text-6xl font-medium tracking-[-0.065em] text-[#0f1c13]">
+                <p className="stat-pop inline-block cursor-default font-display text-6xl font-medium tracking-[-0.065em] text-[#0f1c13]">
                   50+
                 </p>
                 <p className="mt-2 font-mono text-[8px] uppercase tracking-[0.16em] text-[#5a7052]">
@@ -97,7 +91,7 @@ export function ProofSection() {
                 <BarChart3 className="size-8" strokeWidth={1.2} />
               </span>
               <div>
-                <p className="font-display text-6xl font-medium tracking-[-0.065em] text-[#0f1c13]">
+                <p className="stat-pop inline-block cursor-default font-display text-6xl font-medium tracking-[-0.065em] text-[#0f1c13]">
                   25%
                 </p>
                 <p className="mt-2 font-mono text-[8px] uppercase tracking-[0.16em] text-[#5a7052]">
@@ -111,19 +105,51 @@ export function ProofSection() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 rounded-full border border-[#d8e0d5] bg-white/35 px-6 py-4 font-mono text-[8px] text-[#4a5b4e]">
-          <span className="grid size-8 place-items-center rounded-full bg-[#123b28] font-display text-sm font-semibold text-white">
+        <div className="mt-8 grid gap-3 rounded-[22px] border border-[#d8e0d5] bg-white/40 p-4 sm:grid-cols-[auto_1fr] sm:items-center sm:gap-6 sm:px-5 sm:py-4 md:grid-cols-[auto_1.2fr_repeat(3,minmax(0,1fr))]">
+          <span className="grid size-10 place-items-center rounded-full bg-[#123b28] font-display text-sm font-semibold text-white">
             n
           </span>
-          <strong className="font-sans text-[10px] text-[#0f1c13]">
-            Real systems. Real impact.
-          </strong>
-          <span className="h-4 w-px bg-[#d8e0d5]" />
-          <span>Understanding first.</span>
-          <span className="h-4 w-px bg-[#d8e0d5]" />
-          <span>Technology second.</span>
-          <span className="h-4 w-px bg-[#d8e0d5]" />
-          <span className="text-[#5a7052]">Clarity always.</span>
+          <div>
+            <p className="text-[11px] font-medium text-[#0f1c13]">
+              Real systems. Real impact.
+            </p>
+            <p className="mt-1 font-mono text-[8px] uppercase tracking-[0.14em] text-[#5a7052]">
+              Understanding first · Technology second · Clarity always
+            </p>
+          </div>
+          <div className="flex items-center gap-2 rounded-xl border border-[#d8e0d5] bg-[#f7f6f1]/80 px-3 py-2.5">
+            <Clock3 className="size-3.5 shrink-0 text-[#78966a]" />
+            <div>
+              <p className="stat-pop cursor-default font-display text-lg font-medium tracking-[-0.03em] text-[#0f1c13]">
+                24 hours
+              </p>
+              <p className="font-mono text-[7px] uppercase tracking-[0.12em] text-[#5a7052]">
+                Response window
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 rounded-xl border border-[#d8e0d5] bg-[#f7f6f1]/80 px-3 py-2.5">
+            <ShieldCheck className="size-3.5 shrink-0 text-[#78966a]" />
+            <div>
+              <p className="text-[10px] font-medium text-[#0f1c13]">
+                Private by design
+              </p>
+              <p className="font-mono text-[7px] uppercase tracking-[0.12em] text-[#5a7052]">
+                Evidence first
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 rounded-xl border border-[#d8e0d5] bg-[#f7f6f1]/80 px-3 py-2.5">
+            <Sparkles className="size-3.5 shrink-0 text-[#78966a]" />
+            <div>
+              <p className="text-[10px] font-medium text-[#0f1c13]">
+                Zero theatre
+              </p>
+              <p className="font-mono text-[7px] uppercase tracking-[0.12em] text-[#5a7052]">
+                Inspectable claims
+              </p>
+            </div>
+          </div>
         </div>
       </Reveal>
     </section>

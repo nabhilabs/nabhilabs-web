@@ -8,7 +8,7 @@ export function HeroSection() {
     >
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(242,244,240,0.56)_0%,rgba(242,244,240,0.28)_48%,rgba(242,244,240,0.04)_76%)]" />
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-[95rem] items-center px-6 pb-10 pt-24 md:px-12 lg:px-20">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-[95rem] items-center px-6 pb-10 pt-24 md:px-12 lg:px-16 xl:px-20">
         <div className="w-full max-w-[44rem]">
           <span className="inline-flex rounded-full border border-white/70 bg-white/70 px-4 py-2 font-mono text-[10px] tracking-[0.12em] text-[#31543a] shadow-sm">
             + &nbsp; Understanding → Intelligence → Impact
@@ -76,29 +76,23 @@ export function HeroSection() {
               </div>
               <a
                 className="mt-4 w-fit rounded-full border border-[#c8d6c4] bg-white/80 px-4 py-2.5 text-[10px] font-semibold text-[#0f1c13] transition-colors hover:bg-white"
-                href="#begin"
+                href="/contact"
               >
                 Schedule a Call →
               </a>
             </article>
           </div>
 
-          <div className="mt-5 flex max-w-[42rem] flex-wrap items-center gap-x-4 gap-y-2 rounded-3xl border border-white/70 bg-white/70 px-5 py-3 font-mono text-[9px] tracking-[0.04em] text-[#314238] shadow-sm sm:rounded-full">
-            <span>Trusted by thinkers and builders worldwide</span>
-            <span
-              aria-hidden="true"
-              className="hidden text-[#5a7052]/45 sm:block"
-            >
-              |
+          <div className="mt-5 flex max-w-[42rem] flex-wrap items-center gap-2">
+            <span className="rounded-full border border-white/70 bg-white/75 px-3.5 py-1.5 font-mono text-[9px] tracking-[0.04em] text-[#314238] shadow-sm">
+              Trusted by thinkers and builders worldwide
             </span>
-            <span>Enterprise-grade. Human-first.</span>
-            <span
-              aria-hidden="true"
-              className="hidden text-[#5a7052]/45 sm:block"
-            >
-              |
+            <span className="rounded-full border border-white/70 bg-white/75 px-3.5 py-1.5 font-mono text-[9px] tracking-[0.04em] text-[#314238] shadow-sm">
+              Enterprise-grade. Human-first.
             </span>
-            <span>Built for depth. Designed for clarity.</span>
+            <span className="rounded-full border border-white/70 bg-white/75 px-3.5 py-1.5 font-mono text-[9px] tracking-[0.04em] text-[#314238] shadow-sm">
+              Built for depth. Designed for clarity.
+            </span>
           </div>
         </div>
       </div>

@@ -35,7 +35,7 @@ export function BeginSection() {
       <Reveal className="mx-auto max-w-[95rem]">
         <div className="grid gap-12 px-6 py-12 md:px-10 md:py-16 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="relative min-h-[34rem] lg:sticky lg:top-24 lg:self-start lg:min-h-0">
-            <ChapterTag inverse>10 // Begin</ChapterTag>
+            <ChapterTag inverse>11 // Begin</ChapterTag>
             <p className="mt-6 font-mono text-[10px] text-white/50">
               What&apos;s next?
             </p>

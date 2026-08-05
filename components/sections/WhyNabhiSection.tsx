@@ -14,7 +14,9 @@ import {
   WandSparkles,
   Zap,
 } from "lucide-react";
+import { BullseyeOrb } from "@/components/ui/BullseyeOrb";
 import { ChapterTag } from "@/components/ui/ChapterTag";
+import { PipelineFlow } from "@/components/ui/PipelineFlow";
 import { Reveal } from "@/components/ui/Reveal";
 
 const comparisons = [
@@ -93,16 +95,12 @@ export function WhyNabhiSection() {
               the problem is understood and the system feels lighter.
             </p>
 
-            <div className="relative mt-10 h-48 w-full max-w-sm">
-              <span className="absolute left-1/2 top-1/2 size-48 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#cde0b8]/10" />
-              <span className="absolute left-1/2 top-1/2 size-36 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#cde0b8]/10" />
-              <span className="absolute left-1/2 top-1/2 size-24 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#cde0b8]/15" />
-              <span className="absolute left-1/2 top-1/2 grid size-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#cde0b8] font-display text-xl font-semibold text-[#123b28] shadow-[0_0_28px_12px_rgba(205,224,184,0.25)]">
-                n
-              </span>
-              <span className="absolute left-[8%] top-[29%] size-1.5 rounded-full bg-[#cde0b8]/80" />
-              <span className="absolute bottom-[15%] right-[12%] size-1.5 rounded-full bg-[#cde0b8]/70" />
-              <span className="absolute right-[6%] top-[27%] size-1 rounded-full bg-[#cde0b8]/70" />
+            <div className="relative mt-10 w-full max-w-sm">
+              <BullseyeOrb
+                center={<span className="select-none">n</span>}
+                sizeClassName="aspect-square w-full max-w-[13rem]"
+                tone="dark"
+              />
             </div>
           </div>
 
@@ -158,26 +156,17 @@ export function WhyNabhiSection() {
             </p>
           </div>
 
-          <div className="relative grid gap-6 sm:grid-cols-4">
-            <span className="absolute left-5 right-5 top-5 hidden h-px bg-[#cde0b8]/15 sm:block" />
-            {process.map((step) => {
+          <PipelineFlow
+            steps={process.map((step) => {
               const Icon = step.icon;
-
-              return (
-                <div className="relative z-10" key={step.title}>
-                  <span className="grid size-10 place-items-center rounded-full border border-[#cde0b8]/25 bg-[#0d2d1e] text-[#cde0b8]">
-                    <Icon className="size-4" strokeWidth={1.25} />
-                  </span>
-                  <h3 className="mt-4 font-mono text-[9px] tracking-[0.08em] text-[#cde0b8]">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 max-w-32 text-[10px] leading-4 text-white/45">
-                    {step.copy}
-                  </p>
-                </div>
-              );
+              return {
+                title: step.title,
+                copy: step.copy,
+                icon: <Icon className="size-4" strokeWidth={1.25} />,
+              };
             })}
-          </div>
+            tone="dark"
+          />
         </div>
       </Reveal>
     </section>

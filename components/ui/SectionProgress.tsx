@@ -12,7 +12,8 @@ const SECTIONS = [
   { id: "why-nabhi", label: "07" },
   { id: "our-story", label: "08" },
   { id: "team", label: "09" },
-  { id: "begin", label: "10" },
+  { id: "answers", label: "10" },
+  { id: "begin", label: "11" },
 ] as const;
 
 export function SectionProgress() {
@@ -24,15 +25,40 @@ export function SectionProgress() {
       Boolean,
     ) as HTMLElement[];
 
-    const onScroll = () => {
-      const mid = window.innerHeight * 0.35;
-      let current = 0;
-      elements.forEach((el, index) => {
-        const top = el.getBoundingClientRect().top;
-        if (top <= mid) current = index;
-      });
-      setActive(current);
+    if (!elements.length) return;
 
+    const ratios = new Map<string, number>();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          ratios.set(entry.target.id, entry.intersectionRatio);
+        }
+
+        let bestIndex = 0;
+        let bestRatio = -1;
+        elements.forEach((el, index) => {
+          const ratio = ratios.get(el.id) ?? 0;
+          const top = el.getBoundingClientRect().top;
+          // Prefer the section crossing the upper third of the viewport
+          const score = ratio + (top <= window.innerHeight * 0.4 ? 0.15 : 0);
+          if (score >= bestRatio) {
+            bestRatio = score;
+            bestIndex = index;
+          }
+        });
+        setActive(bestIndex);
+      },
+      {
+        root: null,
+        threshold: [0, 0.15, 0.35, 0.55, 0.75, 1],
+        rootMargin: "-12% 0px -45% 0px",
+      },
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    const onScroll = () => {
       const doc = document.documentElement;
       const max = doc.scrollHeight - window.innerHeight;
       setProgress(max > 0 ? window.scrollY / max : 0);
@@ -40,32 +66,37 @@ export function SectionProgress() {
 
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (
     <aside
       aria-hidden
-      className="pointer-events-none fixed left-3 top-1/2 z-40 hidden -translate-y-1/2 lg:block xl:left-5"
+      className="pointer-events-none fixed left-2 top-1/2 z-30 hidden w-10 -translate-y-1/2 xl:left-3 2xl:left-4 lg:block"
     >
-      <div className="relative flex h-56 w-px flex-col items-center bg-[#5a7052]/20">
+      <div className="relative flex h-64 flex-col items-center">
+        <div className="absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-[#5a7052]/20" />
         <span
-          className="absolute left-0 top-0 w-px origin-top bg-[#a3e635] transition-transform duration-300 ease-out"
+          className="absolute left-1/2 top-0 w-px origin-top -translate-x-1/2 bg-[#a3e635] transition-transform duration-300 ease-out"
           style={{
             height: "100%",
-            transform: `scaleY(${Math.min(1, Math.max(0, progress))})`,
+            transform: `translateX(-50%) scaleY(${Math.min(1, Math.max(0, progress))})`,
           }}
         />
-        <ul className="absolute left-3 top-0 flex h-full flex-col justify-between py-1">
+        <ul className="relative z-10 flex h-full w-full flex-col justify-between py-0.5">
           {SECTIONS.map((section, index) => (
-            <li key={section.id}>
+            <li className="flex justify-center" key={section.id}>
               <span
-                className={`font-mono text-[8px] tracking-[0.14em] transition-colors duration-500 ${
+                className={`rounded-sm bg-[#f2f4f0]/90 px-1 font-mono text-[8px] tracking-[0.12em] transition-colors duration-500 ${
                   index === active
-                    ? "text-[#0f1c13]"
+                    ? "font-medium text-[#0f1c13]"
                     : index < active
-                      ? "text-[#5a7052]/70"
-                      : "text-[#5a7052]/30"
+                      ? "text-[#5a7052]/65"
+                      : "text-[#5a7052]/28"
                 }`}
               >
                 {section.label}

@@ -209,15 +209,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </a>
         <Header />
         {children}
-        <footer className="relative z-10 border-t border-[#d8e0d5] bg-[#f7f6f1] px-6 py-8 font-mono text-[8px] uppercase tracking-[0.16em] text-[#4a5b4e] md:px-10">
-          <div className="mx-auto flex max-w-[95rem] flex-col gap-6">
+        <footer className="relative z-10 border-t border-[#d8e0d5] bg-[#f7f6f1]">
+          <div className="mx-auto grid max-w-[95rem] gap-8 px-6 py-10 md:px-10 md:py-12 lg:grid-cols-[1.1fr_1fr] lg:items-end">
+            <div>
+              <p className="font-display text-lg font-medium tracking-[-0.03em] text-[#0f1c13]">
+                Nabhi Labs
+              </p>
+              <p className="mt-2 max-w-sm text-xs leading-5 text-[#4a5b4e]">
+                Understanding before technology. Enterprise-grade systems,
+                human-first by design.
+              </p>
+            </div>
             <nav
               aria-label="Solutions and resources"
-              className="flex flex-wrap gap-x-6 gap-y-2 normal-case tracking-normal"
+              className="grid grid-cols-2 gap-x-6 gap-y-2.5 sm:grid-cols-3 lg:justify-items-start"
             >
               {footerLinks.map((link) => (
                 <a
-                  className="text-[11px] text-[#31543a] underline-offset-4 hover:underline"
+                  className="text-[12px] text-[#31543a] transition-colors hover:text-[#0f1c13]"
                   href={link.href}
                   key={link.href}
                 >
@@ -225,7 +234,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 </a>
               ))}
               <a
-                className="text-[11px] text-[#31543a] underline-offset-4 hover:underline"
+                className="text-[12px] text-[#31543a] transition-colors hover:text-[#0f1c13]"
                 href={socialProfiles.linkedin}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -233,7 +242,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 LinkedIn
               </a>
               <a
-                className="text-[11px] text-[#31543a] underline-offset-4 hover:underline"
+                className="text-[12px] text-[#31543a] transition-colors hover:text-[#0f1c13]"
                 href={socialProfiles.instagram}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -241,14 +250,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 Instagram
               </a>
             </nav>
-            <div className="flex flex-wrap items-center justify-between gap-4">
+          </div>
+          <div className="border-t border-[#d8e0d5]/80">
+            <div className="mx-auto flex max-w-[95rem] flex-col gap-2 px-6 py-5 font-mono text-[8px] uppercase tracking-[0.14em] text-[#5a7052] sm:flex-row sm:items-center sm:justify-between md:px-10">
               <span>
-                Nabhi Labs - Understanding before technology
+                Understanding before technology
                 <span className="sr-only">
                   . Authored by Nabhi Labs. Updated August 2026.
                 </span>
               </span>
-              <span>© 2026 Nabhi Labs · hello@nabhilabs.com</span>
+              <span className="normal-case tracking-normal text-[#4a5b4e]">
+                © 2026 Nabhi Labs ·{" "}
+                <a
+                  className="transition-colors hover:text-[#0f1c13]"
+                  href="mailto:hello@nabhilabs.com"
+                >
+                  hello@nabhilabs.com
+                </a>
+              </span>
             </div>
           </div>
         </footer>

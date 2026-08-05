@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Layers3, Network, Sparkles, UserRound } from "lucide-react";
 import { ChapterTag } from "@/components/ui/ChapterTag";
+import { PipelineFlow } from "@/components/ui/PipelineFlow";
 import { Reveal } from "@/components/ui/Reveal";
 
 const path = [
@@ -105,24 +106,16 @@ export function StorySection() {
             </div>
           </div>
 
-          <div className="relative grid gap-6 sm:grid-cols-4">
-            <span className="absolute left-5 right-5 top-5 hidden h-px bg-[#c8d6c4] sm:block" />
-            {path.map((step) => {
+          <PipelineFlow
+            steps={path.map((step) => {
               const Icon = step.icon;
-
-              return (
-                <div className="relative z-10" key={step.title}>
-                  <span className="grid size-10 place-items-center rounded-full border border-[#aebcac] bg-[#f7f6f1] text-[#31543a]">
-                    <Icon className="size-4" strokeWidth={1.25} />
-                  </span>
-                  <h3 className="mt-4 font-mono text-[8px] uppercase tracking-[0.12em] text-[#0f1c13]">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 text-[10px] text-[#4a5b4e]">{step.copy}</p>
-                </div>
-              );
+              return {
+                title: step.title,
+                copy: step.copy,
+                icon: <Icon className="size-4" strokeWidth={1.25} />,
+              };
             })}
-          </div>
+          />
         </div>
       </Reveal>
     </section>
