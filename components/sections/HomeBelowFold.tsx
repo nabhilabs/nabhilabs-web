@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useEffect, useState, type ComponentType } from "react";
 import { ClientEnhancements } from "@/components/providers/client-enhancements";
 import { LazySection } from "@/components/ui/LazySection";
 
@@ -8,6 +8,41 @@ import { LazySection } from "@/components/ui/LazySection";
  * Below-fold homepage sections — JS chunks load only as each nears the viewport.
  */
 export function HomeBelowFold() {
+  const [Progress, setProgress] = useState<ComponentType | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    const load = () => {
+      void import("@/components/ui/SectionProgress").then((m) => {
+        if (!cancelled) setProgress(() => m.SectionProgress);
+      });
+    };
+
+    const onScroll = () => {
+      window.removeEventListener("scroll", onScroll);
+      load();
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    let idleId: number | undefined;
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+    if ("requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(load, { timeout: 3500 });
+    } else {
+      timeoutId = setTimeout(load, 2500);
+    }
+
+    return () => {
+      cancelled = true;
+      window.removeEventListener("scroll", onScroll);
+      if (idleId !== undefined && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId !== undefined) clearTimeout(timeoutId);
+    };
+  }, []);
+
   const loadUnderstanding = useCallback(
     () =>
       import("@/components/sections/UnderstandingSection").then(
@@ -74,6 +109,7 @@ export function HomeBelowFold() {
   return (
     <>
       <ClientEnhancements />
+      {Progress ? <Progress /> : null}
       <LazySection loader={loadUnderstanding} />
       <LazySection loader={loadNabhiPersona} />
       <LazySection loader={loadEcosystem} />

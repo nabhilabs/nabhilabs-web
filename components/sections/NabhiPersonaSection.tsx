@@ -102,12 +102,12 @@ export function NabhiPersonaSection() {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-5 rounded-[22px] border border-white/10 bg-white/[0.035] px-5 py-6 md:grid-cols-[1fr_repeat(3,minmax(0,1fr))] md:items-stretch md:gap-0 md:px-7 md:py-7">
-          <div className="md:pr-7">
-            <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#cde0b8]">
+        <div className="mt-6 grid gap-4 rounded-[22px] border border-white/10 bg-white/[0.035] px-5 py-5 md:grid-cols-[1fr_repeat(3,minmax(0,1fr))] md:items-stretch md:gap-0 md:px-6 md:py-5">
+          <div className="md:pr-6">
+            <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#cde0b8]">
               This is our promise
             </p>
-            <p className="mt-3 max-w-sm font-display text-2xl leading-8 tracking-[-0.03em] text-white/85 md:text-[1.55rem]">
+            <p className="mt-2 max-w-sm font-display text-xl leading-7 tracking-[-0.03em] text-white/80 md:text-[1.35rem]">
               You won&apos;t just get a solution.
               <br />
               <span className="text-[#cde0b8]">
@@ -120,14 +120,12 @@ export function NabhiPersonaSection() {
 
             return (
               <div
-                className="border-t border-white/10 pt-5 md:border-l md:border-t-0 md:px-6 md:pt-0"
+                className="border-t border-white/10 pt-4 md:border-l md:border-t-0 md:px-5 md:pt-0"
                 key={promise.title}
               >
-                <Icon className="size-5 text-[#cde0b8]" strokeWidth={1.4} />
-                <h3 className="mt-3 font-display text-base font-medium tracking-[-0.02em] text-white md:text-lg">
-                  {promise.title}
-                </h3>
-                <p className="mt-2 text-xs leading-5 text-white/55 md:text-[13px] md:leading-5">
+                <Icon className="size-4 text-[#cde0b8]" />
+                <h3 className="mt-2 text-xs text-white/80">{promise.title}</h3>
+                <p className="mt-1.5 text-[9px] leading-4 text-white/40">
                   {promise.copy}
                 </p>
               </div>
