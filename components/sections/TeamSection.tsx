@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { UsersRound } from "lucide-react";
 import { ChapterTag } from "@/components/ui/ChapterTag";
+import { GlareHover } from "@/components/ui/GlareHover";
 import { HorizontalTimeline } from "@/components/ui/HorizontalTimeline";
 import { Reveal } from "@/components/ui/Reveal";
 import { StaggerReveal } from "@/components/ui/StaggerReveal";
@@ -121,17 +122,29 @@ export function TeamSection() {
               {members.map((member, index) => (
                 <StaggerReveal index={index} key={member.name}>
                   <article className="group grid grid-rows-[auto_auto_1fr]">
-                    <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-[#d8e0d5] bg-[#edf3e8]">
+                    <GlareHover
+                      borderColor="#d8e0d5"
+                      borderRadius="1rem"
+                      className="aspect-[4/5] w-full border bg-[#edf3e8]"
+                      glareAngle={-30}
+                      glareColor="#ffffff"
+                      glareOpacity={0.4}
+                      glareSize={280}
+                      height="100%"
+                      style={{ width: "100%" }}
+                      transitionDuration={800}
+                      width="100%"
+                    >
                       <Image
                         alt={`${member.name}, ${member.role} at Nabhi Labs`}
-                        className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        className="relative z-[1] h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         height={500}
                         loading="lazy"
                         sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
                         src={member.image}
                         width={400}
                       />
-                    </div>
+                    </GlareHover>
                     <div className="mt-4 flex items-start gap-3">
                       <span className="grid size-8 shrink-0 place-items-center rounded-full bg-[#31543a] font-mono text-[8px] text-white">
                         0{index + 1}

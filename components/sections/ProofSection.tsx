@@ -2,6 +2,7 @@ import { BarChart3, Box, Clock3, ShieldCheck, Sparkles } from "lucide-react";
 import { ContextMap } from "@/components/context-map/ContextMap";
 import { BullseyeOrb } from "@/components/ui/BullseyeOrb";
 import { ChapterTag } from "@/components/ui/ChapterTag";
+import { CountUp } from "@/components/ui/CountUp";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function ProofSection() {
@@ -75,7 +76,7 @@ export function ProofSection() {
               </span>
               <div>
                 <p className="stat-pop inline-block cursor-default font-display text-6xl font-medium tracking-[-0.065em] text-[#0f1c13]">
-                  50+
+                  <CountUp end={50} suffix="+" />
                 </p>
                 <p className="mt-2 font-mono text-[8px] uppercase tracking-[0.16em] text-[#5a7052]">
                   Models tailored
@@ -92,7 +93,7 @@ export function ProofSection() {
               </span>
               <div>
                 <p className="stat-pop inline-block cursor-default font-display text-6xl font-medium tracking-[-0.065em] text-[#0f1c13]">
-                  25%
+                  <CountUp end={25} suffix="%" />
                 </p>
                 <p className="mt-2 font-mono text-[8px] uppercase tracking-[0.16em] text-[#5a7052]">
                   Increase in operational clarity
