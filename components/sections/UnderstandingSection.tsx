@@ -132,28 +132,6 @@ export function UnderstandingSection() {
         </div>
 
         <PhilosophySteps principles={principles} />
-
-        <div className="mt-5 grid items-center gap-5 rounded-[24px] border border-[#d8e0d5] bg-white/45 px-6 py-5 md:grid-cols-[1.5fr_repeat(3,auto)]">
-          <div>
-            <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#5a7052]">
-              This is our promise
-            </p>
-            <p className="mt-2 font-display text-lg tracking-[-0.02em] text-[#0f1c13]">
-              You won&apos;t just get a solution. You&apos;ll get clarity you
-              can rely on.
-            </p>
-          </div>
-          {["Deep Understanding", "Purposeful Technology", "Lasting Impact"].map(
-            (item) => (
-              <span
-                className="border-t border-[#d8e0d5] pt-3 font-mono text-[9px] text-[#4a5b4e] md:border-l md:border-t-0 md:pl-5 md:pt-0"
-                key={item}
-              >
-                {item} &nbsp; +
-              </span>
-            ),
-          )}
-        </div>
       </Reveal>
     </section>
   );

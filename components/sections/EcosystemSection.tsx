@@ -173,33 +173,11 @@ export function EcosystemSection() {
               <br />
               Many useful forms<span className="text-[#78966a]">.</span>
             </h2>
-            <p className="mt-7 max-w-lg text-sm leading-6 text-[#4a5b4e]">
+
+            <p className="mt-7 max-w-lg text-base font-normal leading-relaxed text-[#4a5b4e]">
               Products, AI engineering, software, and systems—all consequences
               of the same philosophy.
             </p>
-
-            <div className="mt-4 max-w-sm">
-              <p className="font-mono text-[9px] text-[#5a7052]">
-                — &nbsp; What do you build?
-              </p>
-              <p className="mt-2 text-xs leading-5 text-[#4a5b4e]">
-                Different outputs. Same foundation.
-                <br />
-                We build solutions that understand, connect, and create real
-                impact.
-              </p>
-            </div>
-
-            <div className="relative mt-5 hidden aspect-square w-full max-w-40 lg:block">
-              <span className="orbit-spin-cw absolute inset-0 rounded-full border border-[#5a7052]/15" />
-              <span className="orbit-spin-ccw absolute inset-[18%] rounded-full border border-[#5a7052]/15" />
-              <span className="orbit-spin-cw-fast absolute inset-[37%] rounded-full border border-[#5a7052]/20" />
-              <span className="bullseye-pulse absolute inset-[42%] rounded-full bg-[#cde0b8]/50" />
-              <span className="absolute inset-[46%] rounded-full bg-[#cde0b8] shadow-[0_0_28px_10px_rgba(205,224,184,0.35)]" />
-              <span className="absolute left-[12%] top-[30%] size-1.5 rounded-full bg-[#78966a]" />
-              <span className="absolute right-[9%] top-[20%] size-1 rounded-full bg-[#78966a]" />
-              <span className="absolute bottom-[13%] right-[32%] size-1.5 rounded-full bg-[#78966a]" />
-            </div>
           </div>
 
           <div className="lg:pt-1">
@@ -215,13 +193,13 @@ export function EcosystemSection() {
                       <p className="font-mono text-sm text-[#78966a]">
                         {capability.number}
                       </p>
-                      <p className="mt-5 font-mono text-[8px] uppercase tracking-[0.16em] text-[#5a7052]">
+                      <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.16em] text-[#525252]">
                         [ {capability.category} ]
                       </p>
                       <h3 className="mt-3 font-display text-xl font-medium tracking-[-0.035em] text-[#0f1c13]">
                         {capability.title}
                       </h3>
-                      <p className="mt-3 max-w-52 text-[11px] leading-5 text-[#4a5b4e]">
+                      <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-[#333333]">
                         {capability.description}
                       </p>
                     </div>
@@ -249,7 +227,7 @@ export function EcosystemSection() {
                   <span className="absolute left-5 top-1/2 size-20 -translate-y-1/2 rounded-full border border-[#5a7052]/15" />
                   <span className="absolute left-[3.7rem] top-1/2 size-3 -translate-y-1/2 rounded-full bg-[#8fac79]" />
                   <div className="relative z-10 ml-24 sm:ml-28">
-                    <p className="font-mono text-[8px] text-[#5a7052]">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#525252]">
                       Same foundation.
                     </p>
                     <p className="mt-4 font-display text-2xl leading-7 tracking-[-0.04em] text-[#0f1c13]">
@@ -261,12 +239,6 @@ export function EcosystemSection() {
                   </div>
                 </BentoCard>
               </StaggerReveal>
-            </div>
-
-            <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[8px] tracking-[0.08em] text-[#4a5b4e]">
-              <span className="size-2 rounded-full bg-[#8fac79]" />
-              <span>Every capability. Same philosophy.</span>
-              <span>Understanding first. Technology second.</span>
             </div>
           </div>
         </div>

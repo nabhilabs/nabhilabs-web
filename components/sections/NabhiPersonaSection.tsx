@@ -102,12 +102,12 @@ export function NabhiPersonaSection() {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-4 rounded-[22px] border border-white/10 bg-white/[0.035] px-5 py-5 md:grid-cols-[1fr_repeat(3,minmax(0,1fr))] md:items-stretch md:gap-0 md:px-6 md:py-5">
-          <div className="md:pr-6">
+        <div className="mt-6 grid gap-4 rounded-[22px] border border-white/10 bg-white/[0.035] px-5 py-5 md:grid-cols-[minmax(0,1.85fr)_repeat(3,minmax(0,1fr))] md:items-center md:gap-0 md:px-6 md:py-5">
+          <div className="md:pr-8">
             <p className="font-mono text-[8px] uppercase tracking-[0.16em] text-[#cde0b8]">
               This is our promise
             </p>
-            <p className="mt-2 max-w-sm font-display text-xl leading-7 tracking-[-0.03em] text-white/80 md:text-[1.35rem]">
+            <p className="mt-2 font-display text-xl leading-7 tracking-[-0.03em] text-white/80 md:text-[1.35rem] md:leading-8">
               You won&apos;t just get a solution.
               <br />
               <span className="text-[#cde0b8]">
@@ -120,7 +120,7 @@ export function NabhiPersonaSection() {
 
             return (
               <div
-                className="border-t border-white/10 pt-4 md:border-l md:border-t-0 md:px-5 md:pt-0"
+                className="flex flex-col justify-center border-t border-white/10 pt-4 md:border-l md:border-t-0 md:px-5 md:pt-0"
                 key={promise.title}
               >
                 <Icon className="size-4 text-[#cde0b8]" />

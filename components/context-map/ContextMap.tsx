@@ -30,9 +30,13 @@ const layers = [
   },
 ] as const;
 
-export function ContextMap() {
+type ContextMapProps = {
+  className?: string;
+};
+
+export function ContextMap({ className = "" }: ContextMapProps) {
   return (
-    <div className="relative mt-7 aspect-[2485/800] w-full">
+    <div className={`relative aspect-[2485/800] w-full ${className}`.trim()}>
       {layers.map((layer, index) => (
         <img
           alt={layer.alt}

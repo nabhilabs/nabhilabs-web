@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
+import { Manrope, Outfit } from "next/font/google";
 import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
 import { brandAlternateNames } from "@/lib/keyword-strategy";
@@ -7,6 +7,7 @@ import { sameAsProfiles, socialProfiles } from "@/lib/social";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
+/** Humanist body — soft terminals, approachable reading. */
 const sans = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
@@ -15,11 +16,12 @@ const sans = Manrope({
   adjustFontFallback: true,
 });
 
-const display = Space_Grotesk({
+/** Soft display sans — rounded, calm tech; less rigid than geometric grotesks. */
+const display = Outfit({
   subsets: ["latin"],
-  variable: "--font-space",
-  display: "optional",
-  preload: false,
+  variable: "--font-outfit",
+  display: "swap",
+  preload: true,
   adjustFontFallback: true,
 });
 
