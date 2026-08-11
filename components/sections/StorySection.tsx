@@ -1,31 +1,6 @@
 import Image from "next/image";
-import { Layers3, Network, Sparkles, UserRound } from "lucide-react";
 import { ChapterTag } from "@/components/ui/ChapterTag";
-import { PipelineFlow } from "@/components/ui/PipelineFlow";
 import { Reveal } from "@/components/ui/Reveal";
-
-const path = [
-  {
-    title: "Understand",
-    copy: "People first.",
-    icon: UserRound,
-  },
-  {
-    title: "Connect",
-    copy: "Map what matters.",
-    icon: Network,
-  },
-  {
-    title: "Build",
-    copy: "Create with clarity.",
-    icon: Layers3,
-  },
-  {
-    title: "Impact",
-    copy: "Make it meaningful.",
-    icon: Sparkles,
-  },
-] as const;
 
 export function StorySection() {
   return (
@@ -81,41 +56,6 @@ export function StorySection() {
               />
             </div>
           </div>
-        </div>
-
-        <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="relative overflow-hidden rounded-2xl border border-[#d8e0d5] bg-white/35 p-5">
-            <span className="absolute -right-8 top-1/2 size-36 -translate-y-1/2 rounded-full border border-[#5a7052]/10" />
-            <span className="absolute right-2 top-1/2 size-20 -translate-y-1/2 rounded-full border border-[#5a7052]/10" />
-            <div className="relative flex items-center gap-5">
-              <span className="grid size-12 shrink-0 place-items-center rounded-full bg-[#31543a] font-display text-xl font-semibold text-white shadow-[0_0_18px_6px_rgba(120,150,106,0.2)]">
-                n
-              </span>
-              <div>
-                <p className="font-mono text-[8px] uppercase tracking-[0.15em] text-[#5a7052]">
-                  The Nabhi principle
-                </p>
-                <p className="mt-2 font-serif text-xl text-[#0f1c13]">
-                  First, understand.
-                  <br />
-                  <span className="italic text-[#78966a]">
-                    Then, build what matters.
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <PipelineFlow
-            steps={path.map((step) => {
-              const Icon = step.icon;
-              return {
-                title: step.title,
-                copy: step.copy,
-                icon: <Icon className="size-4" strokeWidth={1.25} />,
-              };
-            })}
-          />
         </div>
       </Reveal>
     </section>

@@ -110,11 +110,12 @@ export const products: Product[] = [
   },
   {
     id: "prod-healthcare",
-    name: "Healthcare AI Integration",
+    name: "Nabhi Cares",
     url: "/industries/healthcare-ai",
     description:
-      "AI integration for healthcare systems—knowledge, RAG, and workflows with careful compliance posture.",
+      "Healthcare AI for care operations—Nabhi Cares brings knowledge, RAG, and workflows with careful compliance posture.",
     keywords: [
+      "nabhi cares",
       "healthcare ai",
       "ai for healthcare",
       "clinical knowledge management",

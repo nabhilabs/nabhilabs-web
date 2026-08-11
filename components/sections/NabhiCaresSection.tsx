@@ -1,9 +1,10 @@
 import {
   ArrowUpRight,
   BrainCircuit,
+  HeartPulse,
   Infinity,
-  Layers3,
   ShieldCheck,
+  Stethoscope,
   Sunrise,
   Target,
 } from "lucide-react";
@@ -12,105 +13,125 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const promises = [
   {
-    title: "Deep Understanding",
-    copy: "We go beyond the surface to understand what’s real.",
+    title: "Care-first clarity",
+    copy: "We map clinical and ops reality before introducing models.",
     icon: Infinity,
   },
   {
-    title: "Purposeful Technology",
-    copy: "Technology is chosen, not assumed. Every choice has a reason.",
+    title: "Purposeful integration",
+    copy: "AI connects systems people already use—never another silo.",
     icon: Target,
   },
   {
-    title: "Lasting Impact",
-    copy: "Solutions built to adapt, scale, and create real change.",
+    title: "Accountable impact",
+    copy: "Assistive by design: humans stay responsible; knowledge becomes usable.",
     icon: Sunrise,
   },
 ] as const;
 
-type NabhiPersonaSectionProps = {
+type NabhiCaresSectionProps = {
   chapterTag?: string;
-  /** Extra top padding when this section is the page hero under the fixed nav. */
   asPageHero?: boolean;
 };
 
-export function NabhiPersonaSection({
-  chapterTag = "Product // Nabhi Persona",
+export function NabhiCaresSection({
+  chapterTag = "Product // Nabhi Cares",
   asPageHero = false,
-}: NabhiPersonaSectionProps) {
+}: NabhiCaresSectionProps) {
   return (
     <section
       className={`section-theme-dark relative z-10 bg-[#0e1012] text-white transition-colors duration-700 ${
         asPageHero ? "pt-24 md:pt-28" : ""
       }`}
-      id="nabhi-persona"
+      id="nabhi-cares"
     >
-      <Reveal className="mx-auto max-w-[95rem] bg-[radial-gradient(circle_at_70%_30%,#1a3d24_0%,#121a16_34%,#0e1012_76%)] p-6 md:p-10 lg:p-14">
+      <Reveal className="mx-auto max-w-[95rem] bg-[radial-gradient(circle_at_30%_20%,#1a2e3d_0%,#121a16_40%,#0e1012_78%)] p-6 md:p-10 lg:p-14">
         <div className="grid gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <ChapterTag inverse>{chapterTag}</ChapterTag>
             <p className="mt-6 font-mono text-[10px] text-white/50">
-              What is your signature creation?
+              Healthcare AI for operations that need trust.
             </p>
             <h2 className="mt-8 font-display text-[clamp(4rem,7vw,7.5rem)] font-medium leading-[0.82] tracking-[-0.065em]">
               Nabhi
               <br />
-              Persona<span className="text-[#cde0b8]">.</span>
+              Cares<span className="text-[#cde0b8]">.</span>
             </h2>
             <div className="mt-8 max-w-lg space-y-4 text-sm font-light leading-7 text-white/65">
               <p>
-                Personal and institutional knowledge shouldn&apos;t live in
-                folders, tools, and forgotten conversations.
+                Care teams drown in systems yet starve for a coherent picture of
+                status, policy, and next action.
               </p>
               <p>
-                Nabhi Persona turns that knowledge into active intelligence—
-                available when context matters. The product is in development;
-                the architecture and thinking are ready to explore.
+                Nabhi Cares brings Healthcare AI into operations with
+                retrieval, workflows, and compliance posture that keep humans
+                accountable.
               </p>
             </div>
             <a
               className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#cde0b8] px-6 py-3 text-xs font-medium text-[#0f1c13] transition-colors hover:bg-white"
-              href={asPageHero ? "#answers" : "/solutions/nabhi-persona"}
+              href={asPageHero ? "#answers" : "/industries/healthcare-ai"}
             >
-              {asPageHero ? "Read the details" : "Explore Nabhi Persona"}
+              {asPageHero ? "Read the details" : "Explore Healthcare AI"}
               <ArrowUpRight aria-hidden="true" className="size-4" />
             </a>
 
             <div className="mt-10 grid gap-5 border-t border-white/10 pt-6 sm:grid-cols-3">
               <div>
-                <BrainCircuit className="size-5 text-[#cde0b8]" />
-                <h3 className="mt-3 text-xs">Always learning</h3>
+                <Stethoscope className="size-5 text-[#cde0b8]" />
+                <h3 className="mt-3 text-xs">Clinical & ops clarity</h3>
                 <p className="mt-2 text-[10px] leading-4 text-white/45">
-                  Continuously ingests and refines knowledge from every source.
+                  Reduce rediscovery across scheduling, documentation, and
+                  departmental knowledge.
                 </p>
               </div>
               <div>
-                <Layers3 className="size-5 text-[#cde0b8]" />
-                <h3 className="mt-3 text-xs">Context aware</h3>
+                <HeartPulse className="size-5 text-[#cde0b8]" />
+                <h3 className="mt-3 text-xs">Assistive, not replacing</h3>
                 <p className="mt-2 text-[10px] leading-4 text-white/45">
-                  Understands the situation before surfacing what truly
-                  matters.
+                  Designed to support judgment—never to substitute clinical
+                  responsibility.
                 </p>
               </div>
               <div>
                 <ShieldCheck className="size-5 text-[#cde0b8]" />
-                <h3 className="mt-3 text-xs">Private by design</h3>
+                <h3 className="mt-3 text-xs">Compliance posture</h3>
                 <p className="mt-2 text-[10px] leading-4 text-white/45">
-                  Your data stays yours. Secure, compliant, and built to trust.
+                  Least privilege, auditability, and clear boundaries for
+                  HIPAA-aware retrieval.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="relative flex items-center justify-center pt-10 lg:pt-16">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              alt="Nabhi Persona intelligence"
-              className="flagship-float h-auto w-[112%] max-w-none object-contain lg:w-[118%]"
-              height={808}
-              src="/assets/Brain Section.svg"
-              width={1132}
-            />
+          <div className="relative flex min-h-[22rem] items-center justify-center pt-10 lg:min-h-[28rem] lg:pt-16">
+            <div
+              aria-hidden
+              className="flagship-float relative grid aspect-square w-full max-w-[28rem] place-items-center"
+            >
+              <span className="absolute inset-[8%] rounded-full border border-[#cde0b8]/15" />
+              <span className="absolute inset-[22%] rounded-full border border-[#cde0b8]/20" />
+              <span className="absolute inset-[36%] rounded-full border border-[#cde0b8]/25" />
+              <div className="relative grid grid-cols-9 gap-1.5 opacity-90">
+                {Array.from({ length: 81 }, (_, index) => {
+                  const row = Math.floor(index / 9);
+                  const column = index % 9;
+                  const active = row === 4 || column === 4;
+
+                  return (
+                    <span
+                      className={`size-2 rounded-full md:size-2.5 ${
+                        active
+                          ? "bg-[#cde0b8] shadow-[0_0_12px_rgba(205,224,184,0.45)]"
+                          : "bg-[#cde0b8]/20"
+                      }`}
+                      key={index}
+                    />
+                  );
+                })}
+              </div>
+              <BrainCircuit className="absolute size-10 text-[#cde0b8]/90" />
+            </div>
           </div>
         </div>
 
@@ -120,10 +141,10 @@ export function NabhiPersonaSection({
               This is our promise
             </p>
             <p className="mt-2 font-display text-xl leading-7 tracking-[-0.03em] text-white/80 md:text-[1.35rem] md:leading-8">
-              You won&apos;t just get a solution.
+              Care operations deserve clarity—
               <br />
               <span className="text-[#cde0b8]">
-                You&apos;ll get clarity you can rely on.
+                not another disconnected AI layer.
               </span>
             </p>
           </div>

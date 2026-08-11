@@ -15,20 +15,6 @@ export function HomeBelowFold() {
       ),
     [],
   );
-  const loadNabhiPersona = useCallback(
-    () =>
-      import("@/components/sections/NabhiPersonaSection").then(
-        (m) => m.NabhiPersonaSection,
-      ),
-    [],
-  );
-  const loadEcosystem = useCallback(
-    () =>
-      import("@/components/sections/EcosystemSection").then(
-        (m) => m.EcosystemSection,
-      ),
-    [],
-  );
   const loadIntelligence = useCallback(
     () =>
       import("@/components/sections/IntelligenceSection").then(
@@ -75,8 +61,6 @@ export function HomeBelowFold() {
     <>
       <ClientEnhancements />
       <LazySection loader={loadUnderstanding} />
-      <LazySection loader={loadNabhiPersona} />
-      <LazySection loader={loadEcosystem} />
       <LazySection loader={loadIntelligence} />
       <LazySection loader={loadProof} minHeight="30vh" />
       <LazySection loader={loadWhy} />

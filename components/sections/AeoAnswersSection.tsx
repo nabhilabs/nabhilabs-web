@@ -1,26 +1,47 @@
 "use client";
 
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 import { aeoFaqs } from "@/lib/aeo-faq";
 import { ChapterTag } from "@/components/ui/ChapterTag";
+import { FaqThread } from "@/components/ui/FaqThread";
 import { Reveal } from "@/components/ui/Reveal";
 
-export function AeoAnswersSection() {
-  const [hovered, setHovered] = useState<number | null>(null);
+const microLabels = [
+  "the work",
+  "the method",
+  "the product",
+  "the proof",
+  "the people",
+  "the beginning",
+] as const;
 
+export function AeoAnswersSection() {
   return (
     <section
       aria-labelledby="aeo-answers-title"
-      className="relative z-10 border-t border-[#d8e0d5] bg-[#f7f6f1]"
+      className="relative z-10 overflow-x-clip overflow-y-visible border-t border-[#d8e0d5] bg-[#f7f6f1]"
       id="answers"
     >
-      <Reveal className="mx-auto max-w-[95rem] px-6 py-12 md:px-10 md:py-16 lg:py-20">
-        <div className="grid gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-          <div className="lg:sticky lg:top-24 lg:self-start">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-[14%] bottom-[6%] left-1/2 z-0 w-[min(36vw,28rem)] -translate-x-[74%] sm:w-[min(34vw,30rem)] lg:top-[12%] lg:bottom-[4%] lg:w-[min(32vw,32rem)] lg:-translate-x-[70%]"
+      >
+        <Image
+          alt=""
+          className="object-contain object-[center_top] mix-blend-multiply opacity-[0.55] sm:opacity-[0.6]"
+          fill
+          sizes="(max-width: 1024px) 45vw, 32vw"
+          src="/assets/questions-section.png"
+          style={{ transform: "scaleX(-1.08) scaleY(1.08)" }}
+        />
+      </div>
+
+      <Reveal className="relative z-10 mx-auto max-w-[95rem] px-6 pb-12 pt-6 md:px-10 md:pb-16 md:pt-8 lg:pb-20 lg:pt-8">
+        <div className="grid gap-16 overflow-visible lg:grid-cols-[minmax(0,0.78fr)_minmax(10rem,0.45fr)_minmax(0,1.35fr)] lg:items-start lg:gap-8 xl:gap-10">
+          <div className="relative lg:sticky lg:top-24 lg:self-start">
             <ChapterTag>10 // Answers</ChapterTag>
-            <p className="mt-6 font-mono text-[10px] text-[#5a7052]">
-              What do people ask Nabhi Labs?
+            <p className="mt-5 font-mono text-[9px] uppercase tracking-[0.16em] text-[#5a7052]">
+              A thread of questions
             </p>
             <h2
               className="mt-8 max-w-md font-display text-[clamp(3.2rem,5.5vw,5.6rem)] font-medium leading-[0.88] tracking-[-0.055em] text-[#0f1c13]"
@@ -45,66 +66,22 @@ export function AeoAnswersSection() {
             </blockquote>
           </div>
 
-          <div className="border-t border-[#d8e0d5]">
-            {aeoFaqs.map((item, index) => {
-              const open = hovered === index;
-              return (
-                <div
-                  className={`border-b border-[#d8e0d5] transition-colors duration-300 ${
-                    open ? "bg-[#f2f4f0]/60" : ""
-                  }`}
-                  key={item.question}
-                  onMouseEnter={() => setHovered(index)}
-                  onMouseLeave={() => setHovered(null)}
-                >
-                  <button
-                    aria-controls={`faq-answer-${index}`}
-                    aria-expanded={open}
-                    className="flex w-full cursor-pointer items-start gap-5 py-6 text-left outline-none transition-colors hover:text-[#0f1c13] focus-visible:bg-[#eef1eb]"
-                    onClick={() =>
-                      setHovered((current) => (current === index ? null : index))
-                    }
-                    type="button"
-                  >
-                    <span className="mt-1 w-8 shrink-0 font-mono text-[10px] tabular-nums text-[#78966a]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="min-w-0 flex-1 font-display text-xl font-medium leading-snug tracking-[-0.03em] text-[#0f1c13] md:text-2xl">
-                      {item.question}
-                    </span>
-                    <ChevronDown
-                      aria-hidden="true"
-                      className={`mt-1.5 size-4 shrink-0 text-[#78966a] transition-transform duration-300 ${
-                        open ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  <div
-                    className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                      open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                    }`}
-                    id={`faq-answer-${index}`}
-                  >
-                    <div className="overflow-hidden">
-                      <p className="max-w-2xl pb-7 pl-[3.25rem] pr-9 text-sm leading-7 text-[#4a5b4e] md:pl-[3.25rem]">
-                        {item.answer}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+          {/* Spacer column — keeps room for the middle background image */}
+          <div aria-hidden className="hidden lg:block" />
 
-            <p className="mt-8 text-xs leading-6 text-[#4a5b4e]">
-              Evidence we cite:{" "}
-              <span className="font-medium text-[#0f1c13]">50+</span> models
-              tailored to unique contexts · about{" "}
-              <span className="font-medium text-[#0f1c13]">25%</span> average
-              increase in operational clarity · replies within{" "}
-              <span className="font-medium text-[#0f1c13]">24 hours</span>
-            </p>
+          <div className="relative overflow-visible pt-2 lg:col-span-1 lg:-mr-8 lg:pt-10 xl:-mr-14">
+            <FaqThread items={aeoFaqs} microLabels={microLabels} slant />
           </div>
         </div>
+
+        <p className="relative z-10 mt-14 border-t border-[#d8e0d5] pt-6 text-xs leading-6 text-[#4a5b4e]">
+          Evidence we cite:{" "}
+          <span className="font-medium text-[#0f1c13]">50+</span> models tailored
+          to unique contexts · about{" "}
+          <span className="font-medium text-[#0f1c13]">25%</span> average increase
+          in operational clarity · replies within{" "}
+          <span className="font-medium text-[#0f1c13]">24 hours</span>
+        </p>
       </Reveal>
     </section>
   );

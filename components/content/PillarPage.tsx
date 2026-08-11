@@ -8,9 +8,17 @@ import { SITE_URL } from "@/lib/site";
 
 type PillarPageProps = {
   page: PillarPageContent;
+  /** Skip the light technical-grid hero (use when a product section sits above). */
+  hideHero?: boolean;
+  /** Render without outer <main> so a parent can compose the page. */
+  embedded?: boolean;
 };
 
-export function PillarPage({ page }: PillarPageProps) {
+export function PillarPage({
+  page,
+  hideHero = false,
+  embedded = false,
+}: PillarPageProps) {
   const product = getProductByPath(page.path);
   const keywordList = product
     ? productKeywordsCsv(product)
@@ -100,8 +108,8 @@ export function PillarPage({ page }: PillarPageProps) {
         }
     : null;
 
-  return (
-    <main className="relative" id="main-content">
+  const body = (
+    <>
       <script
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
         type="application/ld+json"
@@ -117,41 +125,43 @@ export function PillarPage({ page }: PillarPageProps) {
         />
       ) : null}
 
-      <section className="technical-grid relative overflow-hidden border-b border-[#d8e0d5] bg-[#f2f4f0]">
-        <div className="mx-auto max-w-[95rem] px-6 pb-16 pt-28 md:px-10 md:pb-20 md:pt-32">
-          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#5a7052]">
-            [ {page.eyebrow} ]
-          </p>
-          <p className="mt-4 text-sm font-semibold tracking-[0.2em] text-[#0f1c13]">
-            NABHI LABS
-          </p>
-          <h1 className="mt-6 max-w-4xl font-display text-[clamp(2.4rem,5vw,4.6rem)] font-medium leading-[0.95] tracking-[-0.05em] text-[#0f1c13]">
-            {page.headline}
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-[#4a5b4e]">
-            {page.lede}
-          </p>
-          {product ? (
-            <p className="mt-5 max-w-2xl font-mono text-[10px] leading-5 tracking-[0.04em] text-[#5a7052]">
-              Target words: {product.keywords.slice(0, 6).join(" · ")}
+      {!hideHero ? (
+        <section className="technical-grid relative overflow-hidden border-b border-[#d8e0d5] bg-[#f2f4f0]">
+          <div className="mx-auto max-w-[95rem] px-6 pb-16 pt-28 md:px-10 md:pb-20 md:pt-32">
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#5a7052]">
+              [ {page.eyebrow} ]
             </p>
-          ) : null}
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link
-              className="rounded-full bg-[#1a3323] px-6 py-3 text-sm text-white transition-colors hover:bg-[#2c4f37]"
-              href="/#begin"
-            >
-              Begin a conversation
-            </Link>
-            <Link
-              className="text-sm text-[#31543a] underline-offset-4 hover:underline"
-              href="/"
-            >
-              Back to home
-            </Link>
+            <p className="mt-4 text-sm font-semibold tracking-[0.2em] text-[#0f1c13]">
+              NABHI LABS
+            </p>
+            <h1 className="mt-6 max-w-4xl font-display text-[clamp(2.4rem,5vw,4.6rem)] font-medium leading-[0.95] tracking-[-0.05em] text-[#0f1c13]">
+              {page.headline}
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-[#4a5b4e]">
+              {page.lede}
+            </p>
+            {product ? (
+              <p className="mt-5 max-w-2xl font-mono text-[10px] leading-5 tracking-[0.04em] text-[#5a7052]">
+                Target words: {product.keywords.slice(0, 6).join(" · ")}
+              </p>
+            ) : null}
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link
+                className="rounded-full bg-[#1a3323] px-6 py-3 text-sm text-white transition-colors hover:bg-[#2c4f37]"
+                href="/#begin"
+              >
+                Begin a conversation
+              </Link>
+              <Link
+                className="text-sm text-[#31543a] underline-offset-4 hover:underline"
+                href="/"
+              >
+                Back to home
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       {page.sections.map((section) => (
         <section
@@ -243,6 +253,16 @@ export function PillarPage({ page }: PillarPageProps) {
           </Link>
         </div>
       </section>
+    </>
+  );
+
+  if (embedded) {
+    return body;
+  }
+
+  return (
+    <main className="relative" id="main-content">
+      {body}
     </main>
   );
 }

@@ -3,7 +3,7 @@
 @theme inline {
   --font-sans: var(--font-manrope), "Avenir Next", "Segoe UI", ui-sans-serif, sans-serif;
   --font-display: var(--font-outfit), "Avenir Next", "Segoe UI", ui-sans-serif, sans-serif;
-  --font-serif: var(--font-outfit), "Avenir Next", Georgia, serif;
+  --font-serif: var(--font-instrument-serif), "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --color-nabhi-bg: #f2f4f0;
   --color-nabhi-surface: #ffffff;
   --color-nabhi-soft: #ebf0e8;
@@ -178,6 +178,32 @@ a {
 
 .philosophy-float {
   animation: philosophy-float 4.5s ease-in-out infinite;
+}
+
+/* Philosophy principle cards — full-bleed image always sharp */
+.philosophy-card-media {
+  opacity: 1;
+  filter: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .philosophy-card:hover {
+    border-color: rgba(34, 197, 94, 0.4);
+    box-shadow: 0px 12px 30px -10px rgba(34, 197, 94, 0.15);
+    transform: translateY(-8px);
+  }
+
+  .philosophy-card:hover .philosophy-card-title {
+    color: #ffffff;
+  }
+
+  .philosophy-card:hover .philosophy-card-prompt {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .philosophy-card:hover .philosophy-card-media {
+    transform: scale(1.04);
+  }
 }
 
 @keyframes flagship-float {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Outfit } from "next/font/google";
+import { Instrument_Serif, Manrope, Outfit } from "next/font/google";
 import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
 import { brandAlternateNames } from "@/lib/keyword-strategy";
@@ -22,6 +22,17 @@ const display = Outfit({
   variable: "--font-outfit",
   display: "swap",
   preload: true,
+  adjustFontFallback: true,
+});
+
+/** Editorial serif — elegant contrast where Outfit reads too boxy. */
+const serif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+  preload: false,
   adjustFontFallback: true,
 });
 
@@ -173,7 +184,7 @@ type RootLayoutProps = Readonly<{
 const footerLinks = [
   { href: "/about", label: "About Nabhi Labs" },
   { href: "/services", label: "Services" },
-  { href: "/solutions/nabhi-persona", label: "Nabhi Persona" },
+  { href: "/industries/healthcare-ai", label: "Nabhi Cares" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
   { href: "/philosophy", label: "Philosophy" },
@@ -183,7 +194,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`${sans.variable} ${display.variable} bg-[#f2f4f0] font-sans text-[#0f1c13]`}
+        className={`${sans.variable} ${display.variable} ${serif.variable} bg-[#f2f4f0] font-sans text-[#0f1c13]`}
       >
         <script
           dangerouslySetInnerHTML={{

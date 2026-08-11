@@ -1,4 +1,5 @@
-import { ArrowUpRight, Mic } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { BentoCard } from "@/components/ui/BentoCard";
 import { ChapterTag } from "@/components/ui/ChapterTag";
 import { Reveal } from "@/components/ui/Reveal";
@@ -10,25 +11,28 @@ const capabilities = [
     category: "Products",
     title: "Digital Products",
     description: "Useful products shaped around real human needs.",
-    visual: "products",
+    image: "/assets/what-we-build/Digital Products.png",
+    aspect: "aspect-[16/9]",
     span: "md:col-span-8",
-    href: "/solutions/nabhi-persona",
+    href: "/services",
   },
   {
     number: "02",
     category: "AI Engineering",
     title: "AI & RAG Engineering",
     description: "Retrieval and reasoning systems grounded in trusted context.",
-    visual: "network",
+    image: "/assets/what-we-build/AI & RAG Engineering.png",
+    aspect: "aspect-[16/9]",
     span: "md:col-span-4",
     href: "/services/rag-engineering",
   },
   {
     number: "03",
     category: "Platforms",
-    title: "Healthcare & Web Systems",
-    description: "Connected platforms that make care and operations clearer.",
-    visual: "health",
+    title: "Nabhi Cares",
+    description: "Healthcare AI that makes care and operations clearer.",
+    image: "/assets/what-we-build/Nabhi Cares.png",
+    aspect: "aspect-[4/3]",
     span: "md:col-span-4",
     href: "/industries/healthcare-ai",
   },
@@ -37,7 +41,8 @@ const capabilities = [
     category: "Identity",
     title: "Brand Systems",
     description: "Identity systems that make an organization easier to know.",
-    visual: "identity",
+    image: "/assets/what-we-build/Brand Systems.png",
+    aspect: "aspect-square",
     span: "md:col-span-4",
     href: "/#begin",
   },
@@ -46,7 +51,8 @@ const capabilities = [
     category: "Automation",
     title: "Internal Automation Tools",
     description: "Quiet infrastructure that removes repetitive complexity.",
-    visual: "automation",
+    image: "/assets/what-we-build/Internal Automation Tools.png",
+    aspect: "aspect-[4/3]",
     span: "md:col-span-4",
     href: "/solutions/enterprise-knowledge-management",
   },
@@ -55,107 +61,18 @@ const capabilities = [
     category: "Voice & Agents",
     title: "Agentic Voice Workflows",
     description: "Natural conversations connected to useful action.",
-    visual: "voice",
+    image: "/assets/what-we-build/Agentic Voice Workflows.png",
+    aspect: "aspect-[16/9]",
     span: "md:col-span-8",
     href: "/services/agentic-voice-workflows",
   },
 ] as const;
 
-function CapabilityVisual({ type }: { type: string }) {
-  if (type === "products") {
-    return (
-      <div className="absolute inset-0 grid place-items-center">
-        {[0, 1, 2].map((layer) => (
-          <span
-            className="absolute h-24 w-36 rotate-[18deg] border border-[#79906f]/20 bg-white/25"
-            key={layer}
-            style={{
-              transform: `translate(${layer * 11}px, ${layer * -12}px) rotate(18deg)`,
-            }}
-          />
-        ))}
-        <span className="relative ml-16 size-8 rotate-[18deg] bg-[#cde0b8]" />
-      </div>
-    );
-  }
-
-  if (type === "network") {
-    return (
-      <div className="absolute inset-0 grid place-items-center">
-        <span className="size-44 rounded-full bg-[repeating-conic-gradient(from_0deg,rgba(90,112,82,0.22)_0deg_1deg,transparent_1deg_9deg)] [mask-image:radial-gradient(circle,transparent_0_9%,black_10%_100%)]" />
-        <span className="absolute size-3 rounded-full bg-[#8fac79] shadow-[0_0_30px_12px_rgba(143,172,121,0.35)]" />
-      </div>
-    );
-  }
-
-  if (type === "health") {
-    return (
-      <div className="absolute inset-0 grid place-items-center opacity-70">
-        <div className="grid grid-cols-9 gap-1">
-          {Array.from({ length: 81 }, (_, index) => {
-            const row = Math.floor(index / 9);
-            const column = index % 9;
-            const active = row === 4 || column === 4;
-
-            return (
-              <span
-                className={`size-1 rounded-full ${
-                  active ? "bg-[#8fac79]" : "bg-[#8fac79]/15"
-                }`}
-                key={index}
-              />
-            );
-          })}
-        </div>
-      </div>
-    );
-  }
-
-  if (type === "identity") {
-    return (
-      <div className="absolute inset-0 grid place-items-center">
-        <span className="size-28 rounded-full border border-[#5a7052]/25" />
-        <span className="absolute size-16 rounded-full border border-[#5a7052]/15" />
-        <span className="absolute size-3 rounded-full bg-[#78966a] shadow-[0_0_20px_6px_rgba(120,150,106,0.28)]" />
-      </div>
-    );
-  }
-
-  if (type === "automation") {
-    return (
-      <div className="absolute inset-0 grid place-items-center">
-        <div className="grid rotate-[30deg] grid-cols-3 gap-2">
-          {Array.from({ length: 9 }, (_, index) => (
-            <span
-              className={`size-8 border border-[#5a7052]/15 ${
-                index === 7 ? "bg-[#cde0b8]" : "bg-white/20"
-              }`}
-              key={index}
-            />
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="absolute inset-0 flex items-center">
-      <div className="flex flex-1 items-center justify-center gap-[3px]">
-        {Array.from({ length: 42 }, (_, index) => (
-          <span
-            className="w-px bg-[#8fac79]/60"
-            key={index}
-            style={{ height: `${6 + ((index * 13) % 35)}px` }}
-          />
-        ))}
-      </div>
-      <span className="mr-10 grid size-16 place-items-center rounded-full border border-[#78966a]/30">
-        <span className="grid size-11 place-items-center rounded-full bg-[#cde0b8]">
-          <Mic className="size-4 text-[#31543a]" />
-        </span>
-      </span>
-    </div>
-  );
+function assetSrc(path: string) {
+  const slash = path.lastIndexOf("/");
+  const dir = path.slice(0, slash + 1);
+  const file = path.slice(slash + 1);
+  return `${dir}${encodeURIComponent(file)}`;
 }
 
 export function EcosystemSection() {
@@ -165,83 +82,96 @@ export function EcosystemSection() {
       id="capabilities"
     >
       <Reveal className="mx-auto max-w-[95rem] px-6 py-12 md:px-10 md:py-16">
-        <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-10">
-          <div className="lg:sticky lg:top-24 lg:self-start">
-            <ChapterTag>04 // What We Build</ChapterTag>
-            <h2 className="mt-7 font-display text-[clamp(3rem,6vw,6.4rem)] font-medium leading-[0.88] tracking-[-0.06em] text-[#0f1c13]">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-10">
+          <div className="max-w-3xl">
+            <ChapterTag>03 // What We Build</ChapterTag>
+            <h2 className="mt-6 font-display text-[clamp(2.8rem,5vw,5.2rem)] font-medium leading-[0.9] tracking-[-0.055em] text-[#0f1c13]">
               One ecosystem.
               <br />
-              Many useful forms<span className="text-[#78966a]">.</span>
+              Many useful forms
+              <span className="text-[#78966a]">.</span>
             </h2>
-
-            <p className="mt-7 max-w-lg text-base font-normal leading-relaxed text-[#4a5b4e]">
-              Products, AI engineering, software, and systems—all consequences
-              of the same philosophy.
-            </p>
           </div>
-
-          <div className="lg:pt-1">
-            <div className="grid auto-rows-[minmax(13.5rem,auto)] grid-cols-1 gap-2 md:grid-cols-12">
-              {capabilities.map((capability, index) => (
-                <StaggerReveal
-                  className={`h-full ${capability.span}`}
-                  index={index}
-                  key={capability.title}
-                >
-                  <BentoCard className="relative h-full min-h-[13.5rem] overflow-hidden rounded-2xl border border-[#d8e0d5] bg-white/45 p-5 shadow-[0_10px_30px_rgba(26,51,35,0.04)] hover:border-[#a3e635]/45 hover:bg-white/75">
-                    <div className="relative z-10 max-w-[58%]">
-                      <p className="font-mono text-sm text-[#78966a]">
-                        {capability.number}
-                      </p>
-                      <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.16em] text-[#525252]">
-                        [ {capability.category} ]
-                      </p>
-                      <h3 className="mt-3 font-display text-xl font-medium tracking-[-0.035em] text-[#0f1c13]">
-                        {capability.title}
-                      </h3>
-                      <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-[#333333]">
-                        {capability.description}
-                      </p>
-                    </div>
-
-                    <div className="absolute inset-y-0 right-0 z-[1] w-[48%] opacity-80 transition-opacity duration-500 group-hover:opacity-100">
-                      <CapabilityVisual type={capability.visual} />
-                    </div>
-                    <a
-                      aria-label={`Explore ${capability.title}`}
-                      className="absolute bottom-5 right-5 z-20 grid size-8 place-items-center rounded-full border border-[#aebcac] bg-white/60 text-[#31543a] transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:border-[#a3e635] group-hover:bg-[#cde0b8]"
-                      href={capability.href}
-                    >
-                      <ArrowUpRight className="size-3.5" />
-                    </a>
-                    <span className="bento-plus absolute right-4 top-3 z-10 font-mono text-xs text-[#5a7052]/50 transition-colors group-hover:text-[#78966a]">
-                      +
-                    </span>
-                  </BentoCard>
-                </StaggerReveal>
-              ))}
-
-              <StaggerReveal className="h-full md:col-span-4" index={6}>
-                <BentoCard className="relative flex h-full min-h-[13.5rem] flex-col justify-center overflow-hidden rounded-2xl border border-[#d8e0d5] bg-white/30 p-6 hover:border-[#a3e635]/40">
-                  <span className="absolute -left-5 top-1/2 size-36 -translate-y-1/2 rounded-full border border-[#5a7052]/10" />
-                  <span className="absolute left-5 top-1/2 size-20 -translate-y-1/2 rounded-full border border-[#5a7052]/15" />
-                  <span className="absolute left-[3.7rem] top-1/2 size-3 -translate-y-1/2 rounded-full bg-[#8fac79]" />
-                  <div className="relative z-10 ml-24 sm:ml-28">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#525252]">
-                      Same foundation.
-                    </p>
-                    <p className="mt-4 font-display text-2xl leading-7 tracking-[-0.04em] text-[#0f1c13]">
-                      Different outputs.
-                      <br />
-                      One outcome—
-                      <span className="italic text-[#78966a]">clarity.</span>
-                    </p>
-                  </div>
-                </BentoCard>
-              </StaggerReveal>
-            </div>
-          </div>
+          <p className="max-w-sm pb-1 text-sm leading-7 text-[#4a5b4e] sm:text-right">
+            Products, AI engineering, software, and systems—all consequences of
+            the same philosophy.
+          </p>
         </div>
+
+        <div className="mt-10 grid grid-cols-1 gap-2 md:mt-12 md:grid-cols-12">
+          {capabilities.map((capability, index) => (
+            <StaggerReveal
+              className={`h-full ${capability.span}`}
+              index={index}
+              key={capability.title}
+            >
+              <BentoCard className="relative flex h-full min-h-[14rem] flex-col overflow-hidden rounded-2xl border border-black/5 bg-[#F8F8F6] p-5 shadow-[0_10px_30px_rgba(26,51,35,0.04)] transition-[border-color,background-color,transform] duration-300 ease-out hover:border-emerald-600/30 hover:bg-[#f3f4f1]">
+                <div className="relative z-10 max-w-[58%]">
+                  <p className="font-mono text-sm text-[#78966a]">
+                    {capability.number}
+                  </p>
+                  <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.16em] text-[#525252]">
+                    [ {capability.category} ]
+                  </p>
+                  <h3 className="mt-3 font-display text-xl font-medium tracking-[-0.035em] text-[#0f1c13]">
+                    {capability.title}
+                  </h3>
+                  <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-[#333333]">
+                    {capability.description}
+                  </p>
+                </div>
+
+                <div
+                  className={`pointer-events-none absolute bottom-3 right-3 z-[1] w-[52%] ${capability.aspect}`}
+                >
+                  <Image
+                    alt=""
+                    aria-hidden
+                    className="object-contain object-right-bottom transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+                    fill
+                    sizes="(max-width: 768px) 55vw, 28vw"
+                    src={assetSrc(capability.image)}
+                  />
+                </div>
+
+                <a
+                  aria-label={`Explore ${capability.title}`}
+                  className="absolute bottom-5 right-5 z-20 grid size-8 place-items-center rounded-full border border-[#aebcac] bg-white/70 text-[#31543a] transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:border-emerald-600/40 group-hover:bg-[#cde0b8]"
+                  href={capability.href}
+                >
+                  <ArrowUpRight className="size-3.5" />
+                </a>
+                <span className="bento-plus absolute right-4 top-3 z-10 font-mono text-xs text-[#5a7052]/50 transition-colors group-hover:text-[#78966a]">
+                  +
+                </span>
+              </BentoCard>
+            </StaggerReveal>
+          ))}
+
+          <StaggerReveal className="h-full md:col-span-4" index={6}>
+            <BentoCard className="relative flex h-full min-h-[14rem] flex-col justify-center overflow-hidden rounded-2xl border border-black/5 bg-[#F8F8F6]/80 p-6 transition-[border-color] duration-300 hover:border-emerald-600/30">
+              <span className="absolute -left-5 top-1/2 size-36 -translate-y-1/2 rounded-full border border-[#5a7052]/10" />
+              <span className="absolute left-5 top-1/2 size-20 -translate-y-1/2 rounded-full border border-[#5a7052]/15" />
+              <span className="absolute left-[3.7rem] top-1/2 size-3 -translate-y-1/2 rounded-full bg-[#8fac79]" />
+              <div className="relative z-10 ml-24 sm:ml-28">
+                <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#525252]">
+                  Same foundation.
+                </p>
+                <p className="mt-4 font-display text-2xl leading-7 tracking-[-0.04em] text-[#0f1c13]">
+                  Different outputs.
+                  <br />
+                  One outcome—
+                  <span className="italic text-[#78966a]">clarity.</span>
+                </p>
+              </div>
+            </BentoCard>
+          </StaggerReveal>
+        </div>
+
+        <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.14em] text-[#5a7052]">
+          Every capability. Same philosophy. Understanding first. Technology
+          second.
+        </p>
       </Reveal>
     </section>
   );
