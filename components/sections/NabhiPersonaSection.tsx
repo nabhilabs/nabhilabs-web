@@ -38,14 +38,24 @@ export function NabhiPersonaSection({
   chapterTag = "Product // Nabhi Persona",
   asPageHero = false,
 }: NabhiPersonaSectionProps) {
+  const gradient =
+    "radial-gradient(circle at 70% 30%, #1a3d24 0%, #121a16 34%, #0e1012 76%)";
+
   return (
     <section
-      className={`section-theme-dark relative z-10 bg-[#0e1012] text-white transition-colors duration-700 ${
-        asPageHero ? "pt-24 md:pt-28" : ""
+      className={`section-theme-dark relative z-10 text-white transition-colors duration-700 ${
+        asPageHero ? "pt-[4.25rem]" : "bg-[#0e1012]"
       }`}
       id="nabhi-persona"
+      style={asPageHero ? { background: gradient } : undefined}
     >
-      <Reveal className="mx-auto max-w-[95rem] bg-[radial-gradient(circle_at_70%_30%,#1a3d24_0%,#121a16_34%,#0e1012_76%)] p-6 md:p-10 lg:p-14">
+      <Reveal
+        className={`mx-auto max-w-[95rem] p-6 md:p-10 lg:p-14 ${
+          asPageHero
+            ? ""
+            : "bg-[radial-gradient(circle_at_70%_30%,#1a3d24_0%,#121a16_34%,#0e1012_76%)]"
+        }`}
+      >
         <div className="grid gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <ChapterTag inverse>{chapterTag}</ChapterTag>
@@ -70,7 +80,7 @@ export function NabhiPersonaSection({
             </div>
             <a
               className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#cde0b8] px-6 py-3 text-xs font-medium text-[#0f1c13] transition-colors hover:bg-white"
-              href={asPageHero ? "#answers" : "/solutions/nabhi-persona"}
+              href={asPageHero ? "#answers" : "/products/nabhi-persona"}
             >
               {asPageHero ? "Read the details" : "Explore Nabhi Persona"}
               <ArrowUpRight aria-hidden="true" className="size-4" />

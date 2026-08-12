@@ -109,7 +109,7 @@ export default function PhilosophyPage() {
             </Link>
             <Link
               className="underline-offset-4 hover:underline"
-              href="/solutions/nabhi-persona"
+              href="/products/nabhi-persona"
             >
               Nabhi Persona
             </Link>

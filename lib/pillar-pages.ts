@@ -21,8 +21,8 @@ export type PillarPageContent = {
 export const pillarPages: PillarPageContent[] = [
   {
     slug: "nabhi-persona",
-    path: "/solutions/nabhi-persona",
-    eyebrow: "Solutions // Nabhi Persona",
+    path: "/products/nabhi-persona",
+    eyebrow: "Products // Nabhi Persona",
     title: "Nabhi Persona Architecture for Enterprises",
     description:
       "Nabhi Labs designs Nabhi Persona architectures that turn scattered institutional knowledge into active, private, decision-ready intelligence.",
@@ -70,7 +70,7 @@ export const pillarPages: PillarPageContent[] = [
     ],
     related: [
       {
-        href: "/solutions/enterprise-knowledge-management",
+        href: "/services/enterprise-knowledge-management",
         label: "Enterprise knowledge management",
       },
       { href: "/services/rag-engineering", label: "RAG engineering services" },
@@ -82,8 +82,8 @@ export const pillarPages: PillarPageContent[] = [
   },
   {
     slug: "enterprise-knowledge-management",
-    path: "/solutions/enterprise-knowledge-management",
-    eyebrow: "Solutions // Knowledge",
+    path: "/services/enterprise-knowledge-management",
+    eyebrow: "Services // Knowledge",
     title: "Enterprise Knowledge Management Platform",
     description:
       "Nabhi Labs designs enterprise knowledge management platforms that reconnect fragmented information into clarity—before more tools are added.",
@@ -122,9 +122,9 @@ export const pillarPages: PillarPageContent[] = [
       },
     ],
     related: [
-      { href: "/solutions/nabhi-persona", label: "Nabhi Persona solutions" },
+      { href: "/products/nabhi-persona", label: "Nabhi Persona" },
       { href: "/services/rag-engineering", label: "Custom RAG implementation" },
-      { href: "/industries/healthcare-ai", label: "Healthcare AI systems" },
+      { href: "/products/nabhi-cares", label: "Nabhi Cares" },
     ],
   },
   {
@@ -134,7 +134,7 @@ export const pillarPages: PillarPageContent[] = [
     title: "Custom RAG Implementation & Enterprise RAG Engineering",
     description:
       "Nabhi Labs provides custom RAG implementation and enterprise RAG engineering—retrieval systems grounded in trusted context, evaluations, and security.",
-    headline: "Custom RAG implementation services",
+    headline: "Custom RAG that produces grounded answers",
     lede: "Nabhi Labs engineers retrieval-augmented generation systems that answer from your documents and data—with citations, evaluations, and access controls fit for enterprise use.",
     primaryKeyword: "custom RAG implementation services",
     datePublished: "2026-08-02",
@@ -181,7 +181,7 @@ export const pillarPages: PillarPageContent[] = [
         href: "/resources/rag-evaluation-checklist",
         label: "RAG evaluation checklist",
       },
-      { href: "/solutions/nabhi-persona", label: "Nabhi Persona" },
+      { href: "/products/nabhi-persona", label: "Nabhi Persona" },
       {
         href: "/services/agentic-voice-workflows",
         label: "Agentic voice workflows",
@@ -195,7 +195,7 @@ export const pillarPages: PillarPageContent[] = [
     title: "Agentic Voice Workflows & Conversational AI Systems",
     description:
       "Nabhi Labs designs agentic voice workflows and conversational AI systems that connect natural conversation to useful action inside enterprise tools.",
-    headline: "Agentic voice workflow automation",
+    headline: "Voice agents that complete useful action",
     lede: "Nabhi Labs builds conversational AI systems where voice and chat agents call the right tools, respect policy, and leave an audit trail—so conversation becomes work completed, not another transcript.",
     primaryKeyword: "agentic voice workflow automation",
     datePublished: "2026-08-02",
@@ -229,14 +229,14 @@ export const pillarPages: PillarPageContent[] = [
     ],
     related: [
       { href: "/services/rag-engineering", label: "RAG engineering" },
-      { href: "/solutions/nabhi-persona", label: "Nabhi Persona" },
-      { href: "/industries/healthcare-ai", label: "Healthcare AI" },
+      { href: "/products/nabhi-persona", label: "Nabhi Persona" },
+      { href: "/products/nabhi-cares", label: "Nabhi Cares" },
     ],
   },
   {
     slug: "healthcare-ai",
-    path: "/industries/healthcare-ai",
-    eyebrow: "Industries // Healthcare",
+    path: "/products/nabhi-cares",
+    eyebrow: "Products // Nabhi Cares",
     title: "AI Integration for Healthcare Systems",
     description:
       "Nabhi Labs delivers AI integration for healthcare systems—knowledge, RAG, and workflows designed for operational clarity and careful compliance posture.",
@@ -274,7 +274,7 @@ export const pillarPages: PillarPageContent[] = [
     ],
     related: [
       {
-        href: "/solutions/enterprise-knowledge-management",
+        href: "/services/enterprise-knowledge-management",
         label: "Enterprise knowledge management",
       },
       { href: "/services/rag-engineering", label: "RAG engineering" },
@@ -331,7 +331,7 @@ export const resourcePages: PillarPageContent[] = [
     ],
     related: [
       { href: "/services/rag-engineering", label: "RAG engineering services" },
-      { href: "/solutions/nabhi-persona", label: "Nabhi Persona" },
+      { href: "/products/nabhi-persona", label: "Nabhi Persona" },
     ],
   },
   {
@@ -374,9 +374,9 @@ export const resourcePages: PillarPageContent[] = [
       },
     ],
     related: [
-      { href: "/solutions/nabhi-persona", label: "Nabhi Persona solutions" },
+      { href: "/products/nabhi-persona", label: "Nabhi Persona" },
       {
-        href: "/solutions/enterprise-knowledge-management",
+        href: "/services/enterprise-knowledge-management",
         label: "Knowledge management",
       },
       { href: "/case-studies", label: "Case study patterns" },
@@ -406,7 +406,7 @@ export const caseStudyIndex = {
     },
   ],
   related: [
-    { href: "/solutions/nabhi-persona", label: "Nabhi Persona" },
+    { href: "/products/nabhi-persona", label: "Nabhi Persona" },
     { href: "/services/rag-engineering", label: "RAG engineering" },
     {
       href: "/resources/enterprise-nabhi-persona-playbook",

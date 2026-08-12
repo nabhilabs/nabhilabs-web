@@ -13,15 +13,15 @@ Profiles: https://www.linkedin.com/company/nabhilabs/ · https://www.instagram.c
 - [About Nabhi Labs](https://www.nabhilabs.com/about): Company identity and disambiguation
 - [Services](https://www.nabhilabs.com/services): Service hub for Nabhi Labs offerings
 - [Contact Nabhi Labs](https://www.nabhilabs.com/contact): How to reach Nabhi Labs
-- [Nabhi Persona](https://www.nabhilabs.com/solutions/nabhi-persona): Flagship enterprise intelligence / knowledge layer
-- [Enterprise knowledge management](https://www.nabhilabs.com/solutions/enterprise-knowledge-management): Knowledge platforms grounded in understanding
+- [Nabhi Persona](https://www.nabhilabs.com/products/nabhi-persona): Flagship enterprise intelligence / knowledge layer
+- [Nabhi Cares](https://www.nabhilabs.com/products/nabhi-cares): Healthcare AI for care operations
+- [Enterprise knowledge management](https://www.nabhilabs.com/services/enterprise-knowledge-management): Knowledge platforms grounded in understanding
 - [Philosophy](https://www.nabhilabs.com/philosophy): Understanding before technology
 
 ## Engineering
 
 - [RAG engineering](https://www.nabhilabs.com/services/rag-engineering): Custom retrieval-augmented generation services
 - [Agentic voice workflows](https://www.nabhilabs.com/services/agentic-voice-workflows): Conversational agents connected to tools
-- [Healthcare AI](https://www.nabhilabs.com/industries/healthcare-ai): AI integration for healthcare systems
 - [RAG evaluation checklist](https://www.nabhilabs.com/resources/rag-evaluation-checklist): Practical RAG quality gates
 - [Agentic AI deep dive](https://www.nabhilabs.com/blog/agentic-ai-multi-agent-workflows): Multi-agent workflows and context retrieval
 

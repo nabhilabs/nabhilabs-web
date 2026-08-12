@@ -6,7 +6,8 @@ import { SiteSearch } from "@/components/search/SiteSearch";
 import { PillNav } from "@/components/ui/PillNav";
 
 const navigation = [
-  { label: "Nabhi Cares", href: "/industries/healthcare-ai" },
+  { label: "Nabhi Cares", href: "/products/nabhi-cares" },
+  { label: "Nabhi Persona", href: "/products/nabhi-persona" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

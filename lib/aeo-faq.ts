@@ -28,7 +28,7 @@ export const aeoFaqs = [
   {
     question: "How can I start a conversation with Nabhi Labs?",
     answer:
-      "Start with what feels complex. Email hello@nabhilabs.com or use the Begin form on nabhilabs.com with a few lines about the system, the noise, or the decision you cannot yet see clearly. Someone from the Nabhi Labs team usually replies within 24 hours for a thoughtful discussion—not a sales pitch. Bring constraints, stakeholders, and what “better” would feel like. We will listen first, map what matters, and only then talk about products, AI engineering, or architecture. Clarity is the goal of the first conversation, not a contract.",
+      "Start with what feels complex. Email hello@nabhilabs.com or send a note on nabhilabs.com/contact with a few lines about the system, the noise, or the decision you cannot yet see clearly. Someone from the Nabhi Labs team usually replies within 24 hours for a thoughtful discussion—not a sales pitch. Bring constraints, stakeholders, and what “better” would feel like. We will listen first, map what matters, and only then talk about products, AI engineering, or architecture. Clarity is the goal of the first conversation, not a contract.",
   },
 ] as const;
 

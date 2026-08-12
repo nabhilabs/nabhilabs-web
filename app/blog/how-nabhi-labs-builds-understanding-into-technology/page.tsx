@@ -110,7 +110,7 @@ export default function HowNabhiLabsBuildsPage() {
                 Read more about{" "}
                 <Link
                   className="text-[#31543a] underline-offset-4 hover:underline"
-                  href="/solutions/nabhi-persona"
+                  href="/products/nabhi-persona"
                 >
                   Nabhi Persona
                 </Link>

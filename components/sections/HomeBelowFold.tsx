@@ -39,11 +39,6 @@ export function HomeBelowFold() {
       import("@/components/sections/StorySection").then((m) => m.StorySection),
     [],
   );
-  const loadTeam = useCallback(
-    () =>
-      import("@/components/sections/TeamSection").then((m) => m.TeamSection),
-    [],
-  );
   const loadBegin = useCallback(
     () =>
       import("@/components/sections/BeginSection").then((m) => m.BeginSection),
@@ -65,7 +60,6 @@ export function HomeBelowFold() {
       <LazySection loader={loadProof} minHeight="30vh" />
       <LazySection loader={loadWhy} />
       <LazySection loader={loadStory} />
-      <LazySection loader={loadTeam} />
       <LazySection loader={loadAnswers} />
       <LazySection loader={loadBegin} minHeight="80vh" />
     </>

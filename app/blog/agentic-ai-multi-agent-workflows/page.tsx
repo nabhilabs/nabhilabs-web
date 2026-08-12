@@ -216,7 +216,7 @@ export default function AgenticAiBlogPost() {
               </Link>
               <Link
                 className="rounded-full border border-white/20 px-6 py-3 text-sm text-white"
-                href="/solutions/nabhi-persona"
+                href="/products/nabhi-persona"
               >
                 Explore Nabhi Persona
               </Link>

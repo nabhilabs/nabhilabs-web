@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, AudioLines, Library, Search } from "lucide-react";
+import { ChapterTag } from "@/components/ui/ChapterTag";
+import { CurtainSlider } from "@/components/ui/CurtainSlider";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -24,147 +26,112 @@ export const metadata: Metadata = {
   },
 };
 
-const products = [
+const curtainSlides = [
   {
-    href: "/industries/healthcare-ai",
+    src: "/assets/nabhi_cares_wallpaper_hd.png",
+    alt: "Glowing heart over a dark mossy landscape — Nabhi Cares healthcare AI",
+    position: "68% center",
+    chapter: "01 // Nabhi Cares",
     title: "Nabhi Cares",
-    label: "Product",
-    status: "Available",
-    copy: "Healthcare AI for care operations—clarity across systems, assistive workflows, and a careful compliance posture.",
-    cta: "Know more",
+    gist: "Healthcare AI for care operations—clarity across systems, assistive workflows, and a careful compliance posture.",
+    href: "/products/nabhi-cares",
+    cta: "Open Nabhi Cares",
+    accent: "rgba(163, 230, 53, 0.38)",
   },
   {
-    href: "/solutions/nabhi-persona",
+    src: "/assets/nabhi_persona_wallpaper_hd.png",
+    alt: "Glowing brain over a dark mossy landscape — Nabhi Persona intelligence",
+    position: "72% center",
+    chapter: "02 // Nabhi Persona",
     title: "Nabhi Persona",
-    label: "Product",
-    status: "Coming soon",
-    copy: "A future intelligence layer that turns institutional knowledge into active, private understanding. Architecture and roadmap live on its product page.",
-    cta: "Explore the vision",
+    gist: "An intelligence layer that turns institutional knowledge into active, private understanding—when context matters.",
+    href: "/products/nabhi-persona",
+    cta: "Open Nabhi Persona",
+    accent: "rgba(110, 190, 210, 0.34)",
   },
 ] as const;
 
 const supportingServices = [
   {
-    href: "/solutions/enterprise-knowledge-management",
+    href: "/services/enterprise-knowledge-management",
+    index: "01",
     title: "Enterprise knowledge management",
     copy: "Platforms that reconnect fragmented knowledge into usable clarity.",
-    cta: "Know more",
+    icon: Library,
   },
   {
     href: "/services/rag-engineering",
+    index: "02",
     title: "RAG engineering",
     copy: "Custom retrieval-augmented generation with evaluations and permissions.",
-    cta: "Know more",
+    icon: Search,
   },
   {
     href: "/services/agentic-voice-workflows",
+    index: "03",
     title: "Agentic voice workflows",
     copy: "Conversational systems that call tools safely and leave an audit trail.",
-    cta: "Know more",
+    icon: AudioLines,
   },
 ] as const;
 
 export default function ServicesPage() {
   return (
     <main className="relative" id="main-content">
-      <section className="technical-grid border-b border-[#d8e0d5] bg-[#f2f4f0]">
-        <div className="mx-auto max-w-[95rem] px-6 pb-16 pt-28 md:px-10 md:pt-32">
-          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#5a7052]">
-            [ Services ]
-          </p>
-          <h1 className="mt-6 max-w-4xl font-display text-[clamp(2.4rem,5vw,4.6rem)] font-medium leading-[0.95] tracking-[-0.05em] text-[#0f1c13]">
-            Products first.
-            <span className="mt-3 block text-[#31543a]">
-              Engineering that follows.
-            </span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-[#4a5b4e]">
-            Start with the product that matches your problem. Each page opens
-            with the product story, then the full details—architecture,
-            answers, and how to begin.
-          </p>
-        </div>
-      </section>
+      <CurtainSlider slides={[...curtainSlides]} />
 
-      <section className="border-b border-[#d8e0d5] bg-[#f7f6f1]" id="products">
-        <div className="mx-auto max-w-[95rem] px-6 py-14 md:px-10 md:py-20">
-          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#5a7052]">
-            01 // Products
-          </p>
-          <h2 className="mt-4 max-w-2xl font-display text-[clamp(1.8rem,3vw,2.8rem)] font-medium leading-[0.95] tracking-[-0.04em] text-[#0f1c13]">
-            Choose a product path
-          </h2>
-
-          <ul className="mt-10 grid gap-6 lg:grid-cols-2">
-            {products.map((product) => (
-              <li
-                className="flex flex-col rounded-2xl border border-[#d8e0d5] bg-white/60 p-6 md:p-8"
-                key={product.href}
-              >
-                <div className="flex flex-wrap items-center gap-3">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#5a7052]">
-                    {product.label}
-                  </p>
-                  <span className="rounded-full border border-[#d8e0d5] px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-[0.12em] text-[#4a5b4e]">
-                    {product.status}
-                  </span>
-                </div>
-                <h3 className="mt-4 font-display text-3xl tracking-[-0.03em] text-[#0f1c13]">
-                  {product.title}
-                </h3>
-                <p className="mt-4 flex-1 text-sm leading-6 text-[#4a5b4e]">
-                  {product.copy}
-                </p>
-                <Link
-                  className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-[#1a3323] px-5 py-2.5 text-xs font-medium text-white transition-colors hover:bg-[#2c4f37]"
-                  href={product.href}
-                >
-                  {product.cta}
-                  <ArrowUpRight aria-hidden className="size-3.5" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="bg-[#f7f6f1]" id="supporting-services">
-        <div className="mx-auto max-w-[95rem] px-6 py-14 md:px-10 md:py-20">
-          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#5a7052]">
-            02 // Supporting services
-          </p>
-          <h2 className="mt-4 max-w-2xl font-display text-[clamp(1.8rem,3vw,2.8rem)] font-medium leading-[0.95] tracking-[-0.04em] text-[#0f1c13]">
+      <section
+        aria-labelledby="supporting-services-heading"
+        className="border-t border-[#d8e0d5] bg-[#f2f4f0]"
+        id="supporting-services"
+      >
+        <div className="mx-auto max-w-[95rem] px-6 py-16 md:px-10 md:py-24">
+          <ChapterTag>03 // Supporting_Services</ChapterTag>
+          <h2
+            className="mt-6 max-w-2xl font-display text-[clamp(1.8rem,3vw,2.8rem)] font-medium leading-[0.95] tracking-[-0.04em] text-[#0f1c13]"
+            id="supporting-services-heading"
+          >
             The systems behind the products
           </h2>
           <p className="mt-4 max-w-xl text-sm leading-6 text-[#4a5b4e]">
-            Knowledge platforms, retrieval engineering, and agentic voice—
-            used alone or as the substrate for Cares and Persona.
+            Knowledge platforms, retrieval engineering, and agentic voice—used
+            alone or as the substrate for Cares and Persona.
           </p>
 
-          <ul className="mt-10 grid gap-6 md:grid-cols-3">
-            {supportingServices.map((service) => (
-              <li
-                className="flex flex-col border-b border-[#d8e0d5] pb-8"
-                key={service.href}
-              >
-                <h3 className="font-display text-xl tracking-[-0.03em] text-[#0f1c13]">
-                  {service.title}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-6 text-[#4a5b4e]">
-                  {service.copy}
-                </p>
+          <ul className="mt-12 grid gap-5 md:grid-cols-3">
+            {supportingServices.map(({ href, index, title, copy, icon: Icon }) => (
+              <li key={href}>
                 <Link
-                  className="mt-6 inline-flex w-fit items-center gap-2 text-sm text-[#31543a] underline-offset-4 hover:underline"
-                  href={service.href}
+                  className="group flex h-full flex-col rounded-2xl border border-[#d8e0d5] bg-[#f7f6f1] p-6 transition-colors hover:border-[#78966a]/50 hover:bg-[#ebf0e8] md:p-7"
+                  href={href}
                 >
-                  {service.cta}
-                  <ArrowUpRight aria-hidden className="size-3.5" />
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="grid size-10 place-items-center rounded-xl bg-[#0f1c13] text-[#cde0b8]">
+                      <Icon aria-hidden className="size-4" strokeWidth={1.75} />
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#5a7052]">
+                      {index}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 font-display text-xl font-semibold leading-snug tracking-[-0.03em] text-[#0f1c13]">
+                    {title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-6 text-[#4a5b4e]">
+                    {copy}
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-xs font-medium text-[#31543a]">
+                    Know more
+                    <ArrowUpRight
+                      aria-hidden
+                      className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                  </span>
                 </Link>
               </li>
             ))}
           </ul>
 
-          <p className="mt-12 text-sm text-[#4a5b4e]">
+          <p className="mt-12 border-t border-[#d8e0d5] pt-8 text-sm text-[#4a5b4e]">
             Not sure where to start?{" "}
             <Link
               className="text-[#31543a] underline-offset-4 hover:underline"

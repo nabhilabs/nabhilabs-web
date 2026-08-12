@@ -89,7 +89,7 @@ export default function CaseStudiesPage() {
           </ul>
           <Link
             className="mt-10 inline-flex rounded-full bg-[#1a3323] px-6 py-3 text-sm text-white hover:bg-[#2c4f37]"
-            href="/#begin"
+            href="/contact"
           >
             Discuss your system
           </Link>

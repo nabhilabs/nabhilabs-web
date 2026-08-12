@@ -1,12 +1,15 @@
-import { PillarPage } from "@/components/content/PillarPage";
+import { ServiceLanding } from "@/components/content/ServiceLanding";
 import { pillarMetadata } from "@/lib/pillar-metadata";
 import { getPageByPath } from "@/lib/pillar-pages";
+import { routes } from "@/lib/routes";
+import { getServiceLanding } from "@/lib/service-landings";
 
-const path = "/services/rag-engineering";
+const path = routes.rag;
 const page = getPageByPath(path)!;
+const landing = getServiceLanding(path)!;
 
 export const metadata = pillarMetadata(path);
 
 export default function RagEngineeringPage() {
-  return <PillarPage page={page} />;
+  return <ServiceLanding landing={landing} page={page} />;
 }

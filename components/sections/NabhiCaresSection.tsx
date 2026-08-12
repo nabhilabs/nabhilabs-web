@@ -1,6 +1,5 @@
 import {
   ArrowUpRight,
-  BrainCircuit,
   HeartPulse,
   Infinity,
   ShieldCheck,
@@ -38,14 +37,22 @@ export function NabhiCaresSection({
   chapterTag = "Product // Nabhi Cares",
   asPageHero = false,
 }: NabhiCaresSectionProps) {
+  const gradient =
+    "radial-gradient(circle at 30% 20%, #1a2e3d 0%, #121a16 40%, #0e1012 78%)";
+
   return (
     <section
-      className={`section-theme-dark relative z-10 bg-[#0e1012] text-white transition-colors duration-700 ${
-        asPageHero ? "pt-24 md:pt-28" : ""
+      className={`section-theme-dark relative z-10 text-white transition-colors duration-700 ${
+        asPageHero ? "pt-[4.25rem]" : "bg-[#0e1012]"
       }`}
       id="nabhi-cares"
+      style={asPageHero ? { background: gradient } : undefined}
     >
-      <Reveal className="mx-auto max-w-[95rem] bg-[radial-gradient(circle_at_30%_20%,#1a2e3d_0%,#121a16_40%,#0e1012_78%)] p-6 md:p-10 lg:p-14">
+      <Reveal
+        className={`mx-auto max-w-[95rem] p-6 md:p-10 lg:p-14 ${
+          asPageHero ? "" : "bg-[radial-gradient(circle_at_30%_20%,#1a2e3d_0%,#121a16_40%,#0e1012_78%)]"
+        }`}
+      >
         <div className="grid gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <ChapterTag inverse>{chapterTag}</ChapterTag>
@@ -70,7 +77,7 @@ export function NabhiCaresSection({
             </div>
             <a
               className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#cde0b8] px-6 py-3 text-xs font-medium text-[#0f1c13] transition-colors hover:bg-white"
-              href={asPageHero ? "#answers" : "/industries/healthcare-ai"}
+              href={asPageHero ? "#answers" : "/products/nabhi-cares"}
             >
               {asPageHero ? "Read the details" : "Explore Healthcare AI"}
               <ArrowUpRight aria-hidden="true" className="size-4" />
@@ -104,36 +111,16 @@ export function NabhiCaresSection({
             </div>
           </div>
 
-          <div className="relative flex min-h-[22rem] items-center justify-center pt-10 lg:min-h-[28rem] lg:pt-16">
-            <div
-              aria-hidden
-              className="flagship-float relative grid aspect-square w-full max-w-[28rem] place-items-center"
-            >
-              <span className="absolute inset-[8%] rounded-full border border-[#cde0b8]/15" />
-              <span className="absolute inset-[22%] rounded-full border border-[#cde0b8]/20" />
-              <span className="absolute inset-[36%] rounded-full border border-[#cde0b8]/25" />
-              <div className="relative grid grid-cols-9 gap-1.5 opacity-90">
-                {Array.from({ length: 81 }, (_, index) => {
-                  const row = Math.floor(index / 9);
-                  const column = index % 9;
-                  const active = row === 4 || column === 4;
-
-                  return (
-                    <span
-                      className={`size-2 rounded-full md:size-2.5 ${
-                        active
-                          ? "bg-[#cde0b8] shadow-[0_0_12px_rgba(205,224,184,0.45)]"
-                          : "bg-[#cde0b8]/20"
-                      }`}
-                      key={index}
-                    />
-                  );
-                })}
-              </div>
-              <BrainCircuit className="absolute size-10 text-[#cde0b8]/90" />
-            </div>
-          </div>
-        </div>
+          <div className="relative flex items-center justify-center pt-10 lg:pt-16">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="Nabhi Cares healthcare AI"
+              className="flagship-float h-auto w-[112%] max-w-none object-contain lg:w-[118%]"
+              height={808}
+              src="/assets/HeartSection.svg"
+              width={1132}
+            />
+          </div>        </div>
 
         <div className="mt-6 grid gap-4 rounded-[22px] border border-white/10 bg-white/[0.035] px-5 py-5 md:grid-cols-[minmax(0,1.85fr)_repeat(3,minmax(0,1fr))] md:items-center md:gap-0 md:px-6 md:py-5">
           <div className="md:pr-8">

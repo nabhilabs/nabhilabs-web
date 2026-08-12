@@ -53,8 +53,33 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/solutions",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/solutions/nabhi-persona",
+        destination: "/products/nabhi-persona",
+        permanent: true,
+      },
+      {
         source: "/solutions/second-brain",
-        destination: "/solutions/nabhi-persona",
+        destination: "/products/nabhi-persona",
+        permanent: true,
+      },
+      {
+        source: "/solutions/enterprise-knowledge-management",
+        destination: "/services/enterprise-knowledge-management",
+        permanent: true,
+      },
+      {
+        source: "/industries",
+        destination: "/products/nabhi-cares",
+        permanent: true,
+      },
+      {
+        source: "/industries/healthcare-ai",
+        destination: "/products/nabhi-cares",
         permanent: true,
       },
       {

@@ -148,9 +148,9 @@ export function PillarPage({
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 className="rounded-full bg-[#1a3323] px-6 py-3 text-sm text-white transition-colors hover:bg-[#2c4f37]"
-                href="/#begin"
+                href="/contact"
               >
-                Begin a conversation
+                Book a conversation
               </Link>
               <Link
                 className="text-sm text-[#31543a] underline-offset-4 hover:underline"
@@ -242,14 +242,14 @@ export function PillarPage({
             Start with what feels complex.
           </h2>
           <p className="mt-4 max-w-xl text-sm leading-7 text-white/60">
-            Email hello@nabhilabs.com or use the Begin form. Nabhi Labs usually
+            Email hello@nabhilabs.com or send a note on the contact page. Nabhi Labs usually
             replies within 24 hours for a thoughtful discussion.
           </p>
           <Link
             className="mt-8 inline-flex rounded-full bg-[#a3e635] px-6 py-3 text-sm text-[#0f1c13] transition-opacity hover:opacity-90"
-            href="/#begin"
+            href="/contact"
           >
-            Connect with Nabhi Labs
+            Book a conversation
           </Link>
         </div>
       </section>

@@ -34,7 +34,7 @@ const capabilities = [
     image: "/assets/what-we-build/Nabhi Cares.png",
     aspect: "aspect-[4/3]",
     span: "md:col-span-4",
-    href: "/industries/healthcare-ai",
+    href: "/products/nabhi-cares",
   },
   {
     number: "04",
@@ -44,7 +44,7 @@ const capabilities = [
     image: "/assets/what-we-build/Brand Systems.png",
     aspect: "aspect-square",
     span: "md:col-span-4",
-    href: "/#begin",
+    href: "/contact",
   },
   {
     number: "05",
@@ -54,7 +54,7 @@ const capabilities = [
     image: "/assets/what-we-build/Internal Automation Tools.png",
     aspect: "aspect-[4/3]",
     span: "md:col-span-4",
-    href: "/solutions/enterprise-knowledge-management",
+    href: "/services/enterprise-knowledge-management",
   },
   {
     number: "06",

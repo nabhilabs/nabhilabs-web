@@ -21,7 +21,7 @@ export const products: Product[] = [
   {
     id: "prod-nabhi-persona",
     name: "Nabhi Persona",
-    url: "/solutions/nabhi-persona",
+    url: "/products/nabhi-persona",
     description:
       "Enterprise intelligence layer that turns institutional knowledge into active, private, decision-ready understanding.",
     keywords: [
@@ -50,7 +50,7 @@ export const products: Product[] = [
   {
     id: "prod-ekm",
     name: "Enterprise Knowledge Management",
-    url: "/solutions/enterprise-knowledge-management",
+    url: "/services/enterprise-knowledge-management",
     description:
       "Knowledge platforms that reconnect fragmented wikis, drives, and tribal memory into usable clarity.",
     keywords: [
@@ -64,7 +64,7 @@ export const products: Product[] = [
       "knowledge management",
       ...clusterKeywordsFor("Knowledge Management", 20),
     ],
-    schemaType: "SoftwareApplication",
+    schemaType: "Service",
   },
   {
     id: "prod-rag",
@@ -111,7 +111,7 @@ export const products: Product[] = [
   {
     id: "prod-healthcare",
     name: "Nabhi Cares",
-    url: "/industries/healthcare-ai",
+    url: "/products/nabhi-cares",
     description:
       "Healthcare AI for care operations—Nabhi Cares brings knowledge, RAG, and workflows with careful compliance posture.",
     keywords: [
@@ -137,7 +137,7 @@ export const products: Product[] = [
       ...clusterKeywordsFor("Hospital Administration", 8),
       ...clusterKeywordsFor("Appointment Management", 8),
     ],
-    schemaType: "Service",
+    schemaType: "SoftwareApplication",
   },
   {
     id: "res-rag-checklist",
@@ -239,7 +239,7 @@ export const products: Product[] = [
     name: "Services from Nabhi Labs",
     url: "/services",
     description:
-      "Nabhi Labs services hub—Nabhi Persona, RAG, voice, healthcare AI.",
+      "Nabhi Labs services hub—RAG, voice, and knowledge systems. Products live under Nabhi Cares and Nabhi Persona.",
     keywords: [
       "nabhi labs services",
       "nabhi labs",

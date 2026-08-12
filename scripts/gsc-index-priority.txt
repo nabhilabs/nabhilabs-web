@@ -6,9 +6,10 @@ https://www.nabhilabs.com/
 https://www.nabhilabs.com/about
 https://www.nabhilabs.com/services
 https://www.nabhilabs.com/contact
-https://www.nabhilabs.com/solutions/nabhi-persona
+https://www.nabhilabs.com/products/nabhi-persona
+https://www.nabhilabs.com/products/nabhi-cares
 https://www.nabhilabs.com/services/rag-engineering
 https://www.nabhilabs.com/services/agentic-voice-workflows
-https://www.nabhilabs.com/solutions/enterprise-knowledge-management
+https://www.nabhilabs.com/services/enterprise-knowledge-management
 https://www.nabhilabs.com/philosophy
 https://www.nabhilabs.com/blog/how-nabhi-labs-builds-understanding-into-technology
