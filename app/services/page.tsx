@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 const curtainSlides = [
   {
-    src: "/assets/nabhi_cares_wallpaper_hd.png",
+    src: "/assets/nabhi_cares_wallpaper_hd.webp",
     alt: "Glowing heart over a dark mossy landscape — Nabhi Cares healthcare AI",
     position: "68% center",
     chapter: "01 // Nabhi Cares",
@@ -39,7 +39,7 @@ const curtainSlides = [
     accent: "rgba(163, 230, 53, 0.38)",
   },
   {
-    src: "/assets/nabhi_persona_wallpaper_hd.png",
+    src: "/assets/nabhi_persona_wallpaper_hd.webp",
     alt: "Glowing brain over a dark mossy landscape — Nabhi Persona intelligence",
     position: "72% center",
     chapter: "02 // Nabhi Persona",

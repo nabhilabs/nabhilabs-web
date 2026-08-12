@@ -54,7 +54,7 @@ export function AboutHero() {
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 48vw"
-              src="/assets/about_us_wallpaper.png"
+              src="/assets/about_us_wallpaper.webp"
             />
           </div>
           <p className="mt-6 max-w-md text-sm leading-7 text-[#4a5b4e]">

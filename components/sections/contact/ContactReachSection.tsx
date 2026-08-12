@@ -67,7 +67,7 @@ export function ContactReachSection() {
               fill
               loading="lazy"
               sizes="(max-width: 896px) 100vw, 896px"
-              src="/assets/contact_us_asset.png"
+              src="/assets/contact_us_asset.webp"
             />
 
             <div className="absolute left-[58%] top-[28%] hidden min-w-[10rem] rounded-2xl border border-[#d8e0d5] bg-white px-4 py-3 text-left shadow-lg sm:block">

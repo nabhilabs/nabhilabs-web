@@ -7,22 +7,22 @@ const members = [
   {
     name: "Surya Raj",
     role: "Co-founder",
-    image: "/assets/surya.png",
+    image: "/assets/surya.webp",
   },
   {
     name: "Pavan Kumar",
     role: "Co-founder",
-    image: "/assets/pavan.png",
+    image: "/assets/pavan.webp",
   },
   {
     name: "Tharun Parsa",
     role: "Co-founder",
-    image: "/assets/tharun.png",
+    image: "/assets/tharun.webp",
   },
   {
     name: "Sai Manjith",
     role: "Co-founder",
-    image: "/assets/manjith.png",
+    image: "/assets/manjith.webp",
   },
 ] as const;
 

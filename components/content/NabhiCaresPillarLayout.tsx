@@ -9,6 +9,7 @@ import {
   Stethoscope,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { ChallengeAssetFrame } from "@/components/ui/ChallengeAssetFrame";
 import { aeoCitations, type PillarPageContent } from "@/lib/pillar-pages";
 import {
   getProductByPath,
@@ -127,16 +128,11 @@ export function NabhiCaresPillarLayout({ page }: NabhiCaresPillarLayoutProps) {
       <section className="bg-[#f2f4f0] px-6 py-14 md:px-10 md:py-20">
         <div className="mx-auto max-w-[95rem] rounded-3xl border border-[#d8e0d5] bg-white p-6 shadow-[0_12px_48px_rgba(15,28,19,0.06)] md:p-10 lg:p-14">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
-            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-2xl border border-[#d8e0d5] bg-[#0e1012] lg:mx-0 lg:max-w-none">
-              <Image
-                alt="Healthcare systems and care workflows connecting into one clarity layer — Nabhi Cares"
-                className="object-contain object-center p-4"
-                fill
-                priority
-                sizes="(max-width: 1024px) 90vw, 42vw"
-                src="/assets/nabhi_cares_challenge_asset.png"
-              />
-            </div>
+            <ChallengeAssetFrame
+              alt="Healthcare systems and care workflows connecting into one clarity layer — Nabhi Cares"
+              priority
+              src="/assets/nabhi_cares_challenge_asset.webp"
+            />
 
             <div>
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#5a7052]">
@@ -311,7 +307,7 @@ export function NabhiCaresPillarLayout({ page }: NabhiCaresPillarLayoutProps) {
               className="object-cover object-[68%_center]"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              src="/assets/nabhi_cares_wallpaper.png"
+              src="/assets/nabhi_cares_wallpaper.webp"
             />
             <div
               aria-hidden
@@ -345,7 +341,7 @@ export function NabhiCaresPillarLayout({ page }: NabhiCaresPillarLayoutProps) {
               className="object-cover object-center"
               fill
               sizes="(max-width: 1024px) 100vw, 45vw"
-              src="/assets/about_us_wallpaper.png"
+              src="/assets/about_us_wallpaper.webp"
             />
             <div
               aria-hidden

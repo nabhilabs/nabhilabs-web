@@ -114,7 +114,7 @@ export function AboutParallaxHero() {
                 fill
                 priority
                 sizes="(max-width: 1280px) calc(100vw - 3rem), 95rem"
-                src="/assets/about_us_wallpaper.png"
+                src="/assets/about_us_wallpaper.webp"
               />
             </div>
           ) : (
@@ -129,7 +129,7 @@ export function AboutParallaxHero() {
                   fill
                   priority
                   sizes="(max-width: 1280px) calc(100vw - 3rem), 95rem"
-                  src="/assets/about_us_wallpaper.png"
+                  src="/assets/about_us_wallpaper.webp"
                 />
               </motion.div>
 

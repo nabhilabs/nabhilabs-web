@@ -31,7 +31,7 @@ export function AeoAnswersSection() {
           className="object-contain object-[center_top] mix-blend-multiply opacity-[0.55] sm:opacity-[0.6]"
           fill
           sizes="(max-width: 1024px) 45vw, 32vw"
-          src="/assets/questions-section.png"
+          src="/assets/questions-section.webp"
           style={{ transform: "scaleX(-1.08) scaleY(1.08)" }}
         />
       </div>

@@ -35,7 +35,7 @@ export function AboutExpertise() {
             fill
             loading="lazy"
             sizes="(max-width: 1024px) 100vw, 42vw"
-            src="/assets/our-approach/understand.png"
+            src="/assets/our-approach/understand.webp"
           />
         </div>
 

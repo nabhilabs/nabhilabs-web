@@ -8,28 +8,28 @@ const principles = [
     prompt: "Absorb before you act.",
     description:
       "We listen deeply to understand the real problem, not just the surface noise.",
-    image: "/assets/philosophy-grid/listen.png",
+    image: "/assets/philosophy-grid/listen.webp",
   },
   {
     title: "Observe",
     prompt: "Find patterns in complexity.",
     description:
       "We observe the system as a whole and identify the unseen patterns driving it.",
-    image: "/assets/philosophy-grid/observe.png",
+    image: "/assets/philosophy-grid/observe.webp",
   },
   {
     title: "Simplify",
     prompt: "Remove what doesn't matter.",
     description:
       "We strip away unnecessary complexity to uncover what truly matters.",
-    image: "/assets/philosophy-grid/simplify.png",
+    image: "/assets/philosophy-grid/simplify.webp",
   },
   {
     title: "Build",
     prompt: "Build what's inevitable.",
     description:
       "With clarity as our foundation, we build technology that feels natural, not forced.",
-    image: "/assets/philosophy-grid/build.png",
+    image: "/assets/philosophy-grid/build.webp",
   },
 ] as const;
 

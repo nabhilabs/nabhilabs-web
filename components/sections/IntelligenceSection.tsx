@@ -7,25 +7,25 @@ const approach = [
   {
     title: "Understand",
     copy: "We start at the core.",
-    image: "/assets/our-approach/understand.png",
+    image: "/assets/our-approach/understand.webp",
     imageAlt: "Quiet desk work representing deep understanding",
   },
   {
     title: "Connect",
     copy: "We map what matters.",
-    image: "/assets/our-approach/connect.png",
+    image: "/assets/our-approach/connect.webp",
     imageAlt: "Collaborators mapping relationships and context",
   },
   {
     title: "Synthesize",
     copy: "We reveal the insight.",
-    image: "/assets/our-approach/sythensize.png",
+    image: "/assets/our-approach/sythensize.webp",
     imageAlt: "Notes and sketches coming together into clarity",
   },
   {
     title: "Build",
     copy: "We create what lasts.",
-    image: "/assets/our-approach/build.png",
+    image: "/assets/our-approach/build.webp",
     imageAlt: "Careful craftsmanship building lasting systems",
   },
 ] as const;

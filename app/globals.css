@@ -107,7 +107,7 @@ a {
   background-image: image-set(
     url("/assets/hero-landing-day-mobile.avif") type("image/avif"),
     url("/assets/hero-landing-day-mobile.webp") type("image/webp"),
-    url("/assets/hero-landing-day.jpg") type("image/jpeg")
+    url("/assets/hero-landing-day.webp") type("image/webp")
   );
   background-position: center;
   background-repeat: no-repeat;
@@ -119,7 +119,7 @@ a {
     background-image: image-set(
       url("/assets/hero-landing-day.avif") type("image/avif"),
       url("/assets/hero-landing-day.webp") type("image/webp"),
-      url("/assets/hero-landing-day.jpg") type("image/jpeg")
+      url("/assets/hero-landing-day.webp") type("image/webp")
     );
   }
 }

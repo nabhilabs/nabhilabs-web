@@ -89,7 +89,7 @@ export const serviceLandings: ServiceLandingContent[] = [
     splitLabel: "How we work",
     splitHeading:
       "Observe how work actually moves, then build the platform as a consequence.",
-    splitImage: "/assets/our-approach/understand.png",
+    splitImage: "/assets/our-approach/understand.webp",
     splitImageAlt: "Understanding before technology — Nabhi Labs approach",
     relatedProduct: { href: routes.persona, label: "See Nabhi Persona" },
   },
@@ -141,7 +141,7 @@ export const serviceLandings: ServiceLandingContent[] = [
     splitLabel: "Production notes",
     splitHeading:
       "Architecture follows evidence. Regressions surface before users do.",
-    splitImage: "/assets/what-we-build/AI & RAG Engineering.png",
+    splitImage: "/assets/what-we-build/AI & RAG Engineering.webp",
     splitImageAlt: "RAG engineering — retrieval systems grounded in trusted context",
     relatedProduct: { href: routes.persona, label: "See Nabhi Persona" },
   },
@@ -193,7 +193,7 @@ export const serviceLandings: ServiceLandingContent[] = [
     splitLabel: "Where we focus",
     splitHeading:
       "Listen, observe, simplify—then build agents that complete work safely.",
-    splitImage: "/assets/what-we-build/Agentic Voice Workflows.png",
+    splitImage: "/assets/what-we-build/Agentic Voice Workflows.webp",
     splitImageAlt: "Agentic voice workflows — conversation connected to action",
     relatedProduct: { href: routes.cares, label: "See Nabhi Cares" },
   },
