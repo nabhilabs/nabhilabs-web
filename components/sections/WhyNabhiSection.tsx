@@ -1,43 +1,58 @@
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { WhyNabhiBeam } from "@/components/sections/WhyNabhiBeam";
 import { ChapterTag } from "@/components/ui/ChapterTag";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function WhyNabhiSection() {
   return (
-    <section className="relative z-10 bg-[#071c14]" id="why-nabhi">
-      <Reveal className="mx-auto max-w-[95rem] bg-[radial-gradient(circle_at_30%_65%,#17452c_0%,#0d2d1e_36%,#071c14_78%)] p-6 text-white md:p-10 lg:p-14">
+    <section
+      className="relative z-10 overflow-hidden bg-[#0f1c13]"
+      id="why-nabhi"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,rgba(23,69,44,0.55),transparent_55%),radial-gradient(ellipse_at_85%_70%,rgba(163,230,53,0.08),transparent_45%)]"
+      />
+
+      <Reveal className="relative mx-auto max-w-[95rem] px-6 py-16 text-white md:px-10 md:py-24">
         <div className="max-w-3xl">
           <ChapterTag inverse>07 // Why Nabhi</ChapterTag>
-          <p className="mt-6 font-mono text-[10px] text-white/50">
-            What makes NABHI unique?
+          <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.14em] text-white/45">
+            What makes Nabhi unique?
           </p>
-          <h2 className="mt-8 font-display text-[clamp(3rem,5.5vw,5.8rem)] font-medium leading-[0.9] tracking-[-0.055em]">
+          <h2 className="mt-6 font-display text-[clamp(2.6rem,5vw,4.75rem)] font-medium leading-[0.92] tracking-[-0.055em]">
             Trust before
             <br />
-            conversion<span className="text-[#cde0b8]">.</span>
+            <em className="font-serif font-normal italic text-[#a3e635]">
+              conversion.
+            </em>
           </h2>
-          <p className="mt-6 max-w-md text-sm font-light leading-7 text-white/55">
+          <p className="mt-6 max-w-md text-sm leading-7 text-white/55">
             We are not here to add another layer of technology. We stay until
             the problem is understood and the system feels lighter.
           </p>
         </div>
 
-        <div className="relative mt-10 w-full overflow-hidden rounded-[24px] md:mt-12">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            alt="What others provide versus what Nabhi provides — noise transforming into clarity"
-            className="h-auto w-full"
-            decoding="async"
-            loading="lazy"
-            src="/assets/Why%20NABHI.svg"
-          />
+        <div className="mt-12">
+          <WhyNabhiBeam />
         </div>
 
-        <p className="mt-10 max-w-xl border-t border-white/10 pt-6 font-display text-xl leading-8 tracking-[-0.03em] text-white/75 md:text-2xl">
-          We build clarity.
-          <br />
-          Clarity builds{" "}
-          <span className="italic text-[#cde0b8]">trust.</span>
-        </p>
+        <div className="mt-10 flex flex-col gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-end sm:justify-between">
+          <p className="max-w-md font-display text-xl leading-8 tracking-[-0.03em] text-white/70 md:text-2xl">
+            We build clarity.
+            <br />
+            Clarity builds{" "}
+            <span className="italic text-[#cde0b8]">trust.</span>
+          </p>
+          <Link
+            className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3.5 text-xs font-medium text-[#0f1c13] transition-colors hover:bg-[#ebf0e8]"
+            href="/about"
+          >
+            About Nabhi Labs
+            <ArrowUpRight aria-hidden className="size-3.5" />
+          </Link>
+        </div>
       </Reveal>
     </section>
   );

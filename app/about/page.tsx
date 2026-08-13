@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import { AboutBelief } from "@/components/sections/about/AboutBelief";
 import { AboutCta } from "@/components/sections/about/AboutCta";
-import { AboutExpertise } from "@/components/sections/about/AboutExpertise";
 import { AboutHero } from "@/components/sections/about/AboutHero";
+import { AboutPrinciples } from "@/components/sections/about/AboutPrinciples";
 import { AboutTeamGrid } from "@/components/sections/about/AboutTeamGrid";
-import { AboutTestimonial } from "@/components/sections/about/AboutTestimonial";
 import { brandKeywords, primaryKeywords } from "@/lib/keyword-strategy";
 import { sameAsProfiles } from "@/lib/social";
 
@@ -54,9 +54,9 @@ export default function AboutPage() {
         type="application/ld+json"
       />
       <AboutHero />
-      <AboutExpertise />
+      <AboutPrinciples />
       <AboutTeamGrid />
-      <AboutTestimonial />
+      <AboutBelief />
       <AboutCta />
     </main>
   );

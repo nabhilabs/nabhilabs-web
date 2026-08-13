@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   Clock3,
@@ -7,6 +6,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { ContactWorldMap } from "@/components/sections/contact/ContactWorldMap";
 import { ChapterTag } from "@/components/ui/ChapterTag";
 
 const reachCards: Array<{
@@ -29,7 +29,7 @@ const reachCards: Array<{
   },
   {
     title: "Engagements",
-    value: "Remote-first · India",
+    value: "Remote-first · Hyderabad",
     icon: Globe2,
   },
   {
@@ -59,27 +59,7 @@ export function ContactReachSection() {
         </p>
 
         <div className="relative mx-auto mt-12 max-w-4xl">
-          <div className="relative aspect-[2.2/1] overflow-hidden rounded-3xl border border-[#d8e0d5] bg-[#f2f4f0]">
-            <Image
-              alt=""
-              aria-hidden
-              className="object-cover object-center"
-              fill
-              loading="lazy"
-              sizes="(max-width: 896px) 100vw, 896px"
-              src="/assets/contact_us_asset.webp"
-            />
-
-            <div className="absolute left-[58%] top-[28%] hidden min-w-[10rem] rounded-2xl border border-[#d8e0d5] bg-white px-4 py-3 text-left shadow-lg sm:block">
-              <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-[#5a7052]">
-                Nabhi Labs
-              </p>
-              <p className="mt-1 font-display text-sm font-semibold text-[#0f1c13]">
-                Remote-first · India
-              </p>
-              <p className="mt-0.5 text-xs text-[#4a5b4e]">hello@nabhilabs.com</p>
-            </div>
-          </div>
+          <ContactWorldMap />
         </div>
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
