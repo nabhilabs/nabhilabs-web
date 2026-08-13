@@ -26,6 +26,7 @@ export const products: Product[] = [
       "Enterprise intelligence layer that turns institutional knowledge into active, private, decision-ready understanding.",
     keywords: [
       "nabhi persona",
+      "nabhi persona nabhi labs",
       "nabhi labs",
       "nabhi persona architecture",
       "private enterprise nabhi persona",
@@ -116,6 +117,9 @@ export const products: Product[] = [
       "Healthcare AI for care operations—Nabhi Cares brings knowledge, RAG, and workflows with careful compliance posture.",
     keywords: [
       "nabhi cares",
+      "nabhi care",
+      "nabhi cares nabhi labs",
+      "nabhi care nabhi labs",
       "healthcare ai",
       "ai for healthcare",
       "clinical knowledge management",

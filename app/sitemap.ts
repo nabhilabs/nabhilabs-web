@@ -3,7 +3,7 @@ import { allContentPages, caseStudyIndex } from "@/lib/pillar-pages";
 import { SITE_URL } from "@/lib/site";
 
 const siteUrl = SITE_URL;
-const now = new Date("2026-08-02");
+const now = new Date("2026-08-13");
 
 const extraPages = [
   "/about",

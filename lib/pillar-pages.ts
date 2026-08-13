@@ -23,14 +23,14 @@ export const pillarPages: PillarPageContent[] = [
     slug: "nabhi-persona",
     path: "/products/nabhi-persona",
     eyebrow: "Products // Nabhi Persona",
-    title: "Nabhi Persona Architecture for Enterprises",
+    title: "Nabhi Persona",
     description:
-      "Nabhi Labs designs Nabhi Persona architectures that turn scattered institutional knowledge into active, private, decision-ready intelligence.",
+      "Nabhi Persona is Nabhi Labs’ enterprise intelligence layer—turning institutional knowledge into active, private, decision-ready understanding.",
     headline: "Nabhi Persona architecture for enterprises",
     lede: "Nabhi Labs builds Nabhi Persona systems that connect what your organization already knows to the moment a decision is made—private by design, continuously learning from real work.",
-    primaryKeyword: "private enterprise Nabhi Persona",
+    primaryKeyword: "Nabhi Persona",
     datePublished: "2026-08-02",
-    dateModified: "2026-08-02",
+    dateModified: "2026-08-13",
     sections: [
       {
         heading: "Why institutional knowledge stays trapped without Nabhi Persona",
@@ -237,14 +237,14 @@ export const pillarPages: PillarPageContent[] = [
     slug: "healthcare-ai",
     path: "/products/nabhi-cares",
     eyebrow: "Products // Nabhi Cares",
-    title: "AI Integration for Healthcare Systems",
+    title: "Nabhi Cares",
     description:
-      "Nabhi Labs delivers AI integration for healthcare systems—knowledge, RAG, and workflows designed for operational clarity and careful compliance posture.",
+      "Nabhi Cares is Nabhi Labs’ healthcare AI product—knowledge, RAG, and workflows for care operations, with a careful compliance posture. Also searched as Nabhi Care.",
     headline: "AI integration for healthcare systems",
     lede: "Nabhi Labs builds connected healthcare and web systems where AI supports care operations and institutional knowledge—without treating patient trust as optional.",
-    primaryKeyword: "AI integration for healthcare systems",
+    primaryKeyword: "Nabhi Cares",
     datePublished: "2026-08-02",
-    dateModified: "2026-08-02",
+    dateModified: "2026-08-13",
     sections: [
       {
         heading: "Clarity under clinical and operational pressure",

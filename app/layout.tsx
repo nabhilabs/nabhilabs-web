@@ -147,6 +147,27 @@ const organizationJsonLd = {
       availableLanguage: ["English"],
     },
   ],
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "SoftwareApplication",
+        name: "Nabhi Cares",
+        alternateName: ["Nabhi Care"],
+        url: `${siteUrl}/products/nabhi-cares`,
+        applicationCategory: "HealthApplication",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "SoftwareApplication",
+        name: "Nabhi Persona",
+        url: `${siteUrl}/products/nabhi-persona`,
+        applicationCategory: "BusinessApplication",
+      },
+    },
+  ],
 };
 
 const websiteJsonLd = {

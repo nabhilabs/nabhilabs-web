@@ -58,8 +58,33 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/nabhi-persona",
+        destination: "/products/nabhi-persona",
+        permanent: true,
+      },
+      {
         source: "/solutions/nabhi-persona",
         destination: "/products/nabhi-persona",
+        permanent: true,
+      },
+      {
+        source: "/nabhi-cares",
+        destination: "/products/nabhi-cares",
+        permanent: true,
+      },
+      {
+        source: "/nabhi-care",
+        destination: "/products/nabhi-cares",
+        permanent: true,
+      },
+      {
+        source: "/products/nabhi-care",
+        destination: "/products/nabhi-cares",
+        permanent: true,
+      },
+      {
+        source: "/solutions/nabhi-cares",
+        destination: "/products/nabhi-cares",
         permanent: true,
       },
       {
