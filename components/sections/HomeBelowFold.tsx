@@ -27,13 +27,6 @@ export function HomeBelowFold() {
       import("@/components/sections/ProofSection").then((m) => m.ProofSection),
     [],
   );
-  const loadWhy = useCallback(
-    () =>
-      import("@/components/sections/WhyNabhiSection").then(
-        (m) => m.WhyNabhiSection,
-      ),
-    [],
-  );
   const loadStory = useCallback(
     () =>
       import("@/components/sections/StorySection").then((m) => m.StorySection),
@@ -58,7 +51,7 @@ export function HomeBelowFold() {
       <LazySection loader={loadUnderstanding} />
       <LazySection loader={loadIntelligence} />
       <LazySection loader={loadProof} minHeight="30vh" />
-      <LazySection loader={loadWhy} />
+      {/* Why Nabhi (07) — hidden for now; re-enable with loadWhy + WhyNabhiSection */}
       <LazySection loader={loadStory} />
       <LazySection loader={loadAnswers} />
       <LazySection loader={loadBegin} minHeight="80vh" />

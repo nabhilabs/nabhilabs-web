@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { LinkedInIcon } from "@/components/ui/SocialIcons";
-import { socialProfiles } from "@/lib/social";
 
 const members = [
   {
@@ -8,24 +7,28 @@ const members = [
     role: "Co-founder",
     focus: "Agentic systems",
     image: "/assets/surya.webp",
+    linkedin: "https://www.linkedin.com/in/salve-surya-raj",
   },
   {
     name: "Pavan Kumar",
     role: "Co-founder",
     focus: "RAG engineering",
     image: "/assets/pavan.webp",
+    linkedin: "https://www.linkedin.com/in/pavan-kumar-kunukuntla",
   },
   {
     name: "Tharun Parsa",
     role: "Co-founder",
     focus: "Healthcare AI",
     image: "/assets/tharun.webp",
+    linkedin: "https://www.linkedin.com/in/venkata-tharun-parsa-98850632a",
   },
   {
     name: "Sai Manjith",
     role: "Co-founder",
     focus: "Platform",
     image: "/assets/manjith.webp",
+    linkedin: "https://www.linkedin.com/in/saimanjith-paripelli-33b399357",
   },
 ] as const;
 
@@ -95,7 +98,7 @@ export function AboutTeamGrid() {
                     <a
                       aria-label={`${member.name} on LinkedIn`}
                       className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full border border-white/15 text-[#cde0b8] transition-colors hover:border-[#B7E84A] hover:bg-[#B7E84A] hover:text-[#071B12]"
-                      href={socialProfiles.linkedin}
+                      href={member.linkedin}
                       rel="noopener noreferrer"
                       target="_blank"
                     >
