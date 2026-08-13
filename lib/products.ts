@@ -239,6 +239,61 @@ export const products: Product[] = [
     schemaType: "TechArticle",
   },
   {
+    id: "blog-second-brain",
+    name: "Why an Enterprise Second Brain Fails Without Governance",
+    url: "/blog/why-enterprise-second-brain-fails-without-governance",
+    description:
+      "Why second-brain tools stall in enterprises—and how Nabhi Persona starts with governance.",
+    keywords: [
+      "enterprise second brain",
+      "second brain",
+      "institutional knowledge",
+      "nabhi persona",
+    ],
+    schemaType: "TechArticle",
+  },
+  {
+    id: "blog-decision-ready",
+    name: "From Scattered Docs to Decision-Ready Knowledge",
+    url: "/blog/from-scattered-docs-to-decision-ready-knowledge",
+    description:
+      "How Nabhi Persona turns institutional knowledge into inspectable answers.",
+    keywords: [
+      "decision-ready knowledge",
+      "enterprise knowledge layer",
+      "nabhi persona",
+    ],
+    schemaType: "TechArticle",
+  },
+  {
+    id: "blog-cares-ops",
+    name: "Healthcare Operations Starve for Clarity",
+    url: "/blog/healthcare-operations-clarity-nabhi-cares",
+    description:
+      "Nabhi Cares on healthcare operations that drown in systems and starve for clarity.",
+    keywords: [
+      "nabhi cares",
+      "nabhi care",
+      "healthcare ai",
+      "hospital operations",
+    ],
+    schemaType: "TechArticle",
+  },
+  {
+    id: "blog-hipaa-rag",
+    name: "HIPAA-Aware RAG: What Assistive Actually Means",
+    url: "/blog/hipaa-aware-rag-assistive-healthcare-ai",
+    description:
+      "Permission-aware retrieval for care operations—assistive, not replacing clinical judgment.",
+    keywords: [
+      "hipaa-aware rag",
+      "healthcare ai",
+      "nabhi cares",
+      "clinical operations",
+    ],
+    schemaType: "TechArticle",
+  },
+  {
     id: "page-services",
     name: "Services from Nabhi Labs",
     url: "/services",

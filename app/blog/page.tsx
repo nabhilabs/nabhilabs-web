@@ -4,8 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Writing from Nabhi Labs on Nabhi Persona, agentic AI, RAG, and understanding before technology.",
-  keywords: ["Nabhi Labs blog", "Nabhi Labs engineering", "Nabhi Labs AI"],
+    "Writing from Nabhi Labs on Nabhi Persona, Nabhi Cares, second-brain governance, healthcare operations, and RAG.",
+  keywords: [
+    "Nabhi Labs blog",
+    "Nabhi Persona",
+    "Nabhi Cares",
+    "enterprise second brain",
+    "healthcare AI",
+  ],
   alternates: { canonical: "/blog" },
   openGraph: {
     title: "Blog | Nabhi Labs",
@@ -16,6 +22,30 @@ export const metadata: Metadata = {
 };
 
 const posts = [
+  {
+    href: "/blog/why-enterprise-second-brain-fails-without-governance",
+    title: "Why an Enterprise Second Brain Fails Without Governance",
+    blurb:
+      "Why second-brain tools stall in enterprises—and how Nabhi Persona starts with ownership and evidence.",
+  },
+  {
+    href: "/blog/from-scattered-docs-to-decision-ready-knowledge",
+    title: "From Scattered Docs to Decision-Ready Knowledge",
+    blurb:
+      "How Nabhi Persona turns institutional knowledge into answers you can inspect.",
+  },
+  {
+    href: "/blog/healthcare-operations-clarity-nabhi-cares",
+    title: "Healthcare Operations Starve for Clarity",
+    blurb:
+      "Nabhi Cares on care operations that drown in systems and starve for a coherent picture.",
+  },
+  {
+    href: "/blog/hipaa-aware-rag-assistive-healthcare-ai",
+    title: "HIPAA-Aware RAG: What Assistive Actually Means",
+    blurb:
+      "Permissioned retrieval for healthcare—humans stay accountable for clinical judgment.",
+  },
   {
     href: "/blog/how-nabhi-labs-builds-understanding-into-technology",
     title: "How Nabhi Labs Builds Understanding Into Technology",

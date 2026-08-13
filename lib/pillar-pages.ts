@@ -78,6 +78,10 @@ export const pillarPages: PillarPageContent[] = [
         href: "/resources/enterprise-nabhi-persona-playbook",
         label: "Nabhi Persona playbook",
       },
+      {
+        href: "/blog/why-enterprise-second-brain-fails-without-governance",
+        label: "Why a second brain fails without governance",
+      },
     ],
   },
   {
@@ -282,6 +286,10 @@ export const pillarPages: PillarPageContent[] = [
         href: "/services/agentic-voice-workflows",
         label: "Agentic voice workflows",
       },
+      {
+        href: "/blog/healthcare-operations-clarity-nabhi-cares",
+        label: "Healthcare operations and Nabhi Cares",
+      },
     ],
   },
 ];
@@ -380,6 +388,205 @@ export const resourcePages: PillarPageContent[] = [
         label: "Knowledge management",
       },
       { href: "/case-studies", label: "Case study patterns" },
+    ],
+  },
+  {
+    slug: "why-enterprise-second-brain-fails-without-governance",
+    path: "/blog/why-enterprise-second-brain-fails-without-governance",
+    eyebrow: "Blog // Nabhi Persona",
+    title: "Why an Enterprise Second Brain Fails Without Governance",
+    description:
+      "Most enterprise “second brain” projects stall because ownership, permissions, and evidence are missing. How Nabhi Persona treats institutional knowledge as a governed system.",
+    headline: "Why an enterprise second brain fails without governance",
+    lede: "Teams buy another wiki, another assistant, another “second brain”—and still rediscover the same facts. Nabhi Labs treats that failure as a systems problem, not a missing model.",
+    primaryKeyword: "enterprise second brain",
+    datePublished: "2026-08-13",
+    dateModified: "2026-08-13",
+    sections: [
+      {
+        heading: "Storage is not understanding",
+        body: [
+          "“Second brain” language is useful as a capture term: people search it when institutional knowledge feels trapped. In enterprises, a second brain that is only a dump of notes, chats, and PDFs becomes another silo. Search returns volume. Meetings rediscover the same decisions. Assistants invent when context is thin.",
+          "Nabhi Labs does not ship a consumer note-taking app. Nabhi Persona is an intelligence layer: permissioned retrieval, provenance, and answers that can refuse. The bottleneck is almost never “more GPT.” It is missing ownership, stale corpora, and no definition of what a correct answer looks like.",
+        ],
+      },
+      {
+        heading: "Governance before memory",
+        body: [
+          "Before embeddings or agents, Nabhi Labs maps who decides, which sources are trusted, and where clarity collapses. Permissions travel with every chunk. Conflicting policies are treated as design input, not noise to average away. That is why Persona work sits next to enterprise knowledge management and RAG engineering—not instead of them.",
+          "If you are evaluating a private enterprise second brain, start with the Nabhi Persona playbook or contact Nabhi Labs. Understanding first. Technology that follows.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is an enterprise second brain?",
+        answer:
+          "In enterprise search language, a second brain usually means a private knowledge layer that keeps institutional memory usable. Nabhi Labs implements that as Nabhi Persona—with governance, permissions, and provenance—not a consumer notes app.",
+      },
+      {
+        question: "Why do second-brain tools fail in companies?",
+        answer:
+          "They fail when storage is mistaken for understanding: no owners, no permission boundaries, and no definition of a correct answer. Nabhi Labs starts with those constraints before models.",
+      },
+    ],
+    related: [
+      { href: "/products/nabhi-persona", label: "Nabhi Persona" },
+      {
+        href: "/services/enterprise-knowledge-management",
+        label: "Knowledge management",
+      },
+      {
+        href: "/resources/enterprise-nabhi-persona-playbook",
+        label: "Persona playbook",
+      },
+    ],
+  },
+  {
+    slug: "from-scattered-docs-to-decision-ready-knowledge",
+    path: "/blog/from-scattered-docs-to-decision-ready-knowledge",
+    eyebrow: "Blog // Nabhi Persona",
+    title: "From Scattered Docs to Decision-Ready Knowledge",
+    description:
+      "How Nabhi Persona turns tickets, decks, and tribal memory into decision-ready knowledge—with provenance, not another generic AI search box.",
+    headline: "From scattered docs to decision-ready knowledge",
+    lede: "Enterprises already own the answers. They live in tickets, decks, CRMs, and people who leave. Nabhi Persona is built so those answers can be retrieved, cited, and used under pressure.",
+    primaryKeyword: "decision-ready knowledge",
+    datePublished: "2026-08-13",
+    dateModified: "2026-08-13",
+    sections: [
+      {
+        heading: "Search returns documents. Decisions need a thread.",
+        body: [
+          "A wiki stores. Generic AI search often retrieves plausible text without permission boundaries. Nabhi Persona is designed as decision-ready AI: refuse when evidence is thin, cite when confidence is high, and keep data private by design.",
+          "Context-aware intelligence means the system understands the situation before surfacing what matters—role, project, policy boundary, urgency. That is the difference between “we indexed the drive” and “the organization can keep a thread.”",
+        ],
+      },
+      {
+        heading: "What Nabhi Labs implements",
+        body: [
+          "A Nabhi Persona architecture typically includes governed ingestion from tools teams already use, retrieval that respects permissions, memory that updates from real outcomes, and interfaces in the language of the work—not generic chat.",
+          "When action—not only answers—is required, Persona sits alongside custom RAG and agentic workflows. Start with what feels complex.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is decision-ready knowledge?",
+        answer:
+          "Decision-ready knowledge is institutional information retrieved with provenance, permissions, and enough context to act—or to refuse. Nabhi Persona is built for that outcome.",
+      },
+      {
+        question: "How is Nabhi Persona different from AI search?",
+        answer:
+          "AI search often returns plausible text. Nabhi Persona adds ownership, permission-aware retrieval, and refusal when evidence is thin—so answers stay inspectable.",
+      },
+    ],
+    related: [
+      { href: "/products/nabhi-persona", label: "Nabhi Persona" },
+      { href: "/services/rag-engineering", label: "RAG engineering" },
+      {
+        href: "/blog/why-enterprise-second-brain-fails-without-governance",
+        label: "Second brain without governance",
+      },
+    ],
+  },
+  {
+    slug: "healthcare-operations-clarity-nabhi-cares",
+    path: "/blog/healthcare-operations-clarity-nabhi-cares",
+    eyebrow: "Blog // Nabhi Cares",
+    title: "Healthcare Operations Starve for Clarity — Nabhi Cares",
+    description:
+      "Hospitals drown in systems yet starve for a coherent picture of status, policy, and next action. How Nabhi Cares approaches healthcare AI for care operations.",
+    headline: "Healthcare operations drown in systems—and starve for clarity",
+    lede: "Nabhi Cares is Nabhi Labs’ healthcare AI product. It is built for care operations that need a coherent picture of status, policy, and next action—without treating patient trust as optional.",
+    primaryKeyword: "Nabhi Cares",
+    datePublished: "2026-08-13",
+    dateModified: "2026-08-13",
+    sections: [
+      {
+        heading: "Another hospital system is not the same as understanding",
+        body: [
+          "Care teams already live in scheduling tools, documentation, departmental knowledge, and policy PDFs. Adding a generic chatbot on top rarely reduces rediscovery. People still chase status. Knowledge stays trapped in departments. Clinical judgment stays—and should stay—with qualified professionals.",
+          "Nabhi Cares (also searched as Nabhi Care) focuses on AI integration for healthcare operations: retrieval, workflows, and a compliance posture that keeps humans accountable. It is not a claim to replace clinicians.",
+        ],
+      },
+      {
+        heading: "Assistive by design",
+        body: [
+          "Engagements begin with data classification, retention, and access patterns. Retrieval and agents are scoped to approved corpora. Practices align with responsible AI guidance such as NIST’s AI RMF and OECD AI Principles. Specific regulatory certification is scoped per engagement—never assumed from marketing copy.",
+          "Nabhi Cares ships alongside RAG engineering, knowledge platforms, and Nabhi Persona when institutional knowledge needs a private layer.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is Nabhi Cares?",
+        answer:
+          "Nabhi Cares is Nabhi Labs’ healthcare AI product for care operations—knowledge, retrieval, and workflows with a careful compliance posture. Clinical decisions remain with qualified professionals.",
+      },
+      {
+        question: "Is Nabhi Cares a hospital management system?",
+        answer:
+          "No. Nabhi Cares is not a full HMS replacement. It focuses on operational clarity and assistive retrieval across systems teams already use.",
+      },
+    ],
+    related: [
+      { href: "/products/nabhi-cares", label: "Nabhi Cares" },
+      { href: "/services/rag-engineering", label: "RAG engineering" },
+      {
+        href: "/blog/hipaa-aware-rag-assistive-healthcare-ai",
+        label: "HIPAA-aware RAG",
+      },
+    ],
+  },
+  {
+    slug: "hipaa-aware-rag-assistive-healthcare-ai",
+    path: "/blog/hipaa-aware-rag-assistive-healthcare-ai",
+    eyebrow: "Blog // Nabhi Cares",
+    title: "HIPAA-Aware RAG: What Assistive Healthcare AI Actually Means",
+    description:
+      "HIPAA-aware RAG for clinical operations is permissioned retrieval, logging, and refusal—not a demo chatbot. How Nabhi Cares keeps humans accountable.",
+    headline: "HIPAA-aware RAG: what assistive actually means",
+    lede: "Fluency without evidence is a failure in care operations. Nabhi Cares treats retrieval as a permissioned system—with humans still responsible for clinical judgment.",
+    primaryKeyword: "HIPAA-aware RAG",
+    datePublished: "2026-08-13",
+    dateModified: "2026-08-13",
+    sections: [
+      {
+        heading: "Least privilege travels with every chunk",
+        body: [
+          "Healthcare knowledge management AI and HIPAA-aware RAG for clinical ops are engineered with least privilege, auditability, and a clear boundary between assistive retrieval and automated decisions. Nabhi Labs does not claim a blanket certification from marketing copy. Exact compliance scope is defined with legal and security stakeholders per engagement.",
+          "That is the same retrieval discipline as custom RAG engineering—adapted to care operations on Nabhi Cares. The RAG evaluation checklist is the public starting point for groundedness and permissions.",
+        ],
+      },
+      {
+        heading: "Refuse when evidence is thin",
+        body: [
+          "Assistive means: surface approved policy and operational context, show provenance, log access, and hand off when the question is clinical. It does not mean generating a diagnosis from a thin corpus. Agents, if used, are scoped. Humans stay accountable.",
+          "If your search intent is hospital operations AI or HIPAA-aware RAG, start with Nabhi Cares or contact Nabhi Labs for a scoped discussion.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is HIPAA-aware RAG?",
+        answer:
+          "HIPAA-aware RAG is permissioned retrieval with logging, least privilege, and refusal when evidence is thin—scoped with your legal and security stakeholders. Nabhi Cares applies that posture to care operations.",
+      },
+      {
+        question: "Does Nabhi Labs replace clinical judgment?",
+        answer:
+          "No. Nabhi Cares is assistive by design. Clinical decisions remain with qualified professionals.",
+      },
+    ],
+    related: [
+      { href: "/products/nabhi-cares", label: "Nabhi Cares" },
+      { href: "/services/rag-engineering", label: "RAG engineering" },
+      {
+        href: "/resources/rag-evaluation-checklist",
+        label: "RAG evaluation checklist",
+      },
     ],
   },
 ];

@@ -197,6 +197,214 @@ export const serviceLandings: ServiceLandingContent[] = [
     splitImageAlt: "Agentic voice workflows — conversation connected to action",
     relatedProduct: { href: routes.cares, label: "See Nabhi Cares" },
   },
+  {
+    path: "/blog/why-enterprise-second-brain-fails-without-governance",
+    badge: "Blog — Nabhi Persona",
+    highlight: "governance",
+    proofLeft: "Understanding before tools",
+    proofRight: "Ownership before embeddings",
+    asideTitle: "Persona note",
+    asideCopy:
+      "A second brain without owners and permissions is just another silo. Nabhi Persona starts with governance.",
+    gridHeading: "What must exist before memory",
+    gridLede:
+      "Enterprises searching for a “second brain” usually need a governed intelligence layer—not another place to dump notes.",
+    capabilities: [
+      {
+        title: "Decision owners",
+        copy: "Map who decides and what hurts before you pick a model or a vendor.",
+        icon: "clipboard",
+      },
+      {
+        title: "Trusted sources",
+        copy: "Name approved corpora and forbidden stores. Conflicting policy is design input.",
+        icon: "library",
+      },
+      {
+        title: "Permissions",
+        copy: "Every chunk inherits access from the source system—no leaked retrieval.",
+        icon: "lock",
+      },
+      {
+        title: "Definition of done",
+        copy: "What counts as a correct answer: citation, confidence, and when to refuse.",
+        icon: "gauge",
+      },
+      {
+        title: "Provenance",
+        copy: "Useful responses point back to evidence people recognize.",
+        icon: "quote",
+      },
+      {
+        title: "Persona layer",
+        copy: "Nabhi Persona sits on that foundation—active intelligence, private by design.",
+        icon: "layers",
+      },
+    ],
+    midHeading: "Govern the knowledge. Then make it active.",
+    splitLabel: "How we think",
+    splitHeading:
+      "Storage is not understanding. Governance comes before memory.",
+    splitImage: "/assets/our-approach/understand.webp",
+    splitImageAlt: "Understanding before technology — Nabhi Labs",
+    relatedProduct: { href: routes.persona, label: "Explore Nabhi Persona" },
+  },
+  {
+    path: "/blog/from-scattered-docs-to-decision-ready-knowledge",
+    badge: "Blog — Nabhi Persona",
+    highlight: "decision-ready",
+    proofLeft: "Cite when confident",
+    proofRight: "Refuse when evidence is thin",
+    asideTitle: "Knowledge note",
+    asideCopy:
+      "Indexing a drive is not the same as keeping a decision thread under pressure.",
+    gridHeading: "From documents to usable understanding",
+    gridLede:
+      "Nabhi Persona turns institutional knowledge into answers you can inspect—role, project, and policy aware.",
+    capabilities: [
+      {
+        title: "Governed ingestion",
+        copy: "Connect tools teams already use—without another migration theatre.",
+        icon: "library",
+      },
+      {
+        title: "Permission-aware retrieval",
+        copy: "People retrieve only what they could open at the source.",
+        icon: "lock",
+      },
+      {
+        title: "Context before answer",
+        copy: "Situation first: role, urgency, and policy boundary.",
+        icon: "search",
+      },
+      {
+        title: "Decision-ready interfaces",
+        copy: "Language of the work—not generic chat that invents.",
+        icon: "quote",
+      },
+      {
+        title: "Continuous learning",
+        copy: "Memory updates from real outcomes, not a static dump.",
+        icon: "refresh",
+      },
+      {
+        title: "RAG when needed",
+        copy: "Pair Persona with custom RAG when retrieval must be hardened.",
+        icon: "layers",
+      },
+    ],
+    midHeading: "Make institutional knowledge active—not archived.",
+    splitLabel: "Architecture",
+    splitHeading:
+      "A wiki stores. Nabhi Persona keeps the thread when pressure is highest.",
+    splitImage: "/assets/nabhi_persona_wallpaper.webp",
+    splitImageAlt: "Nabhi Persona — decision-ready institutional knowledge",
+    relatedProduct: { href: routes.persona, label: "Explore Nabhi Persona" },
+  },
+  {
+    path: "/blog/healthcare-operations-clarity-nabhi-cares",
+    badge: "Blog — Nabhi Cares",
+    highlight: "clarity",
+    proofLeft: "Assistive by design",
+    proofRight: "Humans stay accountable",
+    asideTitle: "Cares note",
+    asideCopy:
+      "Care operations need a coherent picture of status and policy—not another disconnected AI layer.",
+    gridHeading: "What care operations actually need",
+    gridLede:
+      "Nabhi Cares focuses on operational clarity: retrieval, workflows, and compliance posture without replacing clinical judgment.",
+    capabilities: [
+      {
+        title: "Ops clarity",
+        copy: "Reduce rediscovery across scheduling, documentation, and departments.",
+        icon: "activity",
+      },
+      {
+        title: "Assistive retrieval",
+        copy: "Surface approved context. Never claim to substitute clinicians.",
+        icon: "hand",
+      },
+      {
+        title: "Compliance posture",
+        copy: "Data classification and least privilege before models.",
+        icon: "shield",
+      },
+      {
+        title: "Scoped agents",
+        copy: "Automation only where boundaries are clear and logged.",
+        icon: "workflow",
+      },
+      {
+        title: "Connected stack",
+        copy: "Works with knowledge, RAG, and Persona—not another silo.",
+        icon: "layers",
+      },
+      {
+        title: "Trust first",
+        copy: "Patient trust is a constraint, not an afterthought.",
+        icon: "lock",
+      },
+    ],
+    midHeading: "Care operations deserve clarity—not theatre.",
+    splitLabel: "Nabhi Cares",
+    splitHeading:
+      "Map clinical and ops reality before introducing models.",
+    splitImage: "/assets/what-we-build/Nabhi Cares.webp",
+    splitImageAlt: "Nabhi Cares — healthcare AI for care operations",
+    relatedProduct: { href: routes.cares, label: "Explore Nabhi Cares" },
+  },
+  {
+    path: "/blog/hipaa-aware-rag-assistive-healthcare-ai",
+    badge: "Blog — Nabhi Cares",
+    highlight: "assistive",
+    proofLeft: "Least privilege by default",
+    proofRight: "Refuse when evidence is thin",
+    asideTitle: "Retrieval note",
+    asideCopy:
+      "HIPAA-aware RAG is permissioned retrieval and logging—not a fluent demo on thin corpora.",
+    gridHeading: "What assistive healthcare AI requires",
+    gridLede:
+      "Nabhi Cares applies the same retrieval discipline as production RAG—scoped to care operations.",
+    capabilities: [
+      {
+        title: "Permissioned chunks",
+        copy: "Access travels with every retrieved passage.",
+        icon: "lock",
+      },
+      {
+        title: "Auditability",
+        copy: "Log who retrieved what. Security can inspect the trail.",
+        icon: "list",
+      },
+      {
+        title: "Groundedness",
+        copy: "Cite sources. Measure support—not only latency.",
+        icon: "gauge",
+      },
+      {
+        title: "Refusal paths",
+        copy: "Hand off clinical questions. Do not invent from thin evidence.",
+        icon: "shield",
+      },
+      {
+        title: "Scoped corpora",
+        copy: "Approved sources only. Classification before embeddings.",
+        icon: "library",
+      },
+      {
+        title: "Eval checklist",
+        copy: "Start with the public RAG evaluation checklist, then harden.",
+        icon: "clipboard",
+      },
+    ],
+    midHeading: "Assistive means evidence—not fluency alone.",
+    splitLabel: "Production RAG",
+    splitHeading:
+      "Same retrieval craft as enterprise RAG—adapted for care operations.",
+    splitImage: "/assets/what-we-build/AI & RAG Engineering.webp",
+    splitImageAlt: "RAG engineering — grounded retrieval for healthcare ops",
+    relatedProduct: { href: routes.cares, label: "Explore Nabhi Cares" },
+  },
 ];
 
 export function getServiceLanding(path: string) {

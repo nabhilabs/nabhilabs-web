@@ -66,7 +66,7 @@ function FooterLinkColumn({
 }) {
   return (
     <nav aria-label={title} className="min-w-0">
-      <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-[#7a9a72]">
+      <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-white/40">
         {title}
       </p>
       <ul className="mt-4 space-y-3">
@@ -74,7 +74,7 @@ function FooterLinkColumn({
           <li key={link.href}>
             {link.external ? (
               <a
-                className="group inline-flex max-w-full items-center gap-2 text-[13px] leading-5 text-[#cde0b8]/85 transition-colors hover:text-white"
+                className="group inline-flex max-w-full items-center gap-2 text-[13px] leading-5 text-white/60 transition-colors hover:text-white"
                 href={link.href}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -88,7 +88,7 @@ function FooterLinkColumn({
               </a>
             ) : (
               <Link
-                className="block text-[13px] leading-5 text-[#cde0b8]/85 transition-colors hover:text-white"
+                className="block text-[13px] leading-5 text-white/60 transition-colors hover:text-white"
                 href={link.href}
               >
                 {link.label}
@@ -103,12 +103,12 @@ function FooterLinkColumn({
 
 export function SiteFooter() {
   return (
-    <footer className="relative z-10 bg-[#071B12] text-[#cde0b8]">
+    <footer className="relative z-10 bg-[#0e1012] text-white/70">
       <div className="mx-auto max-w-[95rem] px-6 py-12 md:px-10 md:py-16">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
           <div className="max-w-sm">
             <div className="flex items-center gap-3">
-              <span className="relative grid size-11 shrink-0 place-items-center overflow-hidden rounded-2xl border border-white/10 bg-[#0f2a1c]">
+              <span className="relative grid size-11 shrink-0 place-items-center overflow-hidden rounded-2xl border border-white/10 bg-black">
                 <Image
                   alt=""
                   className="object-contain p-2"
@@ -121,15 +121,15 @@ export function SiteFooter() {
                 <p className="font-display text-lg font-medium tracking-[-0.03em] text-white">
                   Nabhi Labs
                 </p>
-                <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-[#B7E84A]/90">
+                <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-[#a3e635]">
                   Understanding before technology.
                 </p>
               </div>
             </div>
-            <p className="mt-5 text-sm leading-6 text-[#cde0b8]/75">
+            <p className="mt-5 text-sm leading-6 text-white/55">
               Enterprise-grade systems, human-first by design.
             </p>
-            <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.14em] text-[#7a9a72]">
+            <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.14em] text-white/40">
               India · Remote
             </p>
           </div>
@@ -147,10 +147,10 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-white/10 bg-[#0a2218]">
+      <div className="border-t border-white/10 bg-black">
         <div className="mx-auto flex max-w-[95rem] flex-col gap-3 px-6 py-5 md:flex-row md:items-center md:justify-between md:px-10">
-          <span className="flex items-center gap-3 font-mono text-[8px] uppercase tracking-[0.14em] text-[#7a9a72]">
-            <span className="grid size-6 place-items-center rounded-md border border-white/10 bg-[#071B12] font-display text-xs text-[#B7E84A]">
+          <span className="flex items-center gap-3 font-mono text-[8px] uppercase tracking-[0.14em] text-white/40">
+            <span className="grid size-6 place-items-center rounded-md border border-white/10 bg-[#0e1012] font-display text-xs text-[#a3e635]">
               n
             </span>
             Understanding before technology
@@ -158,7 +158,7 @@ export function SiteFooter() {
               . Authored by Nabhi Labs. Updated August 2026.
             </span>
           </span>
-          <p className="text-[11px] text-[#cde0b8]/65">
+          <p className="text-[11px] text-white/45">
             © 2026 Nabhi Labs · Remote-first from India
           </p>
         </div>

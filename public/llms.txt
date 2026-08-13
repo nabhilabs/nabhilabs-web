@@ -29,6 +29,10 @@ Profiles: https://www.linkedin.com/company/nabhilabs/ · https://www.instagram.c
 
 - [Blog index](https://www.nabhilabs.com/blog): Writing from Nabhi Labs
 - [How Nabhi Labs builds understanding into technology](https://www.nabhilabs.com/blog/how-nabhi-labs-builds-understanding-into-technology): Operating sequence behind Nabhi Labs
+- [Why an enterprise second brain fails without governance](https://www.nabhilabs.com/blog/why-enterprise-second-brain-fails-without-governance): Governance before memory — Nabhi Persona
+- [From scattered docs to decision-ready knowledge](https://www.nabhilabs.com/blog/from-scattered-docs-to-decision-ready-knowledge): Institutional knowledge as inspectable answers
+- [Healthcare operations starve for clarity](https://www.nabhilabs.com/blog/healthcare-operations-clarity-nabhi-cares): Nabhi Cares for care operations
+- [HIPAA-aware RAG](https://www.nabhilabs.com/blog/hipaa-aware-rag-assistive-healthcare-ai): Assistive retrieval, not replacing clinical judgment
 
 ## Optional
 

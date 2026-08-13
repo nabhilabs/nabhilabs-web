@@ -215,6 +215,12 @@ export const keywordPageMap = [
     also: "/services/agentic-voice-workflows",
   },
   {
+    intent: "Enterprise second brain",
+    keywords: ["Second Brain", "institutional knowledge"],
+    page: "/blog/why-enterprise-second-brain-fails-without-governance",
+    also: "/products/nabhi-persona",
+  },
+  {
     intent: "Services",
     keywords: [
       "Software Development",
