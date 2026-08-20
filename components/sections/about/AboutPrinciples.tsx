@@ -2,7 +2,7 @@ function ClarityIcon() {
   return (
     <svg
       aria-hidden
-      className="size-9 text-[#B7E84A]"
+      className="size-4 text-[#cde0b8]"
       fill="none"
       viewBox="0 0 40 40"
     >
@@ -29,7 +29,7 @@ function AdaptabilityIcon() {
   return (
     <svg
       aria-hidden
-      className="size-9 text-[#B7E84A]"
+      className="size-4 text-[#cde0b8]"
       fill="none"
       viewBox="0 0 40 40"
     >
@@ -62,7 +62,7 @@ function FocusIcon() {
   return (
     <svg
       aria-hidden
-      className="size-9 text-[#B7E84A]"
+      className="size-4 text-[#cde0b8]"
       fill="none"
       viewBox="0 0 40 40"
     >
@@ -80,21 +80,18 @@ const principles = [
     title: "Clarity",
     copy: "Information organized so you always know what matters now—not buried in noise.",
     icon: ClarityIcon,
-    tone: "light" as const,
   },
   {
     number: "02",
     title: "Adaptability",
     copy: "Systems that adjust as priorities shift, matching how teams actually operate.",
     icon: AdaptabilityIcon,
-    tone: "dark" as const,
   },
   {
     number: "03",
     title: "Focus",
     copy: "Everything works together, so decisions keep their thread without friction or rework.",
     icon: FocusIcon,
-    tone: "light" as const,
   },
 ] as const;
 
@@ -105,76 +102,43 @@ export function AboutPrinciples() {
       className="border-t border-[#d8e0d5] bg-[#f2f4f0] px-6 py-16 md:px-10 md:py-24"
       id="principles"
     >
-      <div className="mx-auto grid max-w-[95rem] gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.2fr)] lg:items-stretch lg:gap-8">
-        <div className="relative flex flex-col justify-center overflow-hidden rounded-[1.75rem] bg-[#071B12] px-7 py-9 text-[#cde0b8] md:px-9 md:py-11">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_90%,rgba(183,232,74,0.16),transparent_55%)]"
-          />
-          <div className="relative">
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#B7E84A]">
-              01 // Principles
-            </p>
-            <h2
-              className="mt-6 max-w-md font-display text-[clamp(1.75rem,3.2vw,2.6rem)] font-medium leading-[1.08] tracking-[-0.04em] text-white"
-              id="about-principles-heading"
-            >
-              We bring strategic thinking and systems craft so organizations
-              operate with{" "}
-              <em className="font-serif font-normal italic text-[#B7E84A]">
-                clarity
-              </em>
-              —and grow with purpose.
-            </h2>
-          </div>
-        </div>
+      <div className="mx-auto max-w-[95rem]">
+        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#5a6b5e]">
+          01 // Principles
+        </p>
+        <h2
+          className="mt-6 max-w-2xl font-display text-[clamp(1.75rem,3.2vw,2.6rem)] font-medium leading-[1.08] tracking-[-0.04em] text-[#0f1c13]"
+          id="about-principles-heading"
+        >
+          We bring strategic thinking and systems craft so organizations operate
+          with{" "}
+          <em className="font-serif font-normal italic text-[#31543a]">
+            clarity
+          </em>
+          —and grow with purpose.
+        </h2>
 
-        <ul className="grid gap-5 sm:grid-cols-3">
-          {principles.map(({ number, title, copy, icon: Icon, tone }, index) => {
-            const dark = tone === "dark";
-            return (
-              <li
-                className={`about-principle-card feature-lift flex flex-col rounded-2xl border p-5 md:p-6 ${
-                  dark
-                    ? "border-[#1a3323] bg-[#0f1c13] text-[#cde0b8]"
-                    : "border-[#d8e0d5] bg-[#f8f8f4]"
-                }`}
-                key={title}
-                style={{ animationDelay: `${120 + index * 110}ms` }}
-              >
-                <span
-                  className={`grid size-12 place-items-center rounded-xl border ${
-                    dark
-                      ? "border-white/10 bg-[#071B12]"
-                      : "border-[#d8e0d5] bg-[#071B12]"
-                  }`}
-                >
+        <ul className="mt-12 grid gap-5 sm:grid-cols-3">
+          {principles.map(({ number, title, copy, icon: Icon }, index) => (
+            <li
+              className="about-principle-card rounded-2xl border border-[#d8e0d5] bg-[#f7f6f1] p-6 md:p-7"
+              key={title}
+              style={{ animationDelay: `${120 + index * 110}ms` }}
+            >
+              <div className="flex items-start justify-between gap-4">
+                <span className="grid size-10 place-items-center rounded-xl bg-[#0f1c13]">
                   <Icon />
                 </span>
-                <p
-                  className={`mt-5 font-mono text-[9px] uppercase tracking-[0.16em] ${
-                    dark ? "text-[#B7E84A]/80" : "text-[#78966a]"
-                  }`}
-                >
+                <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#5a7052]">
                   {number}
-                </p>
-                <h3
-                  className={`mt-2 font-display text-lg font-semibold tracking-[-0.02em] ${
-                    dark ? "text-white" : "text-[#071B12]"
-                  }`}
-                >
-                  {title}
-                </h3>
-                <p
-                  className={`mt-3 text-sm leading-6 ${
-                    dark ? "text-[#cde0b8]/75" : "text-[#4a5b4e]"
-                  }`}
-                >
-                  {copy}
-                </p>
-              </li>
-            );
-          })}
+                </span>
+              </div>
+              <h3 className="mt-6 font-display text-xl font-semibold tracking-[-0.03em] text-[#0f1c13]">
+                {title}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-[#4a5b4e]">{copy}</p>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

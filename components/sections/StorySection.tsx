@@ -35,7 +35,7 @@ export function StorySection() {
           </div>
 
           <div className="relative mx-auto aspect-square w-full max-w-[36rem]">
-            <div className="absolute inset-0 animate-story-spin">
+            <div className="absolute inset-0 animate-story-spin will-change-transform">
               <Image
                 alt="Decorative orbit ring for Nabhi origin story diagram"
                 className="h-full w-full object-contain"

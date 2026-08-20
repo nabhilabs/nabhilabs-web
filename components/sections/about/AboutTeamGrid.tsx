@@ -6,7 +6,7 @@ const members = [
     name: "Surya Raj",
     role: "Co-founder",
     focus: "Agentic systems",
-    image: "/assets/surya.webp",
+    image: "/assets/surya-portrait.webp",
     linkedin: "https://www.linkedin.com/in/salve-surya-raj",
   },
   {
@@ -65,7 +65,7 @@ export function AboutTeamGrid() {
         </div>
 
         <ul className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-          {members.map((member) => (
+          {members.map((member, index) => (
             <li key={member.name}>
               <article className="group overflow-hidden rounded-2xl border border-[#1a3323]/35 bg-[#071B12] transition-transform duration-500 hover:-translate-y-1">
                 <div className="relative aspect-[4/5] overflow-hidden bg-[#04140d]">
@@ -73,7 +73,9 @@ export function AboutTeamGrid() {
                     alt={`${member.name}, ${member.role} at Nabhi Labs`}
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
                     fill
-                    loading="lazy"
+                    key={member.image}
+                    loading="eager"
+                    priority={index === 0}
                     sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 22vw"
                     src={member.image}
                   />

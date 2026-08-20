@@ -31,7 +31,7 @@ export function ChallengeAssetFrame({
       <div className="relative h-full w-full">
         <Image
           alt={alt}
-          className="object-contain object-center mix-blend-screen drop-shadow-[0_24px_48px_rgba(26,51,35,0.12)]"
+          className="object-contain object-center opacity-100 drop-shadow-[0_24px_48px_rgba(26,51,35,0.12)]"
           fill
           priority={priority}
           sizes={sizes}

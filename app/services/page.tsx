@@ -78,7 +78,7 @@ const supportingServices = [
 export default function ServicesPage() {
   return (
     <main className="relative" id="main-content">
-      <CurtainSlider slides={[...curtainSlides]} />
+      <CurtainSlider autoplay slides={[...curtainSlides]} />
 
       <section
         aria-labelledby="supporting-services-heading"

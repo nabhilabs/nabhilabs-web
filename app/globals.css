@@ -170,8 +170,20 @@ a {
   }
 }
 
+@keyframes story-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .animate-story-spin {
   animation: story-spin 10s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-story-spin {
+    animation: none;
+  }
 }
 
 @keyframes philosophy-spin-cw {

@@ -46,7 +46,7 @@ type Ember = {
 export function CurtainSlider({
   slides,
   className = "",
-  autoplay = false,
+  autoplay = true,
   autoplayDelay = 6000,
 }: CurtainSliderProps) {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -327,30 +327,27 @@ export function CurtainSlider({
           </div>
         </div>
 
-        <div className="pointer-events-auto flex items-center justify-end gap-4 pb-10 md:pb-14">
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/55">
-            {label}
-          </p>
-          <div className="flex gap-2">
-            <button
-              aria-label="Previous service"
-              className="grid size-11 place-items-center rounded-full border border-white/25 bg-white/5 text-white transition-colors hover:bg-white/15"
-              onClick={prev}
-              type="button"
-            >
-              ←
-            </button>
-            <button
-              aria-label="Next service"
-              className="grid size-11 place-items-center rounded-full border border-white/25 bg-white/5 text-white transition-colors hover:bg-white/15"
-              onClick={next}
-              type="button"
-            >
-              →
-            </button>
-          </div>
-        </div>
+        <p className="pointer-events-none pb-10 font-mono text-[10px] uppercase tracking-[0.16em] text-white/55 md:pb-14">
+          {label}
+        </p>
       </div>
+
+      <button
+        aria-label="Previous service"
+        className="absolute left-4 top-1/2 z-20 grid size-11 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-black/35 text-white backdrop-blur-sm transition-colors hover:bg-white/15 md:left-6"
+        onClick={prev}
+        type="button"
+      >
+        ←
+      </button>
+      <button
+        aria-label="Next service"
+        className="absolute right-4 top-1/2 z-20 grid size-11 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-black/35 text-white backdrop-blur-sm transition-colors hover:bg-white/15 md:right-6"
+        onClick={next}
+        type="button"
+      >
+        →
+      </button>
     </div>
   );
 }

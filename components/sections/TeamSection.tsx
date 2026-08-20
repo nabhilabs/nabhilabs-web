@@ -7,7 +7,7 @@ const members = [
   {
     name: "Surya Raj",
     role: "Co-founder",
-    image: "/assets/surya.webp",
+    image: "/assets/surya-portrait.webp",
   },
   {
     name: "Pavan Kumar",
